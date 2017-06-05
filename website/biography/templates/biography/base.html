@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta name="Author" content="SOGLO Arcadius">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>{% block title %} sogloarcadius {% endblock title %}</title>
+
+  {% load staticfiles %}
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{% static 'biography/css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+  <link rel="stylesheet" type="text/css" href="{% static 'biography/css/style.css' %}" media="screen,projection">
+
+</head>
+
+
+<body>
+  <nav class="light-green lighten-1" role="navigation">
+    <div class="nav-wrapper container">
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Bio</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+        <ul class="left hide-on-med-and-down">
+        <li><a href="#" title="Linkedin"><i><img src="{% static 'biography/images/linkedin.svg' %}"></i></a></li>
+        <li><a href="#" title="Github"><i><img src="{% static 'biography/images/github.svg' %}"></i></a></li>
+
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  {% block content %}
+  
+  {% endblock content %}
+
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Contact me</h5>
+          <p class="grey-text text-lighten-4">
+              Need some help for your project, please send me an email at <span class="black-text">rtsoglo@gmail.com</span> and I will be glad to help you.
+            </p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <!-- <h5 class="white-text">Menu</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Biography</a></li>
+            <li><a class="white-text" href="#!">Portfolio</a></li>
+            <li><a class="white-text" href="#!">Blog</a></li>
+          </ul> -->
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li>
+              <a href="#" title="Facebook"><i><img src="{% static 'biography/images/facebook.svg' %}"></i></a>&nbsp;
+              <a href="#" title="Google Plus"><i><img src="{% static 'biography/images/googleplus.svg' %}"></i></a>&nbsp;
+              <a href="#" title="Linkedin"><i><img src="{% static 'biography/images/linkedin.svg' %}"></i></a>&nbsp;
+              <a href="#" title="Github"><i><img src="{% static 'biography/images/github.svg' %}"></i></a>&nbsp;
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      &copy; <a class="orange-text text-lighten-3" href="#">sogloarcadius</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{% static 'biography/js/materialize.js' %}" ></script>
+  <script src="{% static 'biography/js/init.js' %}"></script>
+
+  </body>
+</html>
