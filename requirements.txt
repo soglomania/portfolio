@@ -1,3 +1,8 @@
+# Requirements in dev env
+
 django==1.11.2
 djangorestframework==3
 django-debug-toolbar==1.8
+selenium
+coverage
+django-rosetta

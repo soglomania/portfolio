@@ -30,3 +30,11 @@ local_settings.py
 
 # pyenv
 .python-version
+
+#selenium
+
+geckodriver.log
+
+# Translations
+*.mo
+*.pot
