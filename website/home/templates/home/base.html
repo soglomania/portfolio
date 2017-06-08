@@ -28,9 +28,8 @@
   <nav class="light-green lighten-1" role="navigation">
     <div class="nav-wrapper container">
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">{% trans "Biography" %} </a></li>
+        <li><a href="#"><i><img src="{% static 'home/images/favicon_32_32.png' %}"> </i></a></li>
         <li><a href="#">{% trans "Portfolio" %} </a></li>
-        <li><a href="#">{% trans "Blog" %} </a></li>
       </ul>
         <ul class="left hide-on-med-and-down">
         <li><a href="{% url 'set_french' %}" title="fr"><i><img src="{% static 'home/images/fr.png' %}"></i></a></li>
@@ -39,26 +38,26 @@
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">{% trans "Biography" %} </a></li>
+        <li><a href="#"><i><img src="{% static 'home/images/favicon_32_32.png' %}"></i></a></li>
         <li><a href="#">{% trans "Portfolio" %} </a></li>
-        <li><a href="#">{% trans "Blog" %} </a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
     
   </nav>
 
+  <main>
   {% block content %}
   
   {% endblock content %}
+  </main>
 
-  <footer class="page-footer orange">
+  <footer class="page-footer green">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="white-text"> {% trans "Contact me" %} </h5>
+          <h5 class="white-text"> Don't worry, be happy ! </h5>
           <p class="grey-text text-lighten-4">
-            {% blocktrans %} Need some help for your project, please send me an email at <span class="black-text">rtsoglo@gmail.com</span>and I will be glad to help you. {% endblocktrans %}</p>
         </div>
         <div class="col l3 s12">
          
@@ -84,7 +83,7 @@
     </div>
     <div class="footer-copyright">
       <div class="container">
-      &copy; <a class="orange-text text-lighten-3" href="#">sogloarcadius</a>
+      &copy; <a class="orange-text text-lighten-3" href="mailto:rtsoglo@gmail.com">sogloarcadius</a>
       </div>
     </div>
   </footer>

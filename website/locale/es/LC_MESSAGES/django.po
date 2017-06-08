@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-06 00:02+0200\n"
-"PO-Revision-Date: 2017-06-06 00:03+0009\n"
+"POT-Creation-Date: 2017-06-09 00:23+0200\n"
+"PO-Revision-Date: 2017-06-09 00:13+0009\n"
 "Last-Translator: b'  <admin@admin.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,45 +19,41 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.7.13\n"
 
-#: home/templates/home/base.html:31 home/templates/home/base.html:42
-msgid "Biography"
-msgstr "Biografia"
-
-#: home/templates/home/base.html:32 home/templates/home/base.html:43
+#: home/templates/home/base.html:32 home/templates/home/base.html:42
 msgid "Portfolio"
 msgstr "Portfolio"
 
-#: home/templates/home/base.html:33 home/templates/home/base.html:44
-msgid "Blog"
-msgstr "Blog"
-
-#: home/templates/home/base.html:59
-msgid "Contact me"
-msgstr "Escribeme !"
-
-#: home/templates/home/base.html:61
-#| msgid ""
-#| "Need some help for your project, please send me an email at <span class=\\ \"black-text\\\">rtsoglo@gmail.com</span>and\n"
-#| "            I will be glad to help you."
-msgid ""
-" Need some help for your project, please send me an email at <span class"
-"=\"black-text\">rtsoglo@gmail.com</span>and I will be glad to help you. "
-msgstr ""
-"Necesitas ayuda, escribeme a <span class=\"black-"
-"text\">rtsoglo@gmail.com</span> y sera un placer responderte."
-
-#: home/templates/home/base.html:73
+#: home/templates/home/base.html:72
 msgid "Connect"
 msgstr "Redes sociales"
 
-#: website/settings.py:127
+#: website/settings.py:126
 msgid "English"
 msgstr "Inglés"
 
-#: website/settings.py:128
+#: website/settings.py:127
 msgid "French"
 msgstr "Francés"
 
-#: website/settings.py:129
+#: website/settings.py:128
 msgid "Spanish"
 msgstr "Español"
+
+#~ msgid "Email"
+#~ msgstr "Correo electronico"
+
+#~ msgid "Biography"
+#~ msgstr "Biografia"
+
+#~ msgid "Blog"
+#~ msgstr "Blog"
+
+#~ msgid "Contact me"
+#~ msgstr "Escribeme !"
+
+#~ msgid ""
+#~ " Need some help for your project, please send me an email at <span class="
+#~ "\"black-text\">rtsoglo@gmail.com</span>and I will be glad to help you. "
+#~ msgstr ""
+#~ "Necesitas ayuda, escribeme a <span class=\"black-text\">rtsoglo@gmail."
+#~ "com</span> y sera un placer responderte."

@@ -6,6 +6,7 @@ from django.conf.urls.i18n import i18n_patterns
 
 from home import views
 
+
 urlpatterns = [ 
     url(r'^(?P<filename>(robots.txt)|(humans.txt))$', views.home_files, name='home-files'),
     url(r'^i18n/', include('django.conf.urls.i18n')),
@@ -15,11 +16,9 @@ urlpatterns = [
 ]
 
 urlpatterns += i18n_patterns(
-    url(r'^$', include('home.urls')),
+    url(r'^', include('home.urls')),
     url(r'^admin/', admin.site.urls),
-    url(r'^portfolio/', include('portfolio.urls')),
-    url(r'^blog/', include('blog.urls')),
-
+    url(r'^portfolio/', include('portfolio.urls'))
 )
 
 if settings.DEBUG:

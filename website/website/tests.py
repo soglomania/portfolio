@@ -7,16 +7,9 @@ from django.contrib.staticfiles.testing import LiveServerTestCase
 from django.test import TestCase
 from django.utils.translation import activate
 
+# Test homepage
 
-class DemoTest(TestCase):
-    
-    def test_demo(self):
-        calc =  1 + 1 
-        self.assertIs(2, 2)
-
-
-
-class HomeNewVisitorTest(LiveServerTestCase): 
+class HomeTest(LiveServerTestCase): 
  
     def setUp(self):
         self.browser = webdriver.Firefox()
@@ -29,15 +22,21 @@ class HomeNewVisitorTest(LiveServerTestCase):
         return self.live_server_url + reverse(namespace)
  
     def test_home_title(self):
+        activate('fr')
         self.browser.get(self.get_full_url("index"))
         self.assertIn("sogloarcadius", self.browser.title)
 	
-    def test_home_files(self):
+    # make sure that robot and human file accessible 
+    #due to language support django add locale code in url, 
+    # ( http://domain.com/robot.txt & http://domain.com/human.txt)
+
+    def test_search_engines_files(self):
         self.browser.get(self.live_server_url + "/robots.txt")
         self.assertNotIn("Not Found", self.browser.title)
         self.browser.get(self.live_server_url + "/humans.txt")
         self.assertNotIn("Not Found", self.browser.title)
     	
     def test_uses_index_template(self):
+        activate('fr')
         response = self.client.get(reverse("index"))
-        self.assertTemplateUsed(response, 'biography/index.html')
+        self.assertTemplateUsed(response, 'home/index.html')

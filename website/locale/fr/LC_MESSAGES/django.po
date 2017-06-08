@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-06 00:02+0200\n"
-"PO-Revision-Date: 2017-06-06 00:03+0009\n"
+"POT-Creation-Date: 2017-06-09 00:23+0200\n"
+"PO-Revision-Date: 2017-06-09 00:12+0009\n"
 "Last-Translator: b'  <admin@admin.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,46 +19,42 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.7.13\n"
 
-#: home/templates/home/base.html:31 home/templates/home/base.html:42
-msgid "Biography"
-msgstr "Biographie"
-
-#: home/templates/home/base.html:32 home/templates/home/base.html:43
+#: home/templates/home/base.html:32 home/templates/home/base.html:42
 msgid "Portfolio"
 msgstr "Portfolio"
 
-#: home/templates/home/base.html:33 home/templates/home/base.html:44
-msgid "Blog"
-msgstr "Blog"
-
-#: home/templates/home/base.html:59
-msgid "Contact me"
-msgstr "Comment m'écrire ?"
-
-#: home/templates/home/base.html:61
-#| msgid ""
-#| "Need some help for your project, please send me an email at <span class=\\ \"black-text\\\">rtsoglo@gmail.com</span>and\n"
-#| "            I will be glad to help you."
-msgid ""
-" Need some help for your project, please send me an email at <span class"
-"=\"black-text\">rtsoglo@gmail.com</span>and I will be glad to help you. "
-msgstr ""
-"Vous avez bésoin d'aide ?, alors n'hésitez pas à m'écrire à <span class"
-"=\"black-text\">rtsoglo@gmail.com</span> et je serai ravi de vous répondre "
-"dans les plus bref délais."
-
-#: home/templates/home/base.html:73
+#: home/templates/home/base.html:72
 msgid "Connect"
 msgstr "Réseaux Sociaux"
 
-#: website/settings.py:127
+#: website/settings.py:126
 msgid "English"
 msgstr "Anglais"
 
-#: website/settings.py:128
+#: website/settings.py:127
 msgid "French"
 msgstr "Français"
 
-#: website/settings.py:129
+#: website/settings.py:128
 msgid "Spanish"
 msgstr "Espagnol"
+
+#~ msgid "Email"
+#~ msgstr "Couriel"
+
+#~ msgid "Biography"
+#~ msgstr "Biographie"
+
+#~ msgid "Blog"
+#~ msgstr "Blog"
+
+#~ msgid "Contact me"
+#~ msgstr "Comment m'écrire ?"
+
+#~ msgid ""
+#~ " Need some help for your project, please send me an email at <span class="
+#~ "\"black-text\">rtsoglo@gmail.com</span>and I will be glad to help you. "
+#~ msgstr ""
+#~ "Vous avez bésoin d'aide ?, alors n'hésitez pas à m'écrire à <span class="
+#~ "\"black-text\">rtsoglo@gmail.com</span> et je serai ravi de vous répondre "
+#~ "dans les plus bref délais."

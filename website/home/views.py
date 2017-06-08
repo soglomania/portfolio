@@ -3,8 +3,19 @@ from django.utils import translation
 from django.views import generic
 
 
-def index(request):
-    return render(request, 'home/index.html')
+
+class IndexView(generic.TemplateView):
+    template_name = 'home/index.html'
+
+
+
+# to render robot.txt and human.txt (remove 'fr', 'en', 'es' from url )
+
+def home_files(request, filename):
+    return render(request, filename, {}, content_type="text/plain")
+
+
+#persist user language preference in cookie and redirect to home page
 
 def set_french(request):
     user_language = 'fr'
@@ -25,10 +36,6 @@ def set_spanish(request):
     translation.activate(user_language)
     request.session[translation.LANGUAGE_SESSION_KEY] = user_language
     return redirect('/')
-
-
-def home_files(request, filename):
-    return render(request, filename, {}, content_type="text/plain")
 
 
 
