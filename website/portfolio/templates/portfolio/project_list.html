@@ -1,0 +1,40 @@
+{% extends "home/base.html" %}
+
+
+{% block title %} portfolio {% endblock title %}
+{% block portfolio_nav_state %}  active  {% endblock portfolio_nav_state %}
+{% block about_nav_state %}  #  {% endblock about_nav_state %}
+
+
+{% block content %}
+  
+    <div class="section no-pad-bot" id="index-banner">
+    </div>
+
+    <div class="container">
+    <div class="section">
+        <div class="section">
+            <div class="row">
+                {% for project in all_projects %}
+                <div class="col s12 m6 l3">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="{{ MEDIA_URL }}{{ project.icon.url}}" width="200px" height="200px">
+                            <span class="card-title">{{project.title}}</span>
+                        </div>
+                            <div class="card-content">
+                            <p>{{project.summary}}</p>
+                            </div>
+                        <div class="card-action">
+                            <a href="{{project.link}}">link</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+{% endblock content %}

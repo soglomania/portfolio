@@ -28,8 +28,8 @@
   <nav class="light-green lighten-1" role="navigation">
     <div class="nav-wrapper container">
       <ul class="right hide-on-med-and-down">
-        <li><a href="#"><i><img src="{% static 'home/images/favicon_32_32.png' %}"> </i></a></li>
-        <li><a href="#">{% trans "Portfolio" %} </a></li>
+        <li class="{% block about_nav_state %}  active  {% endblock about_nav_state %}"><a href="#" >{% trans "About" %}</a></li>
+        <li class="{% block portfolio_nav_state %}  #  {% endblock portfolio_nav_state %}"><a href="#">{% trans "Portfolio" %} </a></li>
       </ul>
         <ul class="left hide-on-med-and-down">
         <li><a href="{% url 'set_french' %}" title="fr"><i><img src="{% static 'home/images/fr.png' %}"></i></a></li>
@@ -38,8 +38,8 @@
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
-        <li><a href="#"><i><img src="{% static 'home/images/favicon_32_32.png' %}"></i></a></li>
-        <li><a href="#">{% trans "Portfolio" %} </a></li>
+        <li class="{% block mobile_about_nav_state %}  active  {% endblock mobile_about_nav_state %}"><a href="#">{% trans "About" %}</a></li>
+        <li class="{% block mobile_portfolio_nav_state %}  #  {% endblock mobile_portfolio_nav_state %}"><a href="#">{% trans "Portfolio" %} </a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>

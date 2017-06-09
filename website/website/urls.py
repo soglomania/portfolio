@@ -3,6 +3,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.i18n import i18n_patterns
+from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns
 
 from home import views
 
@@ -15,11 +16,15 @@ urlpatterns = [
     url(r'^spanish/$', views.set_spanish, name='set_spanish'),
 ]
 
+
 urlpatterns += i18n_patterns(
     url(r'^', include('home.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^portfolio/', include('portfolio.urls'))
 )
+
+urlpatterns += staticfiles_urlpatterns()
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
     import debug_toolbar
