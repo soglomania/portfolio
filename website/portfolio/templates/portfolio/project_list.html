@@ -1,9 +1,12 @@
 {% extends "home/base.html" %}
 
+{% load i18n %}
 
-{% block title %} portfolio {% endblock title %}
-{% block portfolio_nav_state %}  active  {% endblock portfolio_nav_state %}
-{% block about_nav_state %}  #  {% endblock about_nav_state %}
+{% block title %} {% trans "Portfolio" %} {% endblock title %}
+{% block nav_about_class %} #  {% endblock nav_about_class %}
+{% block nav_portfolio_class %}  active  {% endblock nav_portfolio_class %}
+{% block mobile_nav_about_class %}  #  {% endblock mobile_nav_about_class %}
+{% block mobile_nav_portfolio_class %}  active  {% endblock mobile_nav_portfolio_class %}
 
 
 {% block content %}
@@ -13,27 +16,26 @@
 
     <div class="container">
     <div class="section">
-        <div class="section">
             <div class="row">
                 {% for project in all_projects %}
                 <div class="col s12 m6 l3">
-                    <div class="card">
+                    <div class="card z-depth-2">
                         <div class="card-image">
-                            <img src="{{ MEDIA_URL }}{{ project.icon.url}}" width="200px" height="200px">
-                            <span class="card-title">{{project.title}}</span>
+                            <img class="activator" src="{{ project.icon.url}}" width="200px" height="200px">
+                            <a class="btn-floating halfway-fab waves-effect waves-light green" href="{% url 'project-detail' project.pk %}"><i class="material-icons">info</i></a>
                         </div>
-                            <div class="card-content">
+                        <div class="card-content">
+                            <br>
+                            <span class="card-title activator grey-text text-darken-4">{{project.title}}<i class="material-icons right">more_vert</i></span>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">{{project.title}}<i class="material-icons right">close</i></span>
                             <p>{{project.summary}}</p>
-                            </div>
-                        <div class="card-action">
-                            <a href="{{project.link}}">link</a>
                         </div>
                     </div>
                 </div>
                 {% endfor %}
             </div>
-
-        </div>
     </div>
     </div>
 

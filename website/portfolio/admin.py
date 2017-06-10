@@ -1,6 +1,10 @@
 from django.contrib import admin
 
 from .models import Project
+from modeltranslation.admin import TranslationAdmin
 
-admin.site.register(Project)
-# Register your models here.
+
+class ProjectAdmin(TranslationAdmin):
+    pass
+
+admin.site.register(Project, ProjectAdmin)

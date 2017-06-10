@@ -17,7 +17,8 @@
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="{% static 'home/css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">   <link href="{% static 'home/css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
   <script type="text/javascript" src="{% static 'home/js/utils.js' %}"></script>
   <link rel="stylesheet" type="text/css" href="{% static 'home/css/style.css' %}" media="screen,projection">
 
@@ -28,8 +29,8 @@
   <nav class="light-green lighten-1" role="navigation">
     <div class="nav-wrapper container">
       <ul class="right hide-on-med-and-down">
-        <li class="{% block about_nav_state %}  active  {% endblock about_nav_state %}"><a href="#" >{% trans "About" %}</a></li>
-        <li class="{% block portfolio_nav_state %}  #  {% endblock portfolio_nav_state %}"><a href="#">{% trans "Portfolio" %} </a></li>
+        <li class="{% block nav_about_class %} # {% endblock nav_about_class %}"><a href="{% url 'home-index' %}" >{% trans "About" %}</a></li>
+        <li class="{% block nav_portfolio_class %}  #  {% endblock nav_portfolio_class %}"><a href="{% url 'project-list' %}">{% trans "Portfolio" %} </a></li>
       </ul>
         <ul class="left hide-on-med-and-down">
         <li><a href="{% url 'set_french' %}" title="fr"><i><img src="{% static 'home/images/fr.png' %}"></i></a></li>
@@ -38,8 +39,8 @@
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
-        <li class="{% block mobile_about_nav_state %}  active  {% endblock mobile_about_nav_state %}"><a href="#">{% trans "About" %}</a></li>
-        <li class="{% block mobile_portfolio_nav_state %}  #  {% endblock mobile_portfolio_nav_state %}"><a href="#">{% trans "Portfolio" %} </a></li>
+        <li class="{% block mobile_nav_about_class %}  #  {% endblock mobile_nav_about_class %}"><a href="{% url 'home-index' %}">{% trans "About" %}</a></li>
+        <li class="{% block mobile_nav_portfolio_class %}  #  {% endblock mobile_nav_portfolio_class %}"><a href="{% url 'project-list' %}">{% trans "Portfolio" %} </a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
@@ -47,17 +48,19 @@
   </nav>
 
   <main>
-  {% block content %}
-  
-  {% endblock content %}
+    {% block content %}
+    
+    {% endblock content %}
   </main>
 
   <footer class="page-footer green">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="white-text"> Don't worry, be happy ! </h5>
-          <p class="grey-text text-lighten-4">
+          <div class="chip">DevOps</div>
+          <div class="chip">SDN & NFV</div>
+          <div class="chip">Android</div>
+          <div class="chip">Python</div>
         </div>
         <div class="col l3 s12">
          

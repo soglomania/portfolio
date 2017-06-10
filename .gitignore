@@ -33,7 +33,6 @@ local_settings.py
 
 #selenium
 
-geckodriver.log
 
 # Translations
 *.mo

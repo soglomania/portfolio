@@ -1,0 +1,42 @@
+{% extends "home/base.html" %}
+
+{% load i18n %}
+
+{% block title %} {{project.title}} {% endblock title %}
+{% block nav_about_class %} #  {% endblock nav_about_class %}
+{% block nav_portfolio_class %}  active  {% endblock nav_portfolio_class %}
+{% block mobile_nav_about_class %}  #  {% endblock mobile_nav_about_class %}
+{% block mobile_nav_portfolio_class %}   active  {% endblock mobile_nav_portfolio_class %}
+
+
+{% block content %}
+
+    <div class="section no-pad-bot" id="index-banner">
+    </div>
+
+    <div class="container">
+        <div class="section">
+            
+            <div class="row">
+                <div class="col s4 left">
+                     <figure>
+                        <img src="{{ project.image.url}}">
+                        <figcaption></figcaption>
+                    </figure>
+                </div>
+                <div class="col s1">
+                </div>
+                <div class="col s7 right">
+                    <p><a class="btn btn-floating right green" href="{% url 'project-list' %}"><i class="material-icons">view_list</i></a></p>
+                    <br>
+                    <h1 class="uppercase satisfy">{{ project.title}} </h1>
+                    <p class="flow-text">{{ project.description}}</p>
+                    <br>
+                    <a class="btn btn-floating right green" href="{{ project.link }}"><i class="material-icons">open_in_new</i></a>
+
+                </div> 
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

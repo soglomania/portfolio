@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home.apps.HomeConfig',
     'portfolio.apps.PortfolioConfig',
+    'rosetta',
 ]
 
 MIDDLEWARE = [
@@ -146,7 +148,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 if DEBUG :
     INTERNAL_IPS = ['127.0.0.1',]
     MIDDLEWARE+=['debug_toolbar.middleware.DebugToolbarMiddleware',]
-    INSTALLED_APPS+=['debug_toolbar', 'rosetta']
+    INSTALLED_APPS+=['debug_toolbar',]
 
 
 

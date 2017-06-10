@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-09 00:28+0200\n"
+"POT-Creation-Date: 2017-06-10 17:55+0200\n"
 "PO-Revision-Date: 2017-06-09 00:36+0009\n"
 "Last-Translator: b'  <admin@admin.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,15 +19,17 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.7.13\n"
 
-#: home/templates/home/base.html:31
+#: home/templates/home/base.html:32 home/templates/home/base.html:42
+#: home/templates/home/index.html:5
 msgid "About"
 msgstr "Biografia"
 
-#: home/templates/home/base.html:32 home/templates/home/base.html:42
+#: home/templates/home/base.html:33 home/templates/home/base.html:43
+#: portfolio/templates/portfolio/project_list.html:5
 msgid "Portfolio"
 msgstr "Portfolio"
 
-#: home/templates/home/base.html:72
+#: home/templates/home/base.html:75
 msgid "Connect"
 msgstr "Redes sociales"
 
@@ -56,8 +58,8 @@ msgstr "Español"
 #~ msgstr "Escribeme !"
 
 #~ msgid ""
-#~ " Need some help for your project, please send me an email at <span class"
-#~ "=\"black-text\">rtsoglo@gmail.com</span>and I will be glad to help you. "
+#~ " Need some help for your project, please send me an email at <span class="
+#~ "\"black-text\">rtsoglo@gmail.com</span>and I will be glad to help you. "
 #~ msgstr ""
-#~ "Necesitas ayuda, escribeme a <span class=\"black-"
-#~ "text\">rtsoglo@gmail.com</span> y sera un placer responderte."
+#~ "Necesitas ayuda, escribeme a <span class=\"black-text\">rtsoglo@gmail."
+#~ "com</span> y sera un placer responderte."

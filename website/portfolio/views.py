@@ -10,3 +10,12 @@ class ProjectListView(generic.ListView):
     def get_queryset(self):
         return Project.objects.all()    
 
+
+class ProjectDetailView(generic.DetailView):
+    model = Project
+    template_name = 'portfolio/project_detail.html'
+    
+
+
+
+

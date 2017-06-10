@@ -4,5 +4,6 @@ from django.contrib import admin
 from . import views
 
 urlpatterns = [
-    url(r'^', views.ProjectListView.as_view(), name='project_list_view'),
+    url(r'^$', views.ProjectListView.as_view(), name='project-list'),
+    url(r'^(?P<pk>[0-9]+)/$', views.ProjectDetailView.as_view(), name='project-detail'),
 ]

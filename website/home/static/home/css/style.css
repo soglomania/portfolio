@@ -26,3 +26,16 @@ nav ul li:hover {
  main {
      flex: 1 0 auto;
  }
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.satisfy {
+    font-family: 'Satisfy', cursive;
+}
+
+.great-vibes {
+    font-family: 'Great Vibes', cursive;
+
+}

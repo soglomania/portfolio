@@ -1,9 +1,22 @@
 # Requirements in dev env
 
+# Core
+
 django==1.11.2
 djangorestframework==3
 django-debug-toolbar==1.8
+
+
+#Image uploading
+
 Pillow
+
+# Tests
+
 selenium
 coverage
+
+#translations
+
 django-rosetta
+django-modeltranslation
