@@ -2,9 +2,9 @@ from django.db import models
 
 
 class Project(models.Model):
-    title = models.CharField(max_length=250)
+    title = models.CharField(max_length=10)
     icon = models.ImageField()
-    summary = models.CharField(max_length=250)
+    summary = models.TextField()
     description = models.TextField()
     image = models.ImageField()
     link = models.URLField()

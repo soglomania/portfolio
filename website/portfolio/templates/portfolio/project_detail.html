@@ -18,22 +18,21 @@
         <div class="section">
             
             <div class="row">
-                <div class="col s4 left">
+                <div class="col s0 m0 l6 left">
                      <figure>
-                        <img src="{{ project.image.url}}">
+                        <img class="responsive-img" src="{{ project.image.url}}">
                         <figcaption></figcaption>
                     </figure>
                 </div>
-                <div class="col s1">
+                <div class="col s1 m1 l1">
                 </div>
-                <div class="col s7 right">
+                <div class="col s12 m12 l5 right">
                     <p><a class="btn btn-floating right green" href="{% url 'project-list' %}"><i class="material-icons">view_list</i></a></p>
                     <br>
                     <h1 class="uppercase satisfy">{{ project.title}} </h1>
                     <p class="flow-text">{{ project.description}}</p>
                     <br>
                     <a class="btn btn-floating right green" href="{{ project.link }}"><i class="material-icons">open_in_new</i></a>
-
                 </div> 
             </div>
         </div>
