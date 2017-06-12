@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'portfolio.apps.PortfolioConfig',
     'rosetta',
+    'rest_framework',
+    'resume',
 ]
 
 MIDDLEWARE = [
