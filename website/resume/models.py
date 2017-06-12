@@ -33,7 +33,8 @@ class Language(models.Model):
 
 
 
-class Interest():
+class Interest(models.Model):
+    
     name = models.CharField(max_length=25)
     description = models.TextField()
     image = models.ImageField()
@@ -43,7 +44,7 @@ class Interest():
 
 
 
-class Membership():
+class Membership(models.Model):
     name = models.CharField(max_length=25)
     description = models.TextField()
     image = models.ImageField()
@@ -83,7 +84,7 @@ class Education(models.Model):
         return self.name
 
 
-class Skill():
+class Skill(models.Model):
     name = models.CharField(max_length=25)
     description = models.TextField()
     image = models.ImageField()

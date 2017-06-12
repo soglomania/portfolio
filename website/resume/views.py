@@ -33,3 +33,16 @@ class LanguageView(APIView):
 
     def post(self):
         pass
+
+
+class InterestView(APIView):
+    
+
+    def get(self, request):
+        interests = Interest.objects.all()
+        serializer = InterestSerializer(interests, many=True)
+        return Response(serializer.data)
+        
+
+    def post(self):
+        pass
