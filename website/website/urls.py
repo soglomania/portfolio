@@ -18,7 +18,7 @@ urlpatterns = [
 
 
 urlpatterns += i18n_patterns(
-    url(r'^', include('home.urls')),
+    url(r'^$', include('home.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^portfolio/', include('portfolio.urls')),
     url(r'^api/', include('resume.urls')),

@@ -1,5 +1,7 @@
 {% extends "home/base.html" %}
 
+{% load staticfiles %}
+
 {% load i18n %}
 
 {% block title %} {% trans "About" %} {% endblock title %}
@@ -18,12 +20,67 @@
 
 
 <div class="container">
-<div class="section">
     <div class="section">
-            {% lorem 5 %}
+      <div class="col s12 m12 l12">
+        <div class="card-panel grey lighten-5 z-depth-1">
+          <div class="row valign-wrapper">
+            <div class="col s2">
+              <img src="{% static 'home/images/me.jpg' %}" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+            </div>
+            <div class="col s10">
+              <span class="black-text">
+                {{ personal_info.summary }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
 
+    <div class="col s12 m12 l12">
+        <ul class="collapsible popout" data-collapsible="accordion">
+            <li>
+                <div class="collapsible-header active"><img width="38px" height="38px" src="{% static 'home/images/language.png' %}" alt="" class="circle responsive-img"></div>
+                <div class="collapsible-body">
+                    {% for language in languages %}
+                        <div> {{language.name}} : {{ language.level}} </div>
+                        <div> {{ language.description}} </div>
+                    {% endfor %}
+
+                </div>
+            </li>
+            <li>
+                <div class="collapsible-header"><img width="32px" height="32px" src="{% static 'home/images/interest.png' %}" alt="" class="circle responsive-img"></div>
+                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            </li>
+             <li>
+                <div class="collapsible-header"><img width="32px" height="32px" src="{% static 'home/images/job.png' %}" alt="" class="circle responsive-img"></div>
+                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            </li>
+            <li>
+                <div class="collapsible-header"><img width="32px" height="32px" src="{% static 'home/images/education.png' %}" alt="" class="circle responsive-img"></div>
+                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            </li>
+
+             <li>
+                <div class="collapsible-header"><img width="32px" height="32px" src="{% static 'home/images/tools.png' %}" alt="" class="circle responsive-img"></div>
+                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            </li>
+            <li>
+                <div class="collapsible-header"><img width="32px" height="32px" src="{% static 'home/images/membership.png' %}" alt="" class="circle responsive-img"></div>
+                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            </li>
+            <li>
+                <div class="collapsible-header"><img width="32px" height="32px" src="{% static 'home/images/contact.png' %}" alt="" class="circle responsive-img"></div>
+                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            </li>
+        </ul>
     </div>
-</div>
+    <div>
+        <a class="waves right" href="#!"><i><img width="32px" height="32px" src="{% static 'home/images/download.png' %}" alt="" class="circle responsive-img"></i></a>
+    </div>
+    <br>
+    <br>
+    </div>
 </div>
 
 {% endblock content %}
