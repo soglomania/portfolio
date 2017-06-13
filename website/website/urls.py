@@ -22,9 +22,6 @@ urlpatterns += i18n_patterns(
     url(r'^admin/', admin.site.urls),
     url(r'^portfolio/', include('portfolio.urls')),
     url(r'^api/', include('resume.urls')),
-    url(r'^blog/', include('blog.urls')),
-
-
 )
 
 urlpatterns += staticfiles_urlpatterns()

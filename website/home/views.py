@@ -6,7 +6,9 @@ from resume.models import PersonalInfo
 
 def index(request):
     
-    personal_info = PersonalInfo.objects.all()[0]
+    personal_info = PersonalInfo.objects.all()
+    if personal_info:
+        personal_info = personal_info[0]
     
     template_name = 'home/index.html'
     context = {

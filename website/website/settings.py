@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home.apps.HomeConfig',
     'portfolio.apps.PortfolioConfig',
-    'blog.apps.BlogConfig',
     'rosetta',
     'rest_framework',
     'resume',
