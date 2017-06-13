@@ -4,7 +4,7 @@ from .models import PersonalInfo, Language, Interest, Membership, Education, Job
 
 
 class PersonalInfoTranslationOptions(TranslationOptions):
-    fields = ('job_title', 'summary',)
+    fields = ('job_title', 'summary', 'intro_url')
 
 
 class LanguageTranslationOptions(TranslationOptions):

@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.utils import timezone
 # Create your models here.
 
 class PersonalInfo(models.Model):
@@ -12,6 +12,7 @@ class PersonalInfo(models.Model):
     phone_number = models.IntegerField()
     email = models.EmailField()
     summary = models.TextField()
+    intro_url = models.URLField()
 
     def full_name(self):
         return "%(firstname)s %(surname)s" %({'firstname' : self.firstname, 'surname' : self.surname })

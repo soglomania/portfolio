@@ -29,7 +29,7 @@
             </div>
             <div class="col s10">
               <span class="black-text">
-                {{ personal_info.summary }}
+                {{ personal_info.summary | safe }}
               </span>
             </div>
           </div>
@@ -37,49 +37,10 @@
       </div>
 
     <div class="col s12 m12 l12">
-        <ul class="collapsible popout" data-collapsible="accordion">
-            <li>
-                <div class="collapsible-header active"><img width="38px" height="38px" src="{% static 'home/images/language.png' %}" alt="" class="circle responsive-img"></div>
-                <div class="collapsible-body">
-                    {% for language in languages %}
-                        <div> {{language.name}} : {{ language.level}} </div>
-                        <div> {{ language.description}} </div>
-                    {% endfor %}
-
-                </div>
-            </li>
-            <li>
-                <div class="collapsible-header"><img width="32px" height="32px" src="{% static 'home/images/interest.png' %}" alt="" class="circle responsive-img"></div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-             <li>
-                <div class="collapsible-header"><img width="32px" height="32px" src="{% static 'home/images/job.png' %}" alt="" class="circle responsive-img"></div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-            <li>
-                <div class="collapsible-header"><img width="32px" height="32px" src="{% static 'home/images/education.png' %}" alt="" class="circle responsive-img"></div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-
-             <li>
-                <div class="collapsible-header"><img width="32px" height="32px" src="{% static 'home/images/tools.png' %}" alt="" class="circle responsive-img"></div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-            <li>
-                <div class="collapsible-header"><img width="32px" height="32px" src="{% static 'home/images/membership.png' %}" alt="" class="circle responsive-img"></div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-            <li>
-                <div class="collapsible-header"><img width="32px" height="32px" src="{% static 'home/images/contact.png' %}" alt="" class="circle responsive-img"></div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-        </ul>
-    </div>
-    <div>
-        <a class="waves right" href="#!"><i><img width="32px" height="32px" src="{% static 'home/images/download.png' %}" alt="" class="circle responsive-img"></i></a>
-    </div>
-    <br>
-    <br>
+        
+        <div class="video-container">
+        <iframe width="853" height="480" src="{{personal_info.intro_url}}" frameborder="0" allowfullscreen></iframe>
+      </div
     </div>
 </div>
 

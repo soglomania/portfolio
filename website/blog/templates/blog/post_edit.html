@@ -1,0 +1,22 @@
+{% extends 'home/base.html' %}
+
+{% load staticfiles %}
+
+{% load i18n %}
+
+{% block title %} {% trans "Blog" %}  {% endblock title %}
+{% block nav_about_class %} # {% endblock nav_about_class %}
+{% block nav_portfolio_class %}  #  {% endblock nav_portfolio_class %}
+{% block mobile_nav_about_class %}  # {% endblock mobile_nav_about_class %}
+{% block mobile_nav_portfolio_class %}  #  {% endblock mobile_nav_portfolio_class %}
+{% block nav_blog_class %}  active  {% endblock nav_blog_class %}
+{% block mobile_nav_blog_class %}  active  {% endblock mobile_nav_blog_class %}
+
+
+{% block content %}
+    <h1>New post</h1>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}
