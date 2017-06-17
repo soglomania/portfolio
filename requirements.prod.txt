@@ -1,22 +1,15 @@
-# Requirements in dev env
+# Requirements in production environment
 
 # Core
-
 django==1.11.2
 djangorestframework==3.6.3
 django-debug-toolbar==1.8
 
 
-#Image uploading
-
+# Image uploading
 Pillow
 
-# Tests
 
-selenium
-coverage
-
-#translations
-
+# Translations
 django-rosetta
 django-modeltranslation
