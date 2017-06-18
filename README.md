@@ -8,4 +8,5 @@ My personal website using Django framework
 - Django framework
 - Materialize CSS
 - Djangorestframework
+- Selenium
 
