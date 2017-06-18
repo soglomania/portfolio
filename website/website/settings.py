@@ -9,10 +9,10 @@ https://docs.djangoproject.com/en/1.11/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
-
 import os
 from django.utils.translation import ugettext_lazy as _
-from . import custom_storages
+
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -142,29 +142,38 @@ LOCALE_PATHS = (
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 
+
+
+
 AWS_STORAGE_BUCKET_NAME = 'soglomania-django-website-storage'
 
 AWS_ACCESS_KEY_ID = 'AKIAIGMBLEY4NYMO2XCQ'
 
 AWS_SECRET_ACCESS_KEY = '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'
 
-STATICFILES_LOCATION = 'static'
-
-
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
+STATICFILES_LOCATION = 'static'
 
 STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
-
-
-STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-
 
 MEDIAFILES_LOCATION = 'media'
 
 MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 
-DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+
+from storages.backends.s3boto import S3BotoStorage
+
+class StaticStorage(S3BotoStorage):
+    location = STATICFILES_LOCATION
+
+class MediaStorage(S3BotoStorage):
+    location = MEDIAFILES_LOCATION
+
+STATICFILES_STORAGE = StaticStorage
+
+DEFAULT_FILE_STORAGE = MediaStorage
+
 
 
 if DEBUG :
