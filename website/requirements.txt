@@ -2,4 +2,4 @@ django==1.11.2
 djangorestframework==3.6.3
 django-rosetta
 django-modeltranslation
-
+Pillow
