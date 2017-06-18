@@ -131,7 +131,6 @@ LANGUAGES = (
     ('es', _('Spanish')),
 )
 
-
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
 )
@@ -139,11 +138,13 @@ LOCALE_PATHS = (
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-AWS_STORAGE_BUCKET_NAME = 'soglomania-django-website-storage'
+AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME']
 
-AWS_ACCESS_KEY_ID = 'AKIAIGMBLEY4NYMO2XCQ'
+AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
 
-AWS_SECRET_ACCESS_KEY = 'QbBdG8/9cFQn1MYNfvbmMkLuf3sAQZZbXc8ig8LX'
+AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
+
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
 STATICFILES_LOCATION = 'static'
 
