@@ -3,3 +3,5 @@ djangorestframework==3.6.3
 django-rosetta
 django-modeltranslation
 Pillow
+django-storages
+boto

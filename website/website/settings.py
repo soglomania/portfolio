@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 from django.utils.translation import ugettext_lazy as _
-
+import custom_storage
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'rosetta',
     'rest_framework',
     'resume',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -140,17 +141,40 @@ LOCALE_PATHS = (
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+AWS_STORAGE_BUCKET_NAME = 'soglomania-django-website-storage'
+
+AWS_ACCESS_KEY_ID = 'AKIAIGMBLEY4NYMO2XCQ'
+
+AWS_SECRET_ACCESS_KEY = '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'
+
+STATICFILES_LOCATION = 'static'
+
+
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+
+
+STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
+
+
+STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+
+
+MEDIAFILES_LOCATION = 'media'
+
+MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
+
+DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
 
 if DEBUG :
     INTERNAL_IPS = ['127.0.0.1',]
     MIDDLEWARE+=['debug_toolbar.middleware.DebugToolbarMiddleware',]
     INSTALLED_APPS+=['debug_toolbar',]
+    STATIC_URL = '/static/'
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
