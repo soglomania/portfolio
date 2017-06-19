@@ -13,7 +13,7 @@ class ProjectListView(generic.ListView):
 
 
     def get_queryset(self):
-        # sort by most viewed or recently add first
+        #TODO: sort by most viewed or recently add first
         result = Project.objects.all() 
 
         query = self.request.GET.get('q')

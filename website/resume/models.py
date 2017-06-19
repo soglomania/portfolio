@@ -38,7 +38,7 @@ class Interest(models.Model):
     
     name = models.CharField(max_length=25)
     description = models.TextField()
-    image = models.ImageField()
+    image = models.URLField()
 
     def __str__(self):
         return self.name
@@ -48,7 +48,7 @@ class Interest(models.Model):
 class Membership(models.Model):
     name = models.CharField(max_length=25)
     description = models.TextField()
-    image = models.ImageField()
+    image = models.URLField()
 
     def __str__(self):
         return self.name
@@ -62,7 +62,7 @@ class Job(models.Model):
     company = models.CharField(max_length=25)
     summary = models.TextField()
     description = models.TextField()
-    image = models.ImageField()
+    image = models.URLField()
     link = models.URLField()
 
     def __str__(self):
@@ -77,7 +77,7 @@ class Education(models.Model):
     school = models.CharField(max_length=25)
     summary = models.TextField()
     description = models.TextField()
-    image = models.ImageField()
+    image = models.URLField()
     link = models.URLField()
 
 
@@ -88,7 +88,7 @@ class Education(models.Model):
 class Skill(models.Model):
     name = models.CharField(max_length=25)
     description = models.TextField()
-    image = models.ImageField()
+    image = models.URLField()
 
     def __str__(self):
         return self.name
