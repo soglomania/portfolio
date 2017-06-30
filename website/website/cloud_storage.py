@@ -1,4 +1,7 @@
+
 # custom_storages.py
+#Utils to handle Amazon S3 Storage for Django app
+
 from django.conf import settings
 from storages.backends.s3boto import S3BotoStorage
 

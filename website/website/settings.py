@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'portfolio.apps.PortfolioConfig',
     'rosetta',
     'rest_framework',
+    'rest_framework_swagger',
     'resume',
     'storages',
 ]

@@ -27,12 +27,12 @@
                 <div class="col s1 m1 l1">
                 </div>
                 <div class="col s12 m12 l5 right">
-                    <p><a class="btn btn-floating right green" href="{% url 'project-list' %}"><i class="material-icons">view_list</i></a></p>
+                    <p><a class="btn btn-floating right green" href="{% url 'project-list' %}" title="Go back to project list"><i class="material-icons">view_list</i></a></p>
                     <br>
                     <h1 class="uppercase satisfy">{{ project.title}} </h1>
                     <p class="flow-text">{{ project.description}}</p>
                     <br>
-                    <a class="btn btn-floating right green" href="{{ project.link }}"><i class="material-icons">open_in_new</i></a>
+                    <a class="btn btn-floating right green" href="{{ project.link }}" title="Go to project link"><i class="material-icons">open_in_new</i></a>
                 </div> 
             </div>
         </div>

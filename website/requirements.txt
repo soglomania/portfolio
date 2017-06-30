@@ -5,3 +5,4 @@ django-modeltranslation
 Pillow
 django-storages
 boto
+django-rest-swagger==2.1.2
