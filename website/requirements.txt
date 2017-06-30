@@ -7,6 +7,9 @@ django-storages
 boto
 django-rest-swagger==2.1.2
 
+# === DEV ===
+
 # Tests
 # selenium
 # coverage
+# django-debug-toolbar==1.8
