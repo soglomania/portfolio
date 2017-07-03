@@ -30,7 +30,7 @@
     <div class="nav-wrapper container">
       <ul class="right hide-on-med-and-down">
         <li class="{% block nav_about_class %} # {% endblock nav_about_class %}"><a href="{% url 'home-index' %}" >{% trans "About" %}</a></li>
-        <li class="{% block nav_portfolio_class %}  #  {% endblock nav_portfolio_class %}"><a href="{% url 'project-list' %}">{% trans "Portfolio" %} </a></li>
+        <li class="{% block nav_portfolio_class %}  #  {% endblock nav_portfolio_class %}"><a href="{% url 'project-list' %}">{% trans "Projects" %} </a></li>
 
       </ul>
       <ul class="left hide-on-med-and-down">
@@ -55,7 +55,7 @@
         <div class="divider"></div>
         <div class="section">
           <li class="{% block mobile_nav_about_class %}  #  {% endblock mobile_nav_about_class %}"><a href="{% url 'home-index' %}">{% trans "About" %}</a></li>
-          <li class="{% block mobile_nav_portfolio_class %}  #  {% endblock mobile_nav_portfolio_class %}"><a href="{% url 'project-list' %}">{% trans "Portfolio" %} </a></li>
+          <li class="{% block mobile_nav_portfolio_class %}  #  {% endblock mobile_nav_portfolio_class %}"><a href="{% url 'project-list' %}">{% trans "Projects" %} </a></li>
 
         </div>
       </ul>
@@ -73,8 +73,6 @@
     <div class="container">
       <div class="row">
         <div class="col l6 s6">
-          <img width="32px" height="32px" src="{%  static 'home/images/devops.png' '%}"/>&nbsp;
-          <img width="32px" height="32px" src="{%  static 'home/images/network.png' '%}"/>&nbsp;
           <img width="32px" height="32px" src="{%  static 'home/images/android.png' '%}"/>&nbsp;
           <img width="32px" height="32px" src="{%  static 'home/images/python.png' '%}"/>&nbsp;
         </div>
