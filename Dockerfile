@@ -30,8 +30,6 @@ RUN set -ex \
     && apk del .build-deps
 
 # Copy your application code to the container (make sure you create a .dockerignore file if any large files or directories should be excluded)
-# RUN mkdir /code/
-# WORKDIR /code/
 ADD . ./
 
 
@@ -41,7 +39,6 @@ EXPOSE 8000
 # Add any custom, static environment variables needed by Django or your settings file here:
 ENV DJANGO_SETTINGS_MODULE=website.settings
 
-# WORKDIR /
 
 RUN  /venv/bin/python website/manage.py makemigrations 
 
@@ -54,7 +51,4 @@ ENV UWSGI_VIRTUALENV=/venv UWSGI_WSGI_FILE=/website/website/wsgi.py UWSGI_HTTP=:
 RUN  /venv/bin/python website/manage.py collectstatic --noinput
 
 #Start uWSGI
-
 CMD /venv/bin/uwsgi --http-auto-chunked --http-keepalive
-
-# ENTRYPOINT ["docker-entrypoint.sh"]
