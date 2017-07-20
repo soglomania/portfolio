@@ -34,7 +34,7 @@ ADD . ./
 
 
 # uWSGI will listen on this port
-EXPOSE 80
+EXPOSE 8080
 
 # Add any custom, static environment variables needed by Django or your settings file here:
 ENV DJANGO_SETTINGS_MODULE=website.settings
@@ -45,7 +45,7 @@ RUN  /venv/bin/python website/manage.py makemigrations
 RUN  /venv/bin/python website/manage.py migrate 
 
 #uWSGI configuration (customize as needed):
-ENV UWSGI_VIRTUALENV=/venv UWSGI_WSGI_FILE=/website/website/wsgi.py UWSGI_HTTP=:80 UWSGI_MASTER=1 UWSGI_WORKERS=2 UWSGI_THREADS=8 UWSGI_UID=1000 UWSGI_GID=2000 UWSGI_LAZY_APPS=1 UWSGI_WSGI_ENV_BEHAVIOR=holy
+ENV UWSGI_VIRTUALENV=/venv UWSGI_WSGI_FILE=/website/website/wsgi.py UWSGI_HTTP=:8080 UWSGI_MASTER=1 UWSGI_WORKERS=2 UWSGI_THREADS=8 UWSGI_UID=1000 UWSGI_GID=2000 UWSGI_LAZY_APPS=1 UWSGI_WSGI_ENV_BEHAVIOR=holy
 
 # Call collectstatic (customize the following line with the minimal environment variables needed for manage.py to run):
 RUN  /venv/bin/python website/manage.py collectstatic --noinput
