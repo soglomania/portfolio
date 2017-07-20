@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, render_to_response
 from django.utils import translation
 from django.views import generic
 
@@ -46,5 +46,5 @@ def set_spanish(request):
     return redirect('/')
 
 
-
-    
+def handle_page_not_found_404(request):
+    return redirect('/')

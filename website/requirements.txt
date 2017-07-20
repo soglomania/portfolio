@@ -1,6 +1,11 @@
 # Core
-
 django==1.11.2
+
+# Others dependencies
+uwsgi
+psycopg2
+#gunicorn==19.3.0
+
 
 # Model translations
 
@@ -8,8 +13,7 @@ django-rosetta
 django-modeltranslation
 
 # Image uploading
-
-Pillow
+#Pillow
 
 # AWS Cloud storages
 
@@ -25,6 +29,11 @@ django-rest-swagger==2.1.2
 # Debug
 django-debug-toolbar==1.8
 
+
+# Markdown support
+
+django-markup==1.2
+markdown==2.6.8
 
 #Tests
 

@@ -3,6 +3,7 @@
 {% load staticfiles %}
 
 {% load i18n %}
+{% load markup_tags %}
 
 {% block title %} {% trans "About" %} {% endblock title %}
 {% block nav_about_class %} active {% endblock nav_about_class %}
@@ -29,7 +30,7 @@
             </div>
             <div class="col s10">
               <span class="black-text">
-                     {{ personal_info.summary | safe }}
+                     {{ personal_info.summary | apply_markup:"markdown" }}
               </span>
             </div>
           </div>

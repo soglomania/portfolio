@@ -25,6 +25,8 @@ SECRET_KEY = 'e@%sr&2vnk)+7urrm-urn@j$v%3kem6*vyjjj+w8sdey95gad$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+CLOUD_STORAGE = False
+
 ADMINS = [('admin', 'rtsoglo@gmail.com'), ('sogloarcadius', 'sogloarcadius@yahoo.fr')]
 
 #TODO: put domain name Ex : ".sogloarcadius.com"
@@ -47,6 +49,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_swagger',
     'resume',
+    'django_markup',
     'storages',
 ]
 
@@ -86,28 +89,12 @@ WSGI_APPLICATION = 'website.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-if 'RDS_DB_NAME' in os.environ:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': os.environ['RDS_DB_NAME'],
-            'USER': os.environ['RDS_USERNAME'],
-            'PASSWORD': os.environ['RDS_PASSWORD'],
-            'HOST': os.environ['RDS_HOSTNAME'],
-            'PORT': os.environ['RDS_PORT'],
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'db.sqlite',
     }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': os.environ['DATABASE_NAME'],
-            'USER' : os.environ['DATABASE_USER'],
-            'PASSWORD' : os.environ['DATABASE_PASSWORD'],
-            'HOST' : os.environ['DATABASE_HOST'],
-            'PORT' : os.environ['DATABASE_PORT'],
-        }
-    }
+}
 
 
 # Password validation
@@ -171,7 +158,8 @@ if DEBUG :
     MEDIA_URL = '/media/'
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-else:
+elif not DEBUG and CLOUD_STORAGE:
+    
     AWS_STORAGE_BUCKET_NAME = os.environ["AWS_STORAGE_BUCKET_NAME"]
     
     AWS_ACCESS_KEY_ID = os.environ["AWS_ACCESS_KEY_ID"]

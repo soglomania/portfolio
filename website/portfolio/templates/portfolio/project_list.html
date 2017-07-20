@@ -1,6 +1,7 @@
 {% extends "home/base.html" %}
 
 {% load i18n %}
+{% load markup_tags %}
 
 {% block title %} {% trans "Portfolio" %} {% endblock title %}
 {% block nav_about_class %} #  {% endblock nav_about_class %}
@@ -41,7 +42,7 @@
                         </div>
                         <div class="card-reveal">
                             <span class="card-title grey-text text-darken-4">{{project.title}}<i class="material-icons right">close</i></span>
-                            <p>{{project.summary}}</p>
+                            <p>{{ project.summary | apply_markup:"markdown"  }}</p>
                         </div>
                     </div>
                 </div>

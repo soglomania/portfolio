@@ -19,14 +19,13 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
   <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">   <link href="{% static 'home/css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <script type="text/javascript" src="{% static 'home/js/helpers.js' %}"></script>
   <link rel="stylesheet" type="text/css" href="{% static 'home/css/style.css' %}" media="screen,projection">
 
 </head>
 
 
 <body>
-  <nav class="light-green lighten-1" role="navigation">
+  <nav class="grey lighten-1" role="navigation">
     <div class="nav-wrapper container">
       <ul class="right hide-on-med-and-down">
         <li class="{% block nav_about_class %} # {% endblock nav_about_class %}"><a href="{% url 'home-index' %}" >{% trans "About" %}</a></li>
@@ -64,12 +63,12 @@
     
   </nav>
 
-  <main>
+  <main class="grey lighten-5">
     {% block content %}
     {% endblock content %}
   </main>
 
-  <footer class="page-footer green">
+  <footer class="page-footer grey lighten-1">
     <div class="container">
       <div class="row">
         <div class="col l6 s6">
@@ -84,10 +83,10 @@
           <h5 class="white-text">{% trans "Connect" %}</h5>
           <ul>
             <li>
-              <a href="#" title="Facebook"><i><img width="32px" heigth="32px" src="{% static 'home/images/facebook.svg' %}"></i></a>&nbsp;
-              <a href="#" title="Google Plus"><i><img width="32px" heigth="32px" src="{% static 'home/images/googleplus.svg' %}"></i></a>&nbsp;
-              <a href="#" title="Linkedin"><i><img width="32px" heigth="32px" src="{% static 'home/images/linkedin.svg' %}"></i></a>&nbsp;
-              <a href="#" title="Github"><i><img width="32px" heigth="32px" src="{% static 'home/images/github.svg' %}"></i></a>&nbsp;
+              <a href="https://www.facebook.com/sogloarcadius" title="Facebook"><i><img width="32px" heigth="32px" src="{% static 'home/images/facebook.svg' %}"></i></a>&nbsp;
+              <a href="https://plus.google.com/u/0/+sogloarcadius" title="Google Plus"><i><img width="32px" heigth="32px" src="{% static 'home/images/googleplus.svg' %}"></i></a>&nbsp;
+              <a href="https://www.linkedin.com/in/arcadius-soglo-275bb180/" title="Linkedin"><i><img width="32px" heigth="32px" src="{% static 'home/images/linkedin.svg' %}"></i></a>&nbsp;
+              <a href="https://github.com/soglomania" title="Github"><i><img width="32px" heigth="32px" src="{% static 'home/images/github.svg' %}"></i></a>&nbsp;
             </li>
           </ul>
         </div>
