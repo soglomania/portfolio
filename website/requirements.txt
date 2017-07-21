@@ -2,10 +2,9 @@
 django==1.11.2
 
 # Others dependencies
-uwsgi
-psycopg2
+#psycopg2
 #gunicorn==19.3.0
-
+#uwsgi
 
 # Model translations
 

@@ -1,6 +1,7 @@
 FROM ubuntu:16.04
 
-MAINTAINER 
+LABEL maintainer.fullname="SOGLO Arcadius"
+LABEL maintainer.email="rtsoglo@gmail.com" 
 
 # Install required packages and remove the apt packages cache when done.
 
@@ -34,10 +35,6 @@ RUN pip3 install -r /home/docker/code/app/requirements.txt
 
 # add (the rest of) our code
 COPY . /home/docker/code/
-
-# RUN  python manage.py makemigrations 
-
-# RUN  python manage.py migrate 
 
 EXPOSE 80
 CMD ["supervisord", "-n"]
