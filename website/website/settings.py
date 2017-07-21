@@ -25,7 +25,6 @@ SECRET_KEY = 'e@%sr&2vnk)+7urrm-urn@j$v%3kem6*vyjjj+w8sdey95gad$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-CLOUD_STORAGE = False
 
 ADMINS = [('admin', 'rtsoglo@gmail.com'), ('sogloarcadius', 'sogloarcadius@yahoo.fr')]
 
@@ -146,19 +145,9 @@ LOCALE_PATHS = (
 
 
 
-# DEBUG MODE
+CLOUD_STORAGE = False
 
-if DEBUG :
-    INTERNAL_IPS = ['127.0.0.1',]
-    MIDDLEWARE+=['debug_toolbar.middleware.DebugToolbarMiddleware',]
-    INSTALLED_APPS+=['debug_toolbar',]
-    STATIC_URL = '/static/'
-    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-    MEDIA_URL = '/media/'
-    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-elif not DEBUG and CLOUD_STORAGE:
+if CLOUD_STORAGE:
     
     AWS_STORAGE_BUCKET_NAME = os.environ["AWS_STORAGE_BUCKET_NAME"]
     
@@ -180,5 +169,16 @@ elif not DEBUG and CLOUD_STORAGE:
 
     DEFAULT_FILE_STORAGE = 'website.cloud_storage.MediaStorage'
 
+else:
+    
+    STATIC_URL = '/static/'
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+if DEBUG:  
+    INTERNAL_IPS = ['127.0.0.1',]
+    MIDDLEWARE+=['debug_toolbar.middleware.DebugToolbarMiddleware',]
+    INSTALLED_APPS+=['debug_toolbar',]
 
 
