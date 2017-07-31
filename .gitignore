@@ -35,7 +35,6 @@ local_settings.py
 
 
 # Translations
-*.mo
 *.pot
 
 
