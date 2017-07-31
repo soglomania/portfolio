@@ -25,10 +25,16 @@ SECRET_KEY = 'e@%sr&2vnk)+7urrm-urn@j$v%3kem6*vyjjj+w8sdey95gad$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+#Security 
+
+CSRF_COOKIE_SECURE = True
+# SESSION_COOKIE_SECURE = True
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
 
 ADMINS = [('admin', 'rtsoglo@gmail.com'), ('sogloarcadius', 'sogloarcadius@yahoo.fr')]
 
-#TODO: put domain name Ex : ".sogloarcadius.com"
+#TODO: put domain name Ex : ".sogloarcadius.xyz"
 
 ALLOWED_HOSTS = ['.sogloarcadius.xyz']
 
@@ -146,8 +152,6 @@ LOCALE_PATHS = (
 
 if DEBUG:  
     INTERNAL_IPS = ['127.0.0.1',]
-    ALLOWED_HOSTS += ['*']
-
     MIDDLEWARE+=['debug_toolbar.middleware.DebugToolbarMiddleware',]
     INSTALLED_APPS+=['debug_toolbar',]
 

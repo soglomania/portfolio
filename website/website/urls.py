@@ -7,7 +7,6 @@ from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns
 
 from home import views
 
-handler404=views.handle_page_not_found_404
 
 urlpatterns = [ 
     url(r'^(?P<filename>(robots.txt)|(humans.txt))$', views.home_files, name='home-files'),
@@ -24,8 +23,9 @@ urlpatterns += i18n_patterns(
     url(r'^portfolio/', include('portfolio.urls')),
     url(r'^api/', include('resume.urls')),
     url(r'^translate/', include('rosetta.urls')),
-    url(r'^.*/$', views.handle_page_not_found_404, name="handler404"),
+    url(r'^.*/$', views.handle_page_not_found_404, name="fake_url"),
 )
+
 
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
