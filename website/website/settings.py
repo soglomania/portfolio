@@ -23,13 +23,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'e@%sr&2vnk)+7urrm-urn@j$v%3kem6*vyjjj+w8sdey95gad$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 
 ADMINS = [('admin', 'rtsoglo@gmail.com'), ('sogloarcadius', 'sogloarcadius@yahoo.fr')]
 
 #TODO: put domain name Ex : ".sogloarcadius.com"
-ALLOWED_HOSTS = ['*']
+
+ALLOWED_HOSTS = ['.sogloarcadius.xyz']
 
 
 # Application definition
@@ -140,10 +141,20 @@ LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
 )
 
+
+# DEBUG MODE
+
+if DEBUG:  
+    INTERNAL_IPS = ['127.0.0.1',]
+    ALLOWED_HOSTS += ['*']
+
+    MIDDLEWARE+=['debug_toolbar.middleware.DebugToolbarMiddleware',]
+    INSTALLED_APPS+=['debug_toolbar',]
+
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
-
-
 
 CLOUD_STORAGE = False
 
@@ -176,9 +187,6 @@ else:
     MEDIA_URL = '/media/'
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
-if DEBUG:  
-    INTERNAL_IPS = ['127.0.0.1',]
-    MIDDLEWARE+=['debug_toolbar.middleware.DebugToolbarMiddleware',]
-    INSTALLED_APPS+=['debug_toolbar',]
+
 
 

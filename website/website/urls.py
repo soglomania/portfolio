@@ -23,6 +23,7 @@ urlpatterns += i18n_patterns(
     url(r'^admin/', admin.site.urls),
     url(r'^portfolio/', include('portfolio.urls')),
     url(r'^api/', include('resume.urls')),
+    url(r'^translate/', include('rosetta.urls')),
     url(r'^.*/$', views.handle_page_not_found_404, name="handler404"),
 )
 
@@ -33,7 +34,6 @@ urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 if settings.DEBUG:
     import debug_toolbar
     urlpatterns = [
-        url(r'^translate/', include('rosetta.urls')),
         url(r'^__debug__/', include(debug_toolbar.urls)),
     ] + urlpatterns
 
