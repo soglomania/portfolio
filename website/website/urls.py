@@ -23,8 +23,9 @@ urlpatterns += i18n_patterns(
     url(r'^portfolio/', include('portfolio.urls')),
     url(r'^api/', include('resume.urls')),
     url(r'^translate/', include('rosetta.urls')),
-    url(r'^.*/$', views.handle_page_not_found_404, name="fake_url"),
 )
+
+# url(r'^.*/$', views.handle_page_not_found_404, name="fake_url"),
 
 
 urlpatterns += staticfiles_urlpatterns()

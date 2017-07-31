@@ -25,12 +25,10 @@ SECRET_KEY = 'e@%sr&2vnk)+7urrm-urn@j$v%3kem6*vyjjj+w8sdey95gad$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-#Security 
-
-CSRF_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
 # SESSION_COOKIE_SECURE = True
-SECURE_BROWSER_XSS_FILTER = True
-SECURE_CONTENT_TYPE_NOSNIFF = True
+# SECURE_BROWSER_XSS_FILTER = True
+# SECURE_CONTENT_TYPE_NOSNIFF = True
 
 ADMINS = [('admin', 'rtsoglo@gmail.com'), ('sogloarcadius', 'sogloarcadius@yahoo.fr')]
 
@@ -148,12 +146,6 @@ LOCALE_PATHS = (
 )
 
 
-# DEBUG MODE
-
-if DEBUG:  
-    INTERNAL_IPS = ['127.0.0.1',]
-    MIDDLEWARE+=['debug_toolbar.middleware.DebugToolbarMiddleware',]
-    INSTALLED_APPS+=['debug_toolbar',]
 
 
 
@@ -192,5 +184,10 @@ else:
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 
+# DEBUG MODE
 
-
+if DEBUG:  
+    INTERNAL_IPS = ['127.0.0.1',]
+    MIDDLEWARE+=['debug_toolbar.middleware.DebugToolbarMiddleware',]
+    ALLOWED_HOSTS+=["*"]
+    INSTALLED_APPS+=['debug_toolbar',]
