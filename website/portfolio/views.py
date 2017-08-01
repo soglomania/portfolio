@@ -17,7 +17,7 @@ from .serializers import ProjectSerializer
 class ProjectListView(generic.ListView):
     template_name='portfolio/project_list.html'
     context_object_name = 'all_projects'
-    paginate_by = 8
+    paginate_by = 4
 
 
     def get_queryset(self):
