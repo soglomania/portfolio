@@ -3,7 +3,7 @@ import os
 import sys
 
 from django.core.management.base import BaseCommand
-from resume.models 1import PersonalInfo
+from resume.models import PersonalInfo
 
 
 class Command(BaseCommand):
@@ -11,16 +11,23 @@ class Command(BaseCommand):
     help = 'Populate database with prepared data, Specify the file path or directory, expecting markdown formatted data'
 
     def add_arguments(self, parser):
-    
-        # Named (optional) arguments
+        
         parser.add_argument(
-            '--fp',
-            required=True,
+            '--sql',
+            required=False,
+            choices=["flush", "printall"],
+            dest='sql',
+            help='Specify action',
+        )
+
+        parser.add_argument(
+            '--addresume',
+            required=False,
             dest='fp',
             help='specify file path',
         )
         parser.add_argument(
-        '--datatype',
+        '--model',
         required=True,
         dest='datatype',
         help='specify data type, models datatype',
@@ -117,14 +124,39 @@ class Command(BaseCommand):
         except Exception as er:
             self.stdout.write(str(er))
 
-            
+    def delete_everything(self, datatype):
+        
+        if datatype == "PersonalInfo":
+            PersonalInfo.objects.all().delete()
+    
+    # sql action
+    
+    def print_everything(self, datatype):
+        
+        if datatype == "PersonalInfo":
+            personal_infos = PersonalInfo.objects.all()
+            self.stdout.write("Total results %s" %len(personal_infos))
+            for p in personal_infos:
+                self.stdout.write(str(p))
+                    
     def handle(self, *args, **options):
-        fp = options['fp']
-        datatype = options['datatype']
-        if os.path.isdir(fp):
-            self.load_directory_files_to_db(fp, datatype)
-            self.clean_useless_files_in_directory(fp)
-        elif os.path.isfile(fp): #expect a markdown format in this case
-            self.load_file_content_to_db(fp, datatype)
-            self.clean_useless_files_in_directory(os.path.realpath(os.path.dirname(fp)))
 
+        datatype = options['datatype']
+
+        fp = options['fp']
+
+        if fp:
+            if os.path.isdir(fp):
+                self.load_directory_files_to_db(fp, datatype)
+                self.clean_useless_files_in_directory(fp)
+            elif os.path.isfile(fp): #expect a markdown format in this case
+                self.load_file_content_to_db(fp, datatype)
+                self.clean_useless_files_in_directory(os.path.realpath(os.path.dirname(fp)))
+
+        sql_action = options['sql']
+
+        if str(sql_action) == "flush":
+            self.delete_everything(datatype)
+        
+        if str(sql_action) == "printall":
+            self.print_everything(datatype)

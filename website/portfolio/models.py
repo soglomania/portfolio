@@ -3,10 +3,9 @@ from django.db import models
 
 class Project(models.Model):
     title = models.CharField(max_length=10)
-    icon = models.URLField()
+    icon = models.TextField()
     summary = models.TextField()
     description = models.TextField()
-    image = models.URLField()
     link = models.URLField()
 
     def __str__(self):

@@ -12,14 +12,20 @@ class Command(BaseCommand):
 
     def add_arguments(self, parser):
     
-        # Named (optional) arguments
         parser.add_argument(
-            '--fp',
-            required=True,
-            dest='fp',
-            help='specify file path',
+            '--sql',
+            required=False,
+            choices=["flush", "printall"],
+            dest='sql',
+            help='Specify action',
         )
 
+        parser.add_argument(
+            '--addproject',
+            required=False,
+            dest='addproject',
+            help='specify project file path to add to database',
+        )
 
     def convert_ipynb_file_to_markdown(self, fp):
         try :
@@ -111,13 +117,35 @@ class Command(BaseCommand):
         except Exception as er:
             self.stdout.write(str(er))
 
+
+    # sql action
+
+    def delete_everything(self):
+        Project.objects.all().delete()
+    
+    # sql action
+    
+    def print_everything(self):
+        projs = Project.objects.all()
+        self.stdout.write("Total results %s" %len(projs))
+        for proj in projs:
+            self.stdout.write(str(proj.title))
+            
             
     def handle(self, *args, **options):
-        fp = options['fp']
-        if os.path.isdir(fp):
-            self.load_directory_files_to_db(fp)
-            self.clean_useless_files_in_directory(fp)
-        elif os.path.isfile(fp): #expect a markdown format in this case
-            self.load_file_content_to_db(fp)
-            self.clean_useless_files_in_directory(os.path.realpath(os.path.dirname(fp)))
+        sql_action = options['sql']
 
+        if str(sql_action) == "flush":
+            self.delete_everything()
+        
+        if str(sql_action) == "printall":
+            self.print_everything()
+
+        fp = options['addproject']
+        if fp:
+            if os.path.isdir(fp):
+                self.load_directory_files_to_db(fp)
+                self.clean_useless_files_in_directory(fp)
+            elif os.path.isfile(fp): #expect a markdown format in this case
+                self.load_file_content_to_db(fp)
+                self.clean_useless_files_in_directory(os.path.realpath(os.path.dirname(fp)))
