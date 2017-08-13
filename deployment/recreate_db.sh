@@ -1,5 +1,14 @@
 #!/bin/bash
 
+
+read -p 'Username: ' username
+read -p 'Email: ' email
+read -sp 'Password: ' password
+echo " "
+echo "Username : $username"
+echo "Email : $email"
+echo "Password : $password"
+
 python manage.py makemigrations
 
 python manage.py migrate
@@ -16,7 +25,7 @@ echo "print all users"
 echo "import os; from django.contrib.auth.models import User; print(User.objects.all())" | python manage.py shell
 
 echo "Create new super user"
-echo "import os; from django.contrib.auth.models import User; User.objects.create_superuser(os.environ['username'], os.environ['email'], os.environ['password'])" | python manage.py shell
+echo "import os; from django.contrib.auth.models import User; User.objects.create_superuser('$username', '$email', '$password')" | python manage.py shell
 
 echo "print all users"
 echo "import os; from django.contrib.auth.models import User; print(User.objects.all())" | python manage.py shell
