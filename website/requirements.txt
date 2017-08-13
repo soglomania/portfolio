@@ -9,8 +9,8 @@ django-modeltranslation
 #Pillow
 
 # AWS Cloud storages
-#django-storages
-#boto
+django-storages
+boto
 
 # API
 djangorestframework==3.6.3
