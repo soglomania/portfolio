@@ -13,7 +13,7 @@ import os
 from django.utils.translation import ugettext_lazy as _
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
 # Quick-start development settings - unsuitable for production
@@ -22,19 +22,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'e@%sr&2vnk)+7urrm-urn@j$v%3kem6*vyjjj+w8sdey95gad$'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
 
 # CSRF_COOKIE_SECURE = True
 # SESSION_COOKIE_SECURE = True
 # SECURE_BROWSER_XSS_FILTER = True
 # SECURE_CONTENT_TYPE_NOSNIFF = True
 
+
 ADMINS = [('admin', 'rtsoglo@gmail.com'), ('sogloarcadius', 'sogloarcadius@yahoo.fr')]
-
-#TODO: put domain name Ex : ".sogloarcadius.xyz"
-
-ALLOWED_HOSTS = ['.sogloarcadius.xyz']
 
 
 # Application definition
@@ -146,9 +141,6 @@ LOCALE_PATHS = (
 )
 
 
-
-
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
@@ -166,7 +158,7 @@ if CLOUD_STORAGE:
 
     STATICFILES_LOCATION = 'static'
 
-    STATICFILES_STORAGE = 'website.cloud_storage.StaticStorage'
+    STATICFILES_STORAGE = 'website.settings.aws_s3.StaticStorage'
 
     STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
 
@@ -174,7 +166,7 @@ if CLOUD_STORAGE:
 
     MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 
-    DEFAULT_FILE_STORAGE = 'website.cloud_storage.MediaStorage'
+    DEFAULT_FILE_STORAGE = 'website.settings.aws_s3.MediaStorage'
 
 else:
     
@@ -183,11 +175,3 @@ else:
     MEDIA_URL = '/media/'
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
-
-# DEBUG MODE
-
-if DEBUG:  
-    INTERNAL_IPS = ['127.0.0.1',]
-    MIDDLEWARE+=['debug_toolbar.middleware.DebugToolbarMiddleware',]
-    ALLOWED_HOSTS+=["*"]
-    INSTALLED_APPS+=['debug_toolbar',]
