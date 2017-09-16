@@ -6,6 +6,10 @@
  * Made By MaterializeCSS.com
  */
 
+
+ .section {
+     color: black
+ }
 .icon-block {
   padding: 0 15px;
 }
@@ -38,4 +42,8 @@ nav ul li:hover {
 .great-vibes {
     font-family: 'Great Vibes', cursive;
 
+}
+
+.alegreya {
+    font-family: 'Alegreya Sans', sans-serif;
 }
