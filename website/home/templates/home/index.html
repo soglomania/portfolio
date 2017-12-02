@@ -19,14 +19,26 @@
  
 </div>
 
+<div class="container">
+    <div class="section">
+        <div class="row">
+            <div class="col s12 m12 l12 right alegreya">
+                <p class="flow-text">{{ personal_info.summary | apply_markup:"markdown" }}
+                  </p>
+                <br>
+            </div> 
+        </div>
+    </div>
+</div>
 
+<!--
 <div class="container">
     <div class="section">
       <div class="col s12 m12 l12">
         <div class="card-panel grey lighten-5 z-depth-1">
           <div class="row valign-wrapper">
             <div class="col s2">
-              <img src="{% static 'home/images/me.jpg' %}" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+              <img src="{% static 'home/images/me.jpg' %}" alt="" class="circle responsive-img"> 
             </div>
             <div class="col s10">
               <span class="black-text">
@@ -36,7 +48,7 @@
           </div>
         </div>
       </div>
-
+    
       {% comment %}<div class="col s12 m12 l12">
         <div class="video-container">
           <iframe width="853" height="480" src="{{personal_info.intro_url}}" frameborder="0" allowfullscreen></iframe>
@@ -44,5 +56,6 @@
       </div>{% endcomment %}
     </div>
 </div>
+-->
 
 {% endblock content %}
