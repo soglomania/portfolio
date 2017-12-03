@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+    log:
+        env_file: environment.properties
+        build:
+            context: .
+            dockerfile: ./DockerImages/log/Dockerfile
+        volumes :
+            - /var/log:/var/log/
+
+    main :
+        image : soglomania/portfolio
+        env_file: environment.properties
+        build: .
+        ports:
+            - "80:80"
+        depends_on:
+            - log

@@ -30,11 +30,11 @@
         <!-- Dropdown Structure -->
         <ul id='language_dropdown' class='dropdown-content'>
           <!--<li><a href="#!"></a></li>-->
-          <li><a href="{% url 'set_english' %}"><i><img class="responsive-img" src="{% static 'home/images/en.png' %}"></i>English</a></li>          
+          <li><a href="{% url 'set_english' %}"><i><img class="responsive-img" src="{% static 'home/images/en.png' %}"></i></a></li>          
           <li class="divider"></li>
-          <li><a href="{% url 'set_french' %}"><i><img class="responsive-img" src="{% static 'home/images/fr.png' %}"></i>French</a></li>
+          <li><a href="{% url 'set_french' %}"><i><img class="responsive-img" src="{% static 'home/images/fr.png' %}"></i></a></li>
           <li class="divider"></li>          
-          <li><a href="{% url 'set_spanish' %}"><i><img class="responsive-img" src="{% static 'home/images/es.png' %}"></i>Spanish</a></li>
+          <li><a href="{% url 'set_spanish' %}"><i><img class="responsive-img" src="{% static 'home/images/es.png' %}"></i></a></li>
         </ul>
       </ul>
       <ul class="left hide-on-med-and-down">
@@ -42,8 +42,6 @@
           <li class="{% block nav_portfolio_class %}  #  {% endblock nav_portfolio_class %}"><a href="{% url 'project-list' %}">{% trans "Projects" %} </a></li>
       </ul>
       <ul class="right hide-on-med-and-down">
-          <li><a href="https://www.facebook.com/sogloarcadius" title="Facebook"><i><img width="32px" heigth="32px" src="{% static 'home/images/facebook.svg' %}"></i></a></li>          
-          <li><a href="https://plus.google.com/u/0/+sogloarcadius" title="Google Plus"><i><img width="32px" heigth="32px" src="{% static 'home/images/googleplus.svg' %}"></i></a></li> 
           <li><a href="https://www.linkedin.com/in/arcadius-soglo-275bb180/" title="Linkedin"><i><img width="32px" heigth="32px" src="{% static 'home/images/linkedin.svg' %}"></i></a></li> 
           <li><a href="https://github.com/soglomania" title="Github"><i><img width="32px" heigth="32px" src="{% static 'home/images/github.svg' %}"></i></a></li>
       </ul>
@@ -66,8 +64,6 @@
         <div class="divider"></div> 
         <div class="section">
           <li>{% trans "Connect" %}</li>            
-          <li><a href="https://www.facebook.com/sogloarcadius" title="Facebook"><i><img width="32px" heigth="32px" src="{% static 'home/images/facebook.svg' %}"></i></a></li>          
-          <li><a href="https://plus.google.com/u/0/+sogloarcadius" title="Google Plus"><i><img width="32px" heigth="32px" src="{% static 'home/images/googleplus.svg' %}"></i></a></li> 
           <li><a href="https://www.linkedin.com/in/arcadius-soglo-275bb180/" title="Linkedin"><i><img width="32px" heigth="32px" src="{% static 'home/images/linkedin.svg' %}"></i></a></li> 
           <li><a href="https://github.com/soglomania" title="Github"><i><img width="32px" heigth="32px" src="{% static 'home/images/github.svg' %}"></i></a></li>
         </div>

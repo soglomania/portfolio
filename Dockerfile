@@ -4,8 +4,6 @@ LABEL maintainer.fullname="SOGLO Arcadius"
 LABEL maintainer.email="rtsoglo@gmail.com" 
 
 
-
-
 # Install required packages and remove the apt packages cache when done.
 
 RUN apt-get update && \

@@ -5,9 +5,6 @@ django==1.11.2
 django-rosetta
 django-modeltranslation
 
-# Image uploading
-#Pillow
-
 # AWS Cloud storages
 django-storages
 boto
@@ -16,16 +13,22 @@ boto
 djangorestframework==3.6.3
 django-rest-swagger==2.1.2
 
-
-# Debug
-#django-debug-toolbar==1.8
-
-
 # Markdown support
 django-markup==1.2
 markdown==2.6.8
 markdown-to-json
 
+#Logs
+django-log-request-id==1.3.2
+
+
+# Image uploading
+#Pillow
+
+
+
+# Debug
+#django-debug-toolbar==1.8
 
 #Tests
 #selenium

@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 import os
+import logging
+from logging.handlers import SysLogHandler
 from django.utils.translation import ugettext_lazy as _
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -53,6 +55,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'log_request_id.middleware.RequestIDMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
@@ -149,29 +152,97 @@ CLOUD_STORAGE = False
 if CLOUD_STORAGE:
     
     AWS_STORAGE_BUCKET_NAME = os.environ["AWS_STORAGE_BUCKET_NAME"]
-    
     AWS_ACCESS_KEY_ID = os.environ["AWS_ACCESS_KEY_ID"]
-
     AWS_SECRET_ACCESS_KEY = os.environ["AWS_SECRET_ACCESS_KEY"]
-
     AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
     STATICFILES_LOCATION = 'static'
-
     STATICFILES_STORAGE = 'website.settings.aws_s3.StaticStorage'
-
     STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
 
     MEDIAFILES_LOCATION = 'media'
-
     MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
-
     DEFAULT_FILE_STORAGE = 'website.settings.aws_s3.MediaStorage'
 
 else:
     
     STATIC_URL = '/static/'
     STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
     MEDIA_URL = '/media/'
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
+
+# Logging
+
+SYSLOG_ADDRESS = (
+    os.environ.get('SYSLOG_HOST', 'localhost'),
+    int(os.environ.get('SYSLOG_PORT', 514)),
+)
+
+# Add a special logger to log related occurrences in settings
+settings_logger = logging.getLogger('settings')
+handler = SysLogHandler(address=SYSLOG_ADDRESS)
+formatter = logging.Formatter('portfolio-app-settings : %(levelname)-8s %(message)s')
+handler.setFormatter(formatter)
+settings_logger.addHandler(handler)
+
+# Log settings also in stdout
+handler = logging.StreamHandler()
+handler.setFormatter(formatter)
+settings_logger.addHandler(handler)
+
+settings_logger.setLevel(logging.INFO)
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'filters': {
+        'request_id': {
+            '()': 'log_request_id.filters.RequestIDFilter'
+        }
+    },
+    'formatters': {
+        'standard': {
+            'format': 'portfolio-app-logger : %(levelname)-8s [%(asctime)s] [%(request_id)s] %(name)s: %(message)s'
+        },
+    },
+    'handlers': {
+        # Only send to syslog info or higher
+        'syslog': {
+            'level': 'INFO',
+            'class': 'logging.handlers.SysLogHandler',
+            'address': SYSLOG_ADDRESS,
+            'filters': ['request_id'],
+            'formatter': 'standard',
+        },
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'filters': ['request_id'],
+            'formatter': 'standard',
+        },
+    },
+    'loggers': {
+        # Top level for the application. Remember to set on
+        # all loggers
+        '': {
+            'handlers': ['syslog'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+        # For usage on runserver (dev-server)
+        'django.server': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+    },
+}
+
+LOG_REQUESTS = True
+
+# Origin request will be X-REQUEST-ID
+LOG_REQUEST_ID_HEADER = "HTTP_X_REQUEST_ID"
+GENERATE_REQUEST_ID_IF_NOT_IN_HEADER = True
+REQUEST_ID_RESPONSE_HEADER = "X-REQUEST-ID"
