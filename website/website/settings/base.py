@@ -52,9 +52,11 @@ INSTALLED_APPS = [
     'resume',
     'django_markup',
     'storages',
+    'django_prometheus',
 ]
 
 MIDDLEWARE = [
+    'django_prometheus.middleware.PrometheusBeforeMiddleware',
     'log_request_id.middleware.RequestIDMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -64,6 +66,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_prometheus.middleware.PrometheusAfterMiddleware',
 ]
 
 ROOT_URLCONF = 'website.urls'
@@ -183,7 +186,7 @@ SYSLOG_ADDRESS = (
 # Add a special logger to log related occurrences in settings
 settings_logger = logging.getLogger('settings')
 handler = SysLogHandler(address=SYSLOG_ADDRESS)
-formatter = logging.Formatter('portfolio-app-settings : %(levelname)-8s %(message)s')
+formatter = logging.Formatter('django : %(levelname)-8s %(message)s')
 handler.setFormatter(formatter)
 settings_logger.addHandler(handler)
 
@@ -204,7 +207,7 @@ LOGGING = {
     },
     'formatters': {
         'standard': {
-            'format': 'portfolio-app-logger : %(levelname)-8s [%(asctime)s] [%(request_id)s] %(name)s: %(message)s'
+            'format': 'django : %(levelname)-8s [%(asctime)s] [%(request_id)s] %(name)s: %(message)s'
         },
     },
     'handlers': {

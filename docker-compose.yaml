@@ -8,8 +8,27 @@ services:
             dockerfile: ./DockerImages/log/Dockerfile
         volumes :
             - /var/log:/var/log/
+    
+    metrics:
+        build:
+          context: .
+          dockerfile: ./DockerImages/metrics/Dockerfile
+        ports:
+            - "9090:9090"
 
-    main :
+    os-metrics:
+        image : "prom/node-exporter"
+        ports:
+            - "9100:9100"  
+
+    metrics-graph:
+        image: grafana/grafana
+        ports:
+            - "3000:3000"
+        depends_on:
+            - metrics
+    
+    main:
         image : soglomania/portfolio
         env_file: environment.properties
         build: .
@@ -17,3 +36,6 @@ services:
             - "80:80"
         depends_on:
             - log
+            - metrics
+            - os-metrics
+            - metrics-graph

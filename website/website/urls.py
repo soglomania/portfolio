@@ -18,6 +18,7 @@ urlpatterns = [
 
 
 urlpatterns += i18n_patterns(
+    url(r'^monitoring/', include('django_prometheus.urls')),
     url(r'^', include('home.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^portfolio/', include('portfolio.urls')),

@@ -8,8 +8,14 @@ global:
 rule_files:
     - '/etc/prometheus/django.rules'
 
+
 scrape_configs:
   # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
-  - job_name: 'templatesite'
+  - job_name: 'portfolio'
+    metrics_path: "/monitoring/metrics"
     static_configs:
-        - targets: ['server:80']
+        - targets: ['main:80']
+  - job_name: 'os-metrics'
+    static_configs:
+        - targets: ['os-metrics:9100']
+
