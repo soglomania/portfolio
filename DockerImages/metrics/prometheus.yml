@@ -11,7 +11,7 @@ rule_files:
 
 scrape_configs:
   # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
-  - job_name: 'portfolio'
+  - job_name: 'django'
     metrics_path: "/monitoring/metrics"
     static_configs:
         - targets: ['main:80']

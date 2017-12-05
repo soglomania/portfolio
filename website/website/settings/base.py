@@ -47,12 +47,12 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'portfolio.apps.PortfolioConfig',
     'rosetta',
+    'django_prometheus',
     'rest_framework',
     'rest_framework_swagger',
     'resume',
     'django_markup',
     'storages',
-    'django_prometheus',
 ]
 
 MIDDLEWARE = [

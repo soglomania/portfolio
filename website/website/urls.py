@@ -18,12 +18,12 @@ urlpatterns = [
 
 
 urlpatterns += i18n_patterns(
-    url(r'^monitoring/', include('django_prometheus.urls')),
     url(r'^', include('home.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^portfolio/', include('portfolio.urls')),
     url(r'^api/', include('resume.urls')),
     url(r'^translate/', include('rosetta.urls')),
+    url(r'^monitoring/', include('django_prometheus.urls')),
 )
 
 # url(r'^.*/$', views.handle_page_not_found_404, name="fake_url"),
