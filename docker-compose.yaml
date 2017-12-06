@@ -1,21 +1,23 @@
 version: '3'
 
 services:
+    #syslog
     log:
-        env_file: environment.properties
         build:
             context: .
             dockerfile: ./DockerImages/log/Dockerfile
         volumes :
             - /var/log:/var/log/
     
+    #prometheus metrics
     metrics:
         build:
           context: .
           dockerfile: ./DockerImages/metrics/Dockerfile
         ports:
             - "9090:9090"
-
+    
+    #export metrics on host (cpu,memory,..)
     os-metrics:
         image : "prom/node-exporter"
         ports:
@@ -28,6 +30,28 @@ services:
         depends_on:
             - metrics
     
+    #Elastic search + logstash + kibanna
+    elk:
+        build:
+            context: .
+            dockerfile: ./DockerImages/elk/Dockerfile
+        ports:
+            - "5601:5601"
+            - "9200:9200"
+            - "5044:5044"
+        environment:
+            - ES_HEAP_SIZE=2g
+            - LS_HEAP_SIZE=1g
+            - "ES_JAVA_OPTS=-Xms1024m -Xmx1024m"
+
+        
+    filebeat:
+        build:
+          context: .
+          dockerfile: ./DockerImages/filebeat/Dockerfile
+        volumes :
+            - /var/log/:/var/log/
+ 
     main:
         image : soglomania/portfolio
         env_file: environment.properties
@@ -39,3 +63,5 @@ services:
             - metrics
             - os-metrics
             - metrics-graph
+            - elk
+            - filebeat
