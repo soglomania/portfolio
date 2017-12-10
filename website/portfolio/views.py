@@ -11,13 +11,19 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from .models import Project
-from .serializers import ProjectSerializer
+
+
+
+class ProjectCategoryView(generic.base.TemplateView):
+    template_name = 'portfolio/project_category.html'
+
+
 
 
 class ProjectListView(generic.ListView):
     template_name='portfolio/project_list.html'
     context_object_name = 'all_projects'
-    paginate_by = 4
+    paginate_by = 3
 
 
     def get_queryset(self):
@@ -27,7 +33,7 @@ class ProjectListView(generic.ListView):
         query = self.request.GET.get('q')
         
         if query and len(query.strip())>0:
-            self.paginate_by = None
+            self.paginate_by = 3
 
             query_list = query.split()
             result = result.filter(
@@ -36,7 +42,9 @@ class ProjectListView(generic.ListView):
                 reduce(operator.or_,
                        (Q(summary__icontains=q) for q in query_list)) |
                 reduce(operator.or_,
-                       (Q(description__icontains=q) for q in query_list))
+                       (Q(description__icontains=q) for q in query_list)) |
+                reduce(operator.or_,
+                       (Q(tag__icontains=q) for q in query_list))       
             )
 
         return result  
@@ -46,15 +54,3 @@ class ProjectDetailView(generic.DetailView):
     model = Project
     template_name = 'portfolio/project_detail.html'
 
-
-# API Response
-
-class ProjectApiView(APIView):
-    
-    def get(self, request):
-        projects = Project.objects.all()
-        serializer = ProjectSerializer(projects, many=True)
-        return Response(serializer.data)
-        
-    def post(self):
-        pass

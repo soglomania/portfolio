@@ -46,11 +46,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home.apps.HomeConfig',
     'portfolio.apps.PortfolioConfig',
+    'api.apps.ApiConfig',
     'rosetta',
     'django_prometheus',
     'rest_framework',
     'rest_framework_swagger',
-    'resume',
     'django_markup',
     'storages',
 ]

@@ -3,7 +3,7 @@ import os
 import sys
 
 from django.core.management.base import BaseCommand
-from resume.models import PersonalInfo
+from portfolio.models import PersonalInfo
 
 
 class Command(BaseCommand):

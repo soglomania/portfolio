@@ -34,20 +34,19 @@ echo "import os; from django.contrib.auth.models import User; print(User.objects
 
 # projects
 
-python manage.py portfolio --sql printall
+python manage.py project --sql printall
 
-python manage.py portfolio --sql flush
+python manage.py project --sql flush
 
-python manage.py portfolio --sql printall
+python manage.py project --sql printall
 
-python manage.py portfolio --addproject ~/workspace/notebooks/portfolio/projects/
+python manage.py project --addproject ~/workspace/notebooks/portfolio/projects/
 
-python manage.py portfolio --sql printall
+python manage.py project --sql printall
 
 
-# Resume
+# personalinfos, education, ....
 
-#Personal Infos
 python manage.py resume --model PersonalInfo --sql printall
 
 python manage.py resume --model PersonalInfo --sql flush

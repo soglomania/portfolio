@@ -5,12 +5,26 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework_swagger.views import get_swagger_view
 
-from .models import PersonalInfo, Language, Education, Interest, Job, Skill, Membership
-from .serializers import PersonalInfoSerializer, LanguageSerializer,  EducationSerializer, InterestSerializer, JobSerializer, SkillSerializer, MembershipSerializer
+from portfolio.models import Project, PersonalInfo, Language, Education, Interest, Job, Skill, Membership
+from .serializers import ProjectSerializer,PersonalInfoSerializer, LanguageSerializer,  EducationSerializer, InterestSerializer, JobSerializer, SkillSerializer, MembershipSerializer
 
 api_swagger = get_swagger_view(title='API REFERENCE')
 
-class PersonalInfoView(APIView):
+
+
+# API Response
+class ProjectApiView(APIView):
+    
+    def get(self, request):
+        projects = Project.objects.all()
+        serializer = ProjectSerializer(projects, many=True)
+        return Response(serializer.data)
+        
+    def post(self):
+        pass
+
+
+class PersonalInfoApiView(APIView):
 
     def get(self, request):
         infos = PersonalInfo.objects.all()
@@ -21,7 +35,7 @@ class PersonalInfoView(APIView):
         pass
 
 
-class LanguageView(APIView):
+class LanguageApiView(APIView):
     
     def get(self, request):
         languages = Language.objects.all()
@@ -32,7 +46,7 @@ class LanguageView(APIView):
         pass
 
 
-class InterestView(APIView):
+class InterestApiView(APIView):
     
     def get(self, request):
         interests = Interest.objects.all()
@@ -43,7 +57,7 @@ class InterestView(APIView):
         pass
 
 
-class EducationView(APIView):
+class EducationApiView(APIView):
     
     def get(self, request):
         educations = Education.objects.all()
@@ -54,7 +68,7 @@ class EducationView(APIView):
         pass
 
 
-class JobView(APIView):
+class JobApiView(APIView):
     
     def get(self, request):
         jobs = Job.objects.all()
@@ -64,7 +78,7 @@ class JobView(APIView):
     def post(self):
         pass
 
-class SkillView(APIView):
+class SkillApiView(APIView):
     
     def get(self, request):
         skills = Skill.objects.all()
@@ -74,7 +88,7 @@ class SkillView(APIView):
     def post(self):
         pass
 
-class MembershipView(APIView):
+class MembershipApiView(APIView):
     
     def get(self, request):
         memberships = Membership.objects.all()

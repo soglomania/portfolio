@@ -39,7 +39,7 @@
       </ul>
       <ul class="left hide-on-med-and-down">
           <li class="{% block nav_about_class %} # {% endblock nav_about_class %}"><a href="{% url 'home-index' %}" >{% trans "About" %}</a></li>
-          <li class="{% block nav_portfolio_class %}  #  {% endblock nav_portfolio_class %}"><a href="{% url 'project-list' %}">{% trans "Projects" %} </a></li>
+          <li class="{% block nav_portfolio_class %}  #  {% endblock nav_portfolio_class %}"><a href="{% url 'project-category' %}">{% trans "Projects" %} </a></li>
       </ul>
       <ul class="right hide-on-med-and-down">
           <li><a href="https://www.linkedin.com/in/arcadius-soglo-275bb180/" title="Linkedin"><i><img width="32px" heigth="32px" src="{% static 'home/images/linkedin.svg' %}"></i></a></li> 
@@ -59,7 +59,7 @@
         <div class="divider"></div>
         <div class="section">
           <li class="{% block mobile_nav_about_class %}  #  {% endblock mobile_nav_about_class %}"><a href="{% url 'home-index' %}">{% trans "About" %}</a></li>
-          <li class="{% block mobile_nav_portfolio_class %}  #  {% endblock mobile_nav_portfolio_class %}"><a href="{% url 'project-list' %}">{% trans "Projects" %} </a></li>
+          <li class="{% block mobile_nav_portfolio_class %}  #  {% endblock mobile_nav_portfolio_class %}"><a href="{% url 'project-category' %}">{% trans "Projects" %} </a></li>
         </div>
         <div class="divider"></div> 
         <div class="section">
@@ -91,7 +91,7 @@
         </div>
       </div>
     </div>
-  
+    
     <div class="footer-copyright">
       <div class="container">
       &copy; <a class="black-text text-lighten-3" href="mailto:rtsoglo@gmail.com">sogloarcadius</a>
