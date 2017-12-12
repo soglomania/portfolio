@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-03 20:17+0200\n"
+"POT-Creation-Date: 2017-12-10 17:51+0100\n"
 "PO-Revision-Date: 2017-07-03 20:19+0009\n"
 "Last-Translator: b'  <admin@admin.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,37 +19,54 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.7.13\n"
 
-#: home/templates/home/base.html:32 home/templates/home/base.html:57
-#: home/templates/home/index.html:7
+#: home/templates/home/base.html:41 home/templates/home/base.html:61
+#: home/templates/home/index.html:8
 msgid "About"
 msgstr "A propos"
 
-#: home/templates/home/base.html:33 home/templates/home/base.html:58
+#: home/templates/home/base.html:42 home/templates/home/base.html:62
 msgid "Projects"
 msgstr "Projets"
 
-#: home/templates/home/base.html:86
+#: home/templates/home/base.html:66
 msgid "Connect"
 msgstr "Réseaux Sociaux"
 
-#: portfolio/templates/portfolio/project_list.html:5
+#: portfolio/templates/portfolio/project_category.html:6
+#: portfolio/templates/portfolio/project_list.html:6
 msgid "Portfolio"
 msgstr "Portfolio"
 
-#: website/settings.py:148
+#: portfolio/templates/portfolio/project_category.html:22
+msgid "Software Development"
+msgstr "Développement Logiciel"
+
+#: portfolio/templates/portfolio/project_category.html:31
+msgid "Data Science"
+msgstr "Intélligence Artificielle(Data science)"
+
+#: portfolio/templates/portfolio/project_category.html:41
+msgid "Security"
+msgstr "Sécurité"
+
+#: portfolio/templates/portfolio/project_category.html:51
+msgid "Computer Network"
+msgstr "Réseaux"
+
+#: website/settings/base.py:140
 msgid "English"
 msgstr "Anglais"
 
-#: website/settings.py:149
+#: website/settings/base.py:141
 msgid "French"
 msgstr "Français"
 
-#: website/settings.py:150
+#: website/settings/base.py:142
 msgid "Spanish"
 msgstr "Espagnol"
 
 #~ msgid "Email"
-#~ msgstr "Couriel"
+#~ msgstr "Couriel"
 
 #~ msgid "Biography"
 #~ msgstr "Biographie"
@@ -61,9 +78,9 @@ msgstr "Espagnol"
 #~ msgstr "Comment m'écrire ?"
 
 #~ msgid ""
-#~ " Need some help for your project, please send me an email at <span class"
-#~ "=\"black-text\">rtsoglo@gmail.com</span>and I will be glad to help you. "
+#~ " Need some help for your project, please send me an email at <span class="
+#~ "\"black-text\">rtsoglo@gmail.com</span>and I will be glad to help you. "
 #~ msgstr ""
-#~ "Vous avez bésoin d'aide ?, alors n'hésitez pas à m'écrire à <span class"
-#~ "=\"black-text\">rtsoglo@gmail.com</span> et je serai ravi de vous répondre "
+#~ "Vous avez bésoin d'aide ?, alors n'hésitez pas à m'écrire à <span class="
+#~ "\"black-text\">rtsoglo@gmail.com</span> et je serai ravi de vous répondre "
 #~ "dans les plus bref délais."

@@ -3,11 +3,10 @@ from django.utils import timezone
 
 
 class Project(models.Model):
-    title = models.CharField(max_length=10)
+    title = models.TextField()
     icon = models.TextField()
     summary = models.TextField()
     description = models.TextField()
-    link = models.URLField()
     tag = models.TextField()
 
     def __str__(self):

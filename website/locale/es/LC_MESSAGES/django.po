@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-03 20:18+0200\n"
+"POT-Creation-Date: 2017-12-10 17:57+0100\n"
 "PO-Revision-Date: 2017-07-03 20:19+0009\n"
 "Last-Translator: b'  <admin@admin.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,32 +19,49 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.7.13\n"
 
-#: home/templates/home/base.html:32 home/templates/home/base.html:57
-#: home/templates/home/index.html:7
+#: home/templates/home/base.html:41 home/templates/home/base.html:61
+#: home/templates/home/index.html:8
 msgid "About"
 msgstr "Biografia"
 
-#: home/templates/home/base.html:33 home/templates/home/base.html:58
+#: home/templates/home/base.html:42 home/templates/home/base.html:62
 msgid "Projects"
 msgstr "Proyectos"
 
-#: home/templates/home/base.html:86
+#: home/templates/home/base.html:66
 msgid "Connect"
 msgstr "Redes sociales"
 
-#: portfolio/templates/portfolio/project_list.html:5
+#: portfolio/templates/portfolio/project_category.html:6
+#: portfolio/templates/portfolio/project_list.html:6
 msgid "Portfolio"
 msgstr "Portfolio"
 
-#: website/settings.py:148
+#: portfolio/templates/portfolio/project_category.html:22
+msgid "Software Development"
+msgstr "Desarollo de Software"
+
+#: portfolio/templates/portfolio/project_category.html:31
+msgid "Data Science"
+msgstr "Intelligencia Artificial (Ciencia de los Datos)"
+
+#: portfolio/templates/portfolio/project_category.html:41
+msgid "Security"
+msgstr "Securidad"
+
+#: portfolio/templates/portfolio/project_category.html:51
+msgid "Computer Network"
+msgstr "Redes de las computadoras"
+
+#: website/settings/base.py:140
 msgid "English"
 msgstr "Inglés"
 
-#: website/settings.py:149
+#: website/settings/base.py:141
 msgid "French"
 msgstr "Francés"
 
-#: website/settings.py:150
+#: website/settings/base.py:142
 msgid "Spanish"
 msgstr "Español"
 
@@ -61,8 +78,8 @@ msgstr "Español"
 #~ msgstr "Escribeme !"
 
 #~ msgid ""
-#~ " Need some help for your project, please send me an email at <span class"
-#~ "=\"black-text\">rtsoglo@gmail.com</span>and I will be glad to help you. "
+#~ " Need some help for your project, please send me an email at <span class="
+#~ "\"black-text\">rtsoglo@gmail.com</span>and I will be glad to help you. "
 #~ msgstr ""
-#~ "Necesitas ayuda, escribeme a <span class=\"black-"
-#~ "text\">rtsoglo@gmail.com</span> y sera un placer responderte."
+#~ "Necesitas ayuda, escribeme a <span class=\"black-text\">rtsoglo@gmail."
+#~ "com</span> y sera un placer responderte."

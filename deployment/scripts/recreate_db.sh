@@ -40,7 +40,18 @@ python manage.py project --sql flush
 
 python manage.py project --sql printall
 
-python manage.py project --addproject ~/workspace/notebooks/portfolio/projects/
+#software_development
+python manage.py project --addproject ~/workspace/notebooks/portfolio/projects/software_development
+
+#data_science
+python manage.py project --addproject ~/workspace/notebooks/portfolio/projects/data_science
+
+#computer_network
+python manage.py project --addproject ~/workspace/notebooks/portfolio/projects/computer_network
+
+#security
+python manage.py project --addproject ~/workspace/notebooks/portfolio/projects/security
+
 
 python manage.py project --sql printall
 

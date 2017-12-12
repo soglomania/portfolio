@@ -23,7 +23,7 @@ class ProjectCategoryView(generic.base.TemplateView):
 class ProjectListView(generic.ListView):
     template_name='portfolio/project_list.html'
     context_object_name = 'all_projects'
-    paginate_by = 3
+    paginate_by = None
 
 
     def get_queryset(self):
@@ -33,7 +33,7 @@ class ProjectListView(generic.ListView):
         query = self.request.GET.get('q')
         
         if query and len(query.strip())>0:
-            self.paginate_by = 3
+            self.paginate_by = None
 
             query_list = query.split()
             result = result.filter(
