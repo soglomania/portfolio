@@ -49,3 +49,13 @@ nav ul li:hover {
 .alegreya {
     font-family: 'Alegreya Sans', sans-serif;
 }
+
+.custom_card {
+    width: 200px;
+    height: 200px;
+}
+
+.profile_pic {
+    width: 150px;
+    height: 150px;
+}

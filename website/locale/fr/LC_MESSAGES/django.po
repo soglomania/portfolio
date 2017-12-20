@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-10 17:51+0100\n"
+"POT-Creation-Date: 2017-12-20 17:23+0100\n"
 "PO-Revision-Date: 2017-07-03 20:19+0009\n"
 "Last-Translator: b'  <admin@admin.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,18 +19,18 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.7.13\n"
 
-#: home/templates/home/base.html:41 home/templates/home/base.html:61
+#: home/templates/home/base.html:29 home/templates/home/base.html:54
 #: home/templates/home/index.html:8
 msgid "About"
 msgstr "A propos"
 
-#: home/templates/home/base.html:42 home/templates/home/base.html:62
+#: home/templates/home/base.html:30 home/templates/home/base.html:55
 msgid "Projects"
 msgstr "Projets"
 
-#: home/templates/home/base.html:66
-msgid "Connect"
-msgstr "Réseaux Sociaux"
+#: home/templates/home/base.html:56
+msgid "Blog"
+msgstr "Blog"
 
 #: portfolio/templates/portfolio/project_category.html:6
 #: portfolio/templates/portfolio/project_list.html:6
@@ -42,8 +42,8 @@ msgid "Software Development"
 msgstr "Développement Logiciel"
 
 #: portfolio/templates/portfolio/project_category.html:31
-msgid "Data Science"
-msgstr "Intélligence Artificielle(Data science)"
+msgid "Artificial Intelligence"
+msgstr "Intélligence Artificielle"
 
 #: portfolio/templates/portfolio/project_category.html:41
 msgid "Security"
@@ -65,14 +65,17 @@ msgstr "Français"
 msgid "Spanish"
 msgstr "Espagnol"
 
+#~ msgid "Data Science"
+#~ msgstr "Science des Données"
+
+#~ msgid "Connect"
+#~ msgstr "Réseaux Sociaux"
+
 #~ msgid "Email"
 #~ msgstr "Couriel"
 
 #~ msgid "Biography"
 #~ msgstr "Biographie"
-
-#~ msgid "Blog"
-#~ msgstr "Blog"
 
 #~ msgid "Contact me"
 #~ msgstr "Comment m'écrire ?"

@@ -1,28 +1,97 @@
 {{template "head" .}}
 
+<!--
 {{template "prom_right_table_head"}}
+
+<table>
 <tr>
-  <th>Django</th>
+  <th>Django Metrics</th>
   <th>{{ template "prom_query_drilldown" (args "sum(up{job='django'})") }}
       / {{ template "prom_query_drilldown" (args "count(up{job='django'})") }}
   </th>
 </tr>
 <tr>
-  <td>avg CPU</td>
+  <td>avg CPU  </td>
   <td>{{ template "prom_query_drilldown" (args "avg by(job)(rate(process_cpu_seconds_total{job='django'}[5m]))" "s/s" "humanizeNoSmallPrefix") }}
   </td>
 </tr>
 <tr>
-  <td>avg Memory</td>
+  <td>avg Memory  </td>
   <td>{{ template "prom_query_drilldown" (args "avg by(job)(process_resident_memory_bytes{job='django'})" "B" "humanize1024") }}
   </td>
 </tr>
+</table>
 {{template "prom_right_table_tail"}}
-
+-->
 
 {{template "prom_content_head" .}}
-<h1>Django</h1>
 
+<h1>Server Metrics</h1>
+<h2>Memory</h2>
+
+<h3>MemAvailable</h3>
+<div id="node_os_metrics_mem_available"></div>
+<script>
+new PromConsole.Graph({
+  node: document.querySelector("#node_os_metrics_mem_available"),
+  expr: 'node_memory_MemAvailable',
+  name: "MemAvailable",
+  yAxisFormatter: PromConsole.NumberFormatter.humanizeNoSmallPrefix,
+  yHoverFormatter: PromConsole.NumberFormatter.humanizeNoSmallPrefix,
+  yUnits: "",
+  yTitle: "MemAvailable",
+  min: 0
+})
+</script>
+
+<h3>MemorySwapFree</h3>
+<div id="node_os_metrics_mem_swap_free"></div>
+<script>
+new PromConsole.Graph({
+  node: document.querySelector("#node_os_metrics_mem_swap_free"),
+  expr: 'node_memory_SwapFree',
+  name: "MemorySwapFree",
+  yAxisFormatter: PromConsole.NumberFormatter.humanizeNoSmallPrefix,
+  yHoverFormatter: PromConsole.NumberFormatter.humanizeNoSmallPrefix,
+  yUnits: "",
+  yTitle: "MemorySwapFree",
+  min: 0
+})
+</script>
+
+<h3>Running Process</h3>
+<div id="node_os_metrics_run_procs"></div>
+<script>
+new PromConsole.Graph({
+  node: document.querySelector("#node_os_metrics_run_procs"),
+  expr: 'node_procs_running',
+  name: "Running Process",
+  yAxisFormatter: PromConsole.NumberFormatter.humanizeNoSmallPrefix,
+  yHoverFormatter: PromConsole.NumberFormatter.humanizeNoSmallPrefix,
+  yUnits: "",
+  yTitle: "Running Process",
+  min: 0
+})
+</script>
+
+<h3>Blocked Process</h3>
+<div id="node_os_metrics_block_procs"></div>
+<script>
+new PromConsole.Graph({
+  node: document.querySelector("#node_os_metrics_block_procs"),
+  expr: 'node_procs_blocked',
+  name: "Blocked Process",
+  yAxisFormatter: PromConsole.NumberFormatter.humanizeNoSmallPrefix,
+  yHoverFormatter: PromConsole.NumberFormatter.humanizeNoSmallPrefix,
+  yUnits: "",
+  yTitle: "Blocked Process",
+  min: 0
+})
+</script>
+
+<br>
+
+<h1>Django</h1>
 <h2>Requests</h2>
 <h3>Total</h3>
 <div id="gr_requests_total"></div>
@@ -85,6 +154,7 @@ new PromConsole.Graph({
 })
 </script>
 
+<!--
 <h2>Models</h2>
 <h3>Insertions/s</h3>
 <div id="gr_model_inserts"></div>
@@ -188,6 +258,12 @@ new PromConsole.Graph({
   min: 0
 })
 </script>
+-->
+
+
+
+
+
 
 {{template "prom_content_tail" .}}
 

@@ -5,7 +5,7 @@ from .base import *
 DEBUG = False
 
 #TODO: put domain name Ex : ".sogloarcadius.xyz"
-ALLOWED_HOSTS = ['.sogloarcadius.xyz', 'main']
+ALLOWED_HOSTS = ['.sogloarcadius.xyz', 'app']
 
 
 

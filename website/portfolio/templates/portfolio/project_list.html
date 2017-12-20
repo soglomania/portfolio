@@ -38,13 +38,13 @@
             <div class="row">
                 {% for project in all_projects %}
                 <div class="col s12 m6 l3">
-                    <div class="card z-depth-2">
+                    <div class="card z-depth-2 custom_card">
                         <div class="card-image">
-                            <img class="activator" src="/media/{{project.icon}}" width="150px" height="150px">
+                            <img class="activator" src="/media/{{project.icon}}" width="75px" height="75px">
                             <a class="btn-floating halfway-fab waves-effect waves-light green" href="{% url 'project-detail' project.pk %}"><i class="material-icons">zoom_in</i></a>
                         </div>
                         <div class="card-content">
-                            <br>
+                            <!--<br>-->
                             <span class="card-title activator grey-text text-darken-4">{{project.title}}</span>
                         </div>
                         <div class="card-reveal">

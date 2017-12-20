@@ -15,18 +15,17 @@
 {% block content %}
   
 
-<div class="section no-pad-bot" id="index-banner">
- 
+<div class="left section no-pad-bot" id="index-banner">
 </div>
 
 <div class="container">
     <div class="section">
         <div class="row">
-            <div class="col s12 m12 l12 right alegreya">
-                <p class="flow-text">{{ personal_info.summary | apply_markup:"markdown" }}
-                  </p>
-                <br>
-            </div> 
+          <br>
+          &nbsp;&nbsp;&nbsp; <img src="{% static 'home/images/me.jpg' %}" alt="" class="circle responsive-img profile_pic">
+          <div class="col s12 m12 l12 right alegreya">
+              <p class="flow-text">{{ personal_info.summary | apply_markup:"markdown" }}</p>
+          </div> 
         </div>
     </div>
 </div>

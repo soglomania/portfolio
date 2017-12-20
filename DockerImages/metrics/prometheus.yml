@@ -12,10 +12,13 @@ rule_files:
 scrape_configs:
   # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
   - job_name: 'django'
-    metrics_path: "/monitoring/metrics"
+    metrics_path: "/monitoring/metrics" 
     static_configs:
-        - targets: ['main:80']
+        # WARNING !!! authorize endpoint 
+        # in django settings ALLOWED_HOSTS (production)
+        - targets: ['app:80']
   - job_name: 'os-metrics'
+    #metrics_path: "/metrics"   # default endpoint
     static_configs:
         - targets: ['os-metrics:9100']
 

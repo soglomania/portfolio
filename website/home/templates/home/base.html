@@ -23,55 +23,44 @@
 
 <body>
 
-  <nav class="grey lighten-5" role="navigation">
-      <div class="nav-wrapper container">
-          <ul class='left hide-on-med-and-down'>
-              <!--<li><a href="#!"></a></li>-->
-              <li><a href="{% url 'set_english' %}"><i><img class="responsive-img" src="{% static 'home/images/en.png' %}"></i></a></li>          
-              <li class="divider"></li>
-              <li><a href="{% url 'set_french' %}"><i><img class="responsive-img" src="{% static 'home/images/fr.png' %}"></i></a></li>
-              <li class="divider"></li>          
-              <li><a href="{% url 'set_spanish' %}"><i><img class="responsive-img" src="{% static 'home/images/es.png' %}"></i></a></li>
-              <li class="divider"></li>          
-            </ul>
-            <ul class="right hide-on-med-and-down">
-                <li><a target="_blank" href="https://soglomania.blogspot.ie/" title="Blogger"><i><img width="32px" heigth="32px" src="{% static 'home/images/blogger.png' %}"></i></a></li>                    
-                <li><a target="_blank" href="https://www.linkedin.com/in/arcadius-soglo-275bb180/" title="Linkedin"><i><img width="32px" heigth="32px" src="{% static 'home/images/linkedin.svg' %}"></i></a></li> 
-                <li><a target="_blank" href="https://github.com/soglomania" title="Github"><i><img width="32px" heigth="32px" src="{% static 'home/images/github.svg' %}"></i></a></li>
-            </ul>
-      </div>
-  </nav>
   <nav class="grey lighten-1" role="navigation">
     <div class="nav-wrapper container">
-
       <ul class="left hide-on-med-and-down">
           <li class="{% block nav_about_class %} # {% endblock nav_about_class %}"><a href="{% url 'home-index' %}" >{% trans "About" %}</a></li>
           <li class="{% block nav_portfolio_class %}  #  {% endblock nav_portfolio_class %}"><a href="{% url 'project-category' %}">{% trans "Projects" %} </a></li>
-        </ul>
+      </ul>
+      <ul class='right hide-on-med-and-down'>
+          <!--<li><a href="#!"></a></li>-->
+          <li><a href="{% url 'set_english' %}"><i><img class="responsive-img" src="{% static 'home/images/en.png' %}"></i></a></li>          
+          <li class="divider"></li>
+          <li><a href="{% url 'set_french' %}"><i><img class="responsive-img" src="{% static 'home/images/fr.png' %}"></i></a></li>
+          <li class="divider"></li>          
+          <li><a href="{% url 'set_spanish' %}"><i><img class="responsive-img" src="{% static 'home/images/es.png' %}"></i></a></li>
+          <li class="divider"></li>          
+      </ul>
       <ul class="right hide-on-med-and-down">
-        {% block searchbar %} {% endblock searchbar %}
+          {% block searchbar %} {% endblock searchbar %}
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
-        <div class="divider"></div>
-        <div class="section">
+          <div class="divider"></div>
+          <div class="section">
             <li><a href="{% url 'set_french' %}" title="fr"><i><img class="responsive-img" src="{% static 'home/images/fr.png' %}"></i></a></li>
             <li><a href="{% url 'set_english' %}" title="en"><i><img class="responsive-img" src="{% static 'home/images/en.png' %}"></i></a></li>
             <li><a href="{% url 'set_spanish' %}" title="es"><i><img class="responsive-img" src="{% static 'home/images/es.png' %}"></i></a></li>
-        </div>
-        <div class="divider"></div>
-        <div class="section">
-          <li class="{% block mobile_nav_about_class %}  #  {% endblock mobile_nav_about_class %}"><a href="{% url 'home-index' %}">{% trans "About" %}</a></li>
-          <li class="{% block mobile_nav_portfolio_class %}  #  {% endblock mobile_nav_portfolio_class %}"><a href="{% url 'project-category' %}">{% trans "Projects" %} </a></li>
-          <li class="{% block mobile_nav_blog_class %}  #  {% endblock mobile_nav_blog_class %}"><a target="_blank" href="https://soglomania.blogspot.ie/">{% trans "Blog" %} </a></li>
-          
-        </div>
-        <div class="divider"></div> 
-        <div class="section">
-          <li><a target="_blank" href="https://soglomania.blogspot.ie/" title="Blogger"><i><img width="32px" heigth="32px" src="{% static 'home/images/blogger.png' %}"></i></a></li>                      
-          <li><a target="_blank" href="https://www.linkedin.com/in/arcadius-soglo-275bb180/" title="Linkedin"><i><img width="32px" heigth="32px" src="{% static 'home/images/linkedin.svg' %}"></i></a></li> 
-          <li><a target="_blank" href="https://github.com/soglomania" title="Github"><i><img width="32px" heigth="32px" src="{% static 'home/images/github.svg' %}"></i></a></li>
-        </div>
+          </div>
+          <div class="divider"></div>
+          <div class="section">
+            <li class="{% block mobile_nav_about_class %}  #  {% endblock mobile_nav_about_class %}"><a href="{% url 'home-index' %}">{% trans "About" %}</a></li>
+            <li class="{% block mobile_nav_portfolio_class %}  #  {% endblock mobile_nav_portfolio_class %}"><a href="{% url 'project-category' %}">{% trans "Projects" %} </a></li>
+            <li class="{% block mobile_nav_blog_class %}  #  {% endblock mobile_nav_blog_class %}"><a target="_blank" href="https://soglomania.blogspot.ie/">{% trans "Blog" %} </a></li>
+          </div>
+          <div class="divider"></div> 
+          <div class="section">
+            <li><a target="_blank" href="https://soglomania.blogspot.ie/" title="Blogger"><i><img width="32px" heigth="32px" src="{% static 'home/images/blogger.png' %}"></i></a></li>                      
+            <li><a target="_blank" href="https://www.linkedin.com/in/arcadius-soglo-275bb180/" title="Linkedin"><i><img width="32px" heigth="32px" src="{% static 'home/images/linkedin.svg' %}"></i></a></li> 
+            <li><a target="_blank" href="https://github.com/soglomania" title="Github"><i><img width="32px" heigth="32px" src="{% static 'home/images/github.svg' %}"></i></a></li>
+          </div>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
@@ -86,23 +75,34 @@
     
     <div class="container">
       <div class="row">
-        <div class="col l6 s6">            
-        </div>
+        <div class="left col l6 s6">
+            <br>
+            &copy; <a class="black-text text-lighten-3" target="_blank" href="mailto:rtsoglo@gmail.com">sogloarcadius</a>
+            <!--
+            <a class="right" target="_blank" href="https://www.djangoproject.com/"><img src="https://img.shields.io/badge/Built with-Django-brightgreen.svg?style=flat" alt="Built with django"/></a>
+            -->
+          </div>
         <div class="col l3">
         </div>
         <div class="col l3 s6">
-            <a class="right" target="_blank" href="https://www.djangoproject.com/"><img src="https://img.shields.io/badge/Built with-Django-brightgreen.svg?style=flat" alt="Built with django"/></a>
+            <ul class="right hide-on-med-and-down">
+                <a target="_blank" href="https://soglomania.blogspot.ie/" title="Blogger"><i><img width="32px" heigth="32px" src="{% static 'home/images/blogger.png' %}"></i></a> &nbsp; &nbsp;                 
+                <a target="_blank" href="https://www.linkedin.com/in/arcadius-soglo-275bb180/" title="Linkedin"><i><img width="32px" heigth="32px" src="{% static 'home/images/linkedin.svg' %}"></i></a> &nbsp; &nbsp; 
+                <a target="_blank" href="https://github.com/soglomania" title="Github"><i><img width="32px" heigth="32px" src="{% static 'home/images/github.svg' %}"></i></a>
+            </ul>            
         </div>
       </div>
     </div>
     
+    <!--
     <div class="footer-copyright">
       <div class="container">
       &copy; <a class="black-text text-lighten-3" target="_blank" href="mailto:rtsoglo@gmail.com">sogloarcadius</a>
       </div>
     </div>
-  </footer>
+    -->
 
+  </footer>
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>

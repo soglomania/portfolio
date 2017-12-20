@@ -95,6 +95,8 @@ class Command(BaseCommand):
             if datatype == "PersonalInfo":              
                 personal_info = PersonalInfo(**file_content)
                 personal_info.save()
+            #TODO:
+            #Add other subcases, (Skills, Education, Work Experience) for the API
 
     def load_directory_files_to_db(self, dp, datatype):
         """ Take a path to a directory,

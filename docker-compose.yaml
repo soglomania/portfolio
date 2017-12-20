@@ -23,13 +23,13 @@ services:
         ports:
             - "9100:9100"  
 
-    metrics-graph:
+    grafana:
         image: grafana/grafana
         ports:
             - "3000:3000"
         depends_on:
             - metrics
-    
+
     #Elastic search + logstash + kibanna
     elk:
         build:
@@ -43,16 +43,18 @@ services:
             - ES_HEAP_SIZE=2g
             - LS_HEAP_SIZE=1g
             - "ES_JAVA_OPTS=-Xms1024m -Xmx1024m"
-
-        
+    
+    #Parse Syslog and load into elastic search
     filebeat:
         build:
           context: .
           dockerfile: ./DockerImages/filebeat/Dockerfile
         volumes :
             - /var/log/:/var/log/
- 
-    main:
+        depends_on:
+            - elk
+    
+    app:
         image : soglomania/portfolio
         env_file: environment.properties
         build: .
@@ -62,6 +64,10 @@ services:
             - log
             - metrics
             - os-metrics
-            - metrics-graph
+    
+    monitoring:
+        build : .
+        env_file: environment.properties
+        depends_on:
             - elk
             - filebeat

@@ -35,36 +35,33 @@ echo "import os; from django.contrib.auth.models import User; print(User.objects
 # projects
 
 python manage.py project --sql printall
-
 python manage.py project --sql flush
-
 python manage.py project --sql printall
 
-#software_development
 python manage.py project --addproject ~/workspace/notebooks/portfolio/projects/software_development
-
-#data_science
 python manage.py project --addproject ~/workspace/notebooks/portfolio/projects/data_science
-
-#computer_network
 python manage.py project --addproject ~/workspace/notebooks/portfolio/projects/computer_network
-
-#security
 python manage.py project --addproject ~/workspace/notebooks/portfolio/projects/security
 
 
 python manage.py project --sql printall
 
 
-# personalinfos, education, ....
-
+# About me
 python manage.py resume --model PersonalInfo --sql printall
-
 python manage.py resume --model PersonalInfo --sql flush
+python manage.py resume --model PersonalInfo --sql printall
+
+python manage.py resume --model PersonalInfo --addresume ~/workspace/notebooks/portfolio/about.me/
 
 python manage.py resume --model PersonalInfo --sql printall
 
-python manage.py resume --model PersonalInfo --addresume ~/workspace/notebooks/portfolio/resume/
 
-python manage.py resume --model PersonalInfo --sql printall
- 
+#Education
+#python manage.py resume --model Education --sql printall
+#python manage.py resume --model Education --sql flush
+#python manage.py resume --model Education --sql printall
+
+#python manage.py resume --model Education --addresume ~/workspace/notebooks/portfolio/education
+
+#python manage.py resume --model Education --sql printall
