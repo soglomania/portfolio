@@ -1,20 +1,24 @@
 # Prometheus
 
-[Prometheus Metrics](local.sogloarcadius.xyz:9090/metrics)
+[Django Prometheus Metrics](http://sogloarcadius.xyz/monitoring/metrics)
 
-[Prometheus UI](local.sogloarcadius.xyz:9090)
+[Node-Exporter Prometheus Metrics](http://sogloarcadius.xyz:9100/metrics)
 
-[Prometheus Graph Dashbord using templating engine](local.sogloarcadius:9090/consoles/summary.html)
+[Prometheus Server Metrics](http://sogloarcadius.xyz:9090/metrics)
+
+[Prometheus UI](http://sogloarcadius.xyz:9090)
+
+[Prometheus Web Console](http://sogloarcadius.xyz:9090/consoles/summary.html)
 
 # Grafana Dashbord
 
-[Grafana Dashboard](local.sogloarcadius.xyz:3000)
+[Grafana Dashboard](http://sogloarcadius.xyz:3000)
 
-Credentials : admin/admin
+Default Credentials : admin/admin
 
 # ELK
 
-[Kibana Dashboard](http://local.sogloarcadius.xyz:5601)
+[Kibana Dashboard](http://sogloarcadius.xyz:5601)
 
 
 
