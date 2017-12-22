@@ -17,12 +17,6 @@ def index(request):
 
     return render(request, template_name, context)
 
-# to render robot.txt and human.txt (remove 'fr', 'en', 'es' from url )
-
-def home_files(request, filename):
-    return render(request, filename, {}, content_type="text/plain")
-
-
 #persist user language preference in cookie and redirect to home page
 
 def set_french(request):
@@ -43,8 +37,4 @@ def set_spanish(request):
     user_language = 'es'
     translation.activate(user_language)
     request.session[translation.LANGUAGE_SESSION_KEY] = user_language
-    return redirect('/')
-
-
-def handle_page_not_found_404(request):
     return redirect('/')

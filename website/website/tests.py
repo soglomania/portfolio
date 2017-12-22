@@ -23,20 +23,20 @@ class HomeTest(LiveServerTestCase):
  
     def test_home_title(self):
         activate('fr')
-        self.browser.get(self.get_full_url("index"))
-        self.assertIn("sogloarcadius", self.browser.title)
+        self.browser.get(self.get_full_url("home-index"))
+        self.assertIn("A propos", self.browser.title)
 	
-    # make sure that robot and human file accessible 
-    #due to language support django add locale code in url, 
-    # ( http://domain.com/robot.txt & http://domain.com/human.txt)
+    	
+    def test_uses_index_template(self):
+        activate('fr')
+        response = self.client.get(reverse("home-index"))
+        self.assertTemplateUsed(response, 'home/index.html')
 
+    # test to make sure that robot and human file accessible 
+    #due to language support django add locale code in url, 
+    # ( http://domain.com/robots.txt & http://domain.com/humans.txt)
     def test_search_engines_files(self):
         self.browser.get(self.live_server_url + "/robots.txt")
         self.assertNotIn("Not Found", self.browser.title)
         self.browser.get(self.live_server_url + "/humans.txt")
         self.assertNotIn("Not Found", self.browser.title)
-    	
-    def test_uses_index_template(self):
-        activate('fr')
-        response = self.client.get(reverse("index"))
-        self.assertTemplateUsed(response, 'home/index.html')

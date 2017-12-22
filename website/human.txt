@@ -1,7 +1,0 @@
-# Personal website
-
-Arcadius SOGLO -- Developer -- @soglomania
-
-# TECHNOLOGY COLOPHON
-    Django
-    Materialize CSS

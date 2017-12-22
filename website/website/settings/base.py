@@ -213,7 +213,7 @@ LOGGING = {
     'handlers': {
         # Only send to syslog info or higher
         'syslog': {
-            'level': 'INFO',
+            'level': 'DEBUG',
             'class': 'logging.handlers.SysLogHandler',
             'address': SYSLOG_ADDRESS,
             'filters': ['request_id'],

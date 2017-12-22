@@ -30,8 +30,8 @@ django-prometheus==1.0.9
 django-debug-toolbar==1.8
 
 #Tests
-selenium
-coverage
+selenium >= 3.5
+coverage >= 4.4.1
 
 #markdown to database scripts dep
 markdown-to-json==1.0.0

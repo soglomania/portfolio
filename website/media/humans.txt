@@ -1,0 +1,25 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+                                
+/* TEAM */
+                            
+Software Engineer: SOGLO Arcadius.                         
+Site: rtsoglo@gmail.com, soglomania.github.io                        
+Twitter: @sogloarcadius.                       
+Location: Rennes, FRANCE.
+                    
+/* THANKS */
+       
+Thank to django fondation for this amazing framework
+                                          
+/* SITE */
+
+Last update: 22/12/2017                             
+Standards: HTML5, CSS3, Python                            
+Components: Django, Materialize CSS.                            
+Software: @personalwebsite @portfolio
+    
+                        
+
+
+                    
