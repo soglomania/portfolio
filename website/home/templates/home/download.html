@@ -1,0 +1,40 @@
+{% extends "home/base.html" %}
+
+{% load staticfiles %}
+
+{% load i18n %}
+{% load markup_tags %}
+
+{% block title %} {% trans "About" %} {% endblock title %}
+{% block nav_about_class %} # {% endblock nav_about_class %}
+{% block nav_portfolio_class %}  #  {% endblock nav_portfolio_class %}
+{% block mobile_nav_about_class %}  #  {% endblock mobile_nav_about_class %}
+{% block mobile_nav_portfolio_class %}  #  {% endblock mobile_nav_portfolio_class %}
+{% block nav_download_class %} active {% endblock nav_download_class %} 
+{% block mobile_nav_download_class %} active {% endblock mobile_nav_download_class %} 
+
+{% block content %}
+  
+
+<div class="left section no-pad-bot" id="index-banner">
+</div>
+
+<div class="container">
+    <div class="section">
+        <div class="row">
+            <div class="col s12 m6 l3">
+                <div class="card z-depth-2 custom_card">
+                    <div class="card-image">
+                        <br>
+                        <img class="activator" src="{% static 'home/images/resume.svg' %}" width="75px" height="75px">
+                        <a target="_blank" class="btn-floating halfway-fab waves-effect waves-light green" href="{% trans 'https://www.dropbox.com/s/4zcmunb2uq8h77e/Resume_Arcadius_SOGLO_english.pdf?dl=0' %}"><i class="material-icons">cloud_download</i></a>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title center activator grey-text text-darken-4">{% trans "Resume" %}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

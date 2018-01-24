@@ -17,6 +17,12 @@ def index(request):
 
     return render(request, template_name, context)
 
+
+
+def download(request):
+    template_name ="home/download.html"
+    return render(request, template_name)
+
 #persist user language preference in cookie and redirect to home page
 
 def set_french(request):

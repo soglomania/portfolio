@@ -7,4 +7,6 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.index, name='home-index'),
+    url(r'^download$', views.download, name='download'),
+
 ]

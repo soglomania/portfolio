@@ -14,7 +14,7 @@ Thank to django fondation for this amazing framework
                                           
 /* SITE */
 
-Last update: 22/12/2017                             
+Last update: 24/01/2017                             
 Standards: HTML5, CSS3, Python                            
 Components: Django, Materialize CSS.                            
 Software: @personalwebsite @portfolio
