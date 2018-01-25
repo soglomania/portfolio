@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-24 17:01+0100\n"
+"POT-Creation-Date: 2018-01-25 10:12+0100\n"
 "PO-Revision-Date: 2017-07-03 20:19+0009\n"
 "Last-Translator: b'  <admin@admin.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,23 +28,21 @@ msgstr "Biografia"
 msgid "Projects"
 msgstr "Proyectos"
 
-#: home/templates/home/base.html:32
+#: home/templates/home/base.html:32 home/templates/home/base.html:58
 msgid "Downloads"
 msgstr "Descargar"
 
-#: home/templates/home/base.html:58
-msgid "Blog"
-msgstr "Blog"
+#: home/templates/home/download.html:28 home/templates/home/download.html:38
+msgid "Click to download"
+msgstr "Haz click para descargar"
 
-#: home/templates/home/download.html:29
-msgid ""
-"https://www.dropbox.com/s/4zcmunb2uq8h77e/Resume_Arcadius_SOGLO_english.pdf?"
-"dl=0"
-msgstr "https://www.dropbox.com/s/4zcmunb2uq8h77e/Resume_Arcadius_SOGLO_english.pdf?dl=0"
-
-#: home/templates/home/download.html:32
+#: home/templates/home/download.html:30 home/templates/home/download.html:40
 msgid "Resume"
 msgstr "Curriculum Vitae(CV)"
+
+#: home/templates/home/index.html:41
+msgid "View profile"
+msgstr "Ver el profil"
 
 #: portfolio/templates/portfolio/project_category.html:6
 #: portfolio/templates/portfolio/project_list.html:6
@@ -78,25 +76,3 @@ msgstr "Francés"
 #: website/settings/base.py:142
 msgid "Spanish"
 msgstr "Español"
-
-#~ msgid "Data Science"
-#~ msgstr "Ciencia de los Datos"
-
-#~ msgid "Connect"
-#~ msgstr "Redes sociales"
-
-#~ msgid "Email"
-#~ msgstr "Correo electronico"
-
-#~ msgid "Biography"
-#~ msgstr "Biografia"
-
-#~ msgid "Contact me"
-#~ msgstr "Escribeme !"
-
-#~ msgid ""
-#~ " Need some help for your project, please send me an email at <span class="
-#~ "\"black-text\">rtsoglo@gmail.com</span>and I will be glad to help you. "
-#~ msgstr ""
-#~ "Necesitas ayuda, escribeme a <span class=\"black-text\">rtsoglo@gmail."
-#~ "com</span> y sera un placer responderte."

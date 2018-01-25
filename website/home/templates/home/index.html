@@ -18,19 +18,36 @@
 <div class="left section no-pad-bot" id="index-banner">
 </div>
 
+
 <div class="container">
+  <div class="section">
+    <div class="card z-depth-2 custom_card">
+      <div class="card-image">
+        <img class="activator center" src="{% static 'home/images/me.jpg' %}">
+      </div>
+    </div>
+  </div>
+
+    <div class="section grey">
+      <div class="card-panel white">
+        <span class="black-text"> {{ personal_info.summary | apply_markup:"markdown" }} </span>
+      </div>
+      
+    </div>
+
     <div class="section">
-        <div class="row">
-          <br>
-          &nbsp;&nbsp;&nbsp; <img src="{% static 'home/images/me.jpg' %}" alt="" class="circle responsive-img profile_pic">
-          <div class="col s12 m12 l12 right alegreya">
-              <p class="flow-text">{{ personal_info.summary | apply_markup:"markdown" }}</p>
-          </div> 
+        <div class="chip">
+            <img src="{% static 'home/images/linkedin.svg' %}" alt="Linkedin">
+            <a target="_blank"  href="https://www.linkedin.com/in/arcadius-soglo-275bb180/">{% trans "View profile" %} </a>
         </div>
     </div>
+
 </div>
 
-<!--
+
+
+{% comment %}
+  
 <div class="container">
     <div class="section">
       <div class="col s12 m12 l12">
@@ -48,13 +65,15 @@
         </div>
       </div>
     
-      {% comment %}<div class="col s12 m12 l12">
+      <div class="col s12 m12 l12">
         <div class="video-container">
           <iframe width="853" height="480" src="{{personal_info.intro_url}}" frameborder="0" allowfullscreen></iframe>
         </div>
-      </div>{% endcomment %}
+      </div>
     </div>
 </div>
--->
+
+{% endcomment %}
+
 
 {% endblock content %}

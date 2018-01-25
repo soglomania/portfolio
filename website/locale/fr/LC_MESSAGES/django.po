@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-24 17:01+0100\n"
+"POT-Creation-Date: 2018-01-25 10:12+0100\n"
 "PO-Revision-Date: 2017-07-03 20:19+0009\n"
 "Last-Translator: b'  <admin@admin.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,23 +28,21 @@ msgstr "A propos"
 msgid "Projects"
 msgstr "Projets"
 
-#: home/templates/home/base.html:32
+#: home/templates/home/base.html:32 home/templates/home/base.html:58
 msgid "Downloads"
 msgstr "Téléchargements"
 
-#: home/templates/home/base.html:58
-msgid "Blog"
-msgstr "Blog"
+#: home/templates/home/download.html:28 home/templates/home/download.html:38
+msgid "Click to download"
+msgstr "Click pour télécharger"
 
-#: home/templates/home/download.html:29
-msgid ""
-"https://www.dropbox.com/s/4zcmunb2uq8h77e/Resume_Arcadius_SOGLO_english.pdf?"
-"dl=0"
-msgstr "https://www.dropbox.com/s/77ppoj3xld58nmw/Resume_Arcadius_SOGLO_french.pdf?dl=0"
-
-#: home/templates/home/download.html:32
+#: home/templates/home/download.html:30 home/templates/home/download.html:40
 msgid "Resume"
 msgstr "Curriculum Vitae(CV)"
+
+#: home/templates/home/index.html:41
+msgid "View profile"
+msgstr "Voir le profil"
 
 #: portfolio/templates/portfolio/project_category.html:6
 #: portfolio/templates/portfolio/project_list.html:6
@@ -78,26 +76,3 @@ msgstr "Français"
 #: website/settings/base.py:142
 msgid "Spanish"
 msgstr "Espagnol"
-
-#~ msgid "Data Science"
-#~ msgstr "Science des Données"
-
-#~ msgid "Connect"
-#~ msgstr "Réseaux Sociaux"
-
-#~ msgid "Email"
-#~ msgstr "Couriel"
-
-#~ msgid "Biography"
-#~ msgstr "Biographie"
-
-#~ msgid "Contact me"
-#~ msgstr "Comment m'écrire ?"
-
-#~ msgid ""
-#~ " Need some help for your project, please send me an email at <span class="
-#~ "\"black-text\">rtsoglo@gmail.com</span>and I will be glad to help you. "
-#~ msgstr ""
-#~ "Vous avez bésoin d'aide ?, alors n'hésitez pas à m'écrire à <span class="
-#~ "\"black-text\">rtsoglo@gmail.com</span> et je serai ravi de vous répondre "
-#~ "dans les plus bref délais."
