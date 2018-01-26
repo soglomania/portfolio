@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-25 10:12+0100\n"
+"POT-Creation-Date: 2018-01-26 16:43+0100\n"
 "PO-Revision-Date: 2017-07-03 20:19+0009\n"
 "Last-Translator: b'  <admin@admin.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,15 +20,18 @@ msgstr ""
 "X-Translated-Using: django-rosetta 0.7.13\n"
 
 #: home/templates/home/base.html:30 home/templates/home/base.html:56
-#: home/templates/home/download.html:8 home/templates/home/index.html:8
+#: home/templates/home/index.html:8
 msgid "About"
 msgstr "Biografia"
 
 #: home/templates/home/base.html:31 home/templates/home/base.html:57
+#: portfolio/templates/portfolio/project_category.html:6
+#: portfolio/templates/portfolio/project_list.html:6
 msgid "Projects"
 msgstr "Proyectos"
 
 #: home/templates/home/base.html:32 home/templates/home/base.html:58
+#: home/templates/home/download.html:8
 msgid "Downloads"
 msgstr "Descargar"
 
@@ -43,11 +46,6 @@ msgstr "Curriculum Vitae(CV)"
 #: home/templates/home/index.html:41
 msgid "View profile"
 msgstr "Ver el profil"
-
-#: portfolio/templates/portfolio/project_category.html:6
-#: portfolio/templates/portfolio/project_list.html:6
-msgid "Portfolio"
-msgstr "Portfolio"
 
 #: portfolio/templates/portfolio/project_category.html:22
 msgid "Software Development"
@@ -76,3 +74,4 @@ msgstr "Francés"
 #: website/settings/base.py:142
 msgid "Spanish"
 msgstr "Español"
+
