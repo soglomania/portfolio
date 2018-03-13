@@ -35,3 +35,6 @@ coverage >= 4.4.1
 
 #markdown to database scripts dep
 markdown-to-json==1.0.0
+
+
+jupyter

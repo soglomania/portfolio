@@ -10,6 +10,7 @@ RUN apt-get update && \
     apt-get upgrade -y && \ 	
     apt-get install -y \
 	git \
+	build-essential \
 	python3 \
 	python3-dev \
 	python3-setuptools \
@@ -37,6 +38,10 @@ COPY configuration/supervisor-app.conf /etc/supervisor/conf.d/
 
 # add (the rest of) our code
 COPY website /home/docker/code/website
+
+#RECREATE DATABASE
+COPY Makefile /home/docker/code
+RUN  cd /home/docker/code && make deploy-app
 
 # add configuration files
 COPY configuration/uwsgi_params /home/docker/code/uwsgi_params
