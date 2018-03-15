@@ -6,6 +6,7 @@ PORTFOLIO_DATA_DIR?=$(PWD)/data/portfolio
 PATH_TO_MANAGE_PY?=$(PWD)/website
 APP_CLUSTER?=app
 MONITORING_CLUSTER?=monitoring
+GRAFANA_SERVICE?=grafana
 
 deploy-app:
 	make makemigrations
@@ -24,6 +25,9 @@ start-app-cluster:
 start-monitoring-cluster:
 	sudo sysctl -w vm.max_map_count=262144 && \
 	sudo docker-compose up --build -d $(MONITORING_CLUSTER)
+
+start-grafana:
+	sudo docker-compose up --build -d $(GRAFANA_SERVICE)
 
 stop-cluster:
 	sudo docker-compose down --volumes
