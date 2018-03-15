@@ -16,8 +16,8 @@ deploy-app:
 makemigrations:
 	rm $(PATH_TO_MANAGE_PY)/db.sqlite && \
 	cd $(PATH_TO_MANAGE_PY) && \
-	python manage.py makemigrations && \
-	python manage.py migrate
+	python3 manage.py makemigrations && \
+	python3 manage.py migrate
 
 start-app-cluster:
 	sudo docker-compose up --build -d $(APP_CLUSTER)
