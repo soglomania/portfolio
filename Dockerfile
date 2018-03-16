@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:14.04
 
 LABEL maintainer.fullname="SOGLO Arcadius"
 LABEL maintainer.email="rtsoglo@gmail.com" 
@@ -11,7 +11,7 @@ RUN apt-get update && \
     apt-get install -y \
 	git \
 	build-essential \
-	python3 \
+	python3.4 \
 	python3-dev \
 	python3-setuptools \
 	python3-pip \

@@ -13,8 +13,10 @@ deploy-app:
 	make create-user
 	make reset-db
 
-makemigrations:
-	rm $(PATH_TO_MANAGE_PY)/db.sqlite && \
+delete-database: 
+	-rm $(PATH_TO_MANAGE_PY)/db.sqlite
+
+makemigrations: delete-database
 	cd $(PATH_TO_MANAGE_PY) && \
 	python3 manage.py makemigrations && \
 	python3 manage.py migrate
@@ -34,12 +36,12 @@ stop-cluster:
 
 
 clean-portfolio-data-dir:
-	-rm -rf $(PWD)/data 
+	-rm -rf $(PWD)/data/ 
 
 pull-portfolio-data: clean-portfolio-data-dir
 	mkdir -p data && cd data && \
-	git clone https://github.com/soglomania/notebooks && \
-	mv $(PWD)/data/notebooks/portfolio $(PWD)/data && rm -rf $(PWD)/data/notebooks
+	git clone https://github.com/soglomania/notebooks.git && \
+	mv $(PWD)/data/notebooks/portfolio/ $(PWD)/data/ && rm -rf $(PWD)/data/notebooks/
 
 create-user:
 	cd $(PATH_TO_MANAGE_PY) &&	python3 --version && pwd && echo "print all users" && \
@@ -55,7 +57,8 @@ create-user:
 	cd ../ && pwd
 
 reset-db: pull-portfolio-data
-	cd $(PATH_TO_MANAGE_PY) && python3 --version && \
+	cd $(PATH_TO_MANAGE_PY) && python3 --version && jupyter --version && \
+	echo "import tornado; print(tornado.version)" | python3 && \
 	python3 manage.py project --sql printall && \
 	python3 manage.py project --sql flush && \
 	python3 manage.py project --sql printall && \

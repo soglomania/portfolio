@@ -28,9 +28,11 @@ class Command(BaseCommand):
         )
 
     def convert_ipynb_file_to_markdown(self, fp):
+        self.stdout.write("convert_ipynb_file_to_markdown : File path specified is : %s" %fp)
         try :
             if fp.endswith(".ipynb") :
                 fname = os.path.realpath(fp)
+                self.stdout.write("convert_ipynb_file_to_markdown : File realpath specified is : %s" %fname)
                 os.system("jupyter nbconvert --to markdown {}".format(fname))
         except Exception as er:
             print(str(er))
@@ -58,17 +60,18 @@ class Command(BaseCommand):
 
     def parse_json_file(self, fp):
         
-        self.stdout.write('Start parsing the file')
+        self.stdout.write('parse_json_file : Start parsing the file')
+        self.stdout.write("parse_json_file : File path specified is : %s" %fp)
         file_content = ""
         try: 
             if os.path.isfile(fp) and fp.endswith(".md.json"):
-                self.stdout.write("File path specified is : %s" %fp)
+                self.stdout.write("parse_json_file : Correct File path specified is : %s" %fp)
                 with open(fp, "r+") as file_path:
                     file_content = json.load(file_path)
 
                     self.stdout.write(str(file_content.keys())) 
             else :
-                self.stdout.write("You should specify a real file path and json format expected")
+                self.stdout.write("parse_json_file : You should specify a real file path and json format expected")
 
         except Exception as er:
             self.stdout.write(str(er))
