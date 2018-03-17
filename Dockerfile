@@ -39,7 +39,7 @@ COPY configuration/supervisor-app.conf /etc/supervisor/conf.d/
 # add (the rest of) our code
 COPY website /home/docker/code/website
 
-#RECREATE DATABASE
+#UPDATE DATABASE
 COPY Makefile /home/docker/code
 RUN  cd /home/docker/code && make deploy-app
 
