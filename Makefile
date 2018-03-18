@@ -8,9 +8,11 @@ APP_CLUSTER?=app
 MONITORING_CLUSTER?=monitoring
 GRAFANA_SERVICE?=grafana
 
-deploy-app:
+reset-database:
+	make delete-database
 	make makemigrations
 	make create-user
+	make insert-rows-db
 
 delete-database: 
 	-rm $(PATH_TO_MANAGE_PY)/db.sqlite
@@ -56,7 +58,7 @@ create-user:
 	echo "import os; from django.contrib.auth.models import User; print(User.objects.all())" | python3 manage.py shell && \
 	cd ../ && pwd
 
-reset-db:
+insert-rows-db:
 	cd $(PATH_TO_MANAGE_PY) && python3 --version && jupyter --version && \
 	echo "import tornado; print(tornado.version)" | python3 && \
 	python3 manage.py project --sql printall && \

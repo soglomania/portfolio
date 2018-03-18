@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-26 16:43+0100\n"
+"POT-Creation-Date: 2018-03-18 16:28+0100\n"
 "PO-Revision-Date: 2017-07-03 20:19+0009\n"
 "Last-Translator: b'  <admin@admin.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,18 +19,15 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.7.13\n"
 
-#: home/templates/home/base.html:30 home/templates/home/base.html:56
+#: home/templates/home/base.html:30 home/templates/home/base.html:55
 #: home/templates/home/index.html:8
 msgid "About"
 msgstr "A propos"
 
-#: home/templates/home/base.html:31 home/templates/home/base.html:57
-#: portfolio/templates/portfolio/project_category.html:6
-#: portfolio/templates/portfolio/project_list.html:6
-msgid "Projects"
-msgstr "Projets"
+#: home/templates/home/base.html:31 home/templates/home/base.html:56
+msgid "Portfolio"
+msgstr "Portfolio"
 
-#: home/templates/home/base.html:32 home/templates/home/base.html:58
 #: home/templates/home/download.html:8
 msgid "Downloads"
 msgstr "Téléchargements"
@@ -43,9 +40,28 @@ msgstr "Click pour télécharger"
 msgid "Resume"
 msgstr "Curriculum Vitae(CV)"
 
-#: home/templates/home/index.html:41
-msgid "View profile"
-msgstr "Voir le profil"
+#: home/templates/home/index.html:32
+msgid "Hello."
+msgstr "Bonjour."
+
+#: home/templates/home/index.html:33
+msgid "I'm Arcadius SOGLO."
+msgstr "Je suis Arcadius SOGLO."
+
+#: home/templates/home/index.html:40
+msgid ""
+"https://www.dropbox.com/s/4zcmunb2uq8h77e/Resume_Arcadius_SOGLO_english.pdf?"
+"dl=0"
+msgstr "https://www.dropbox.com/s/77ppoj3xld58nmw/Resume_Arcadius_SOGLO_french.pdf?dl=0"
+
+#: home/templates/home/index.html:40
+msgid "Download CV"
+msgstr "Télécharger mon CV"
+
+#: portfolio/templates/portfolio/project_category.html:6
+#: portfolio/templates/portfolio/project_list.html:6
+msgid "Projects"
+msgstr "Projets"
 
 #: portfolio/templates/portfolio/project_category.html:22
 msgid "Software Development"
@@ -75,3 +91,5 @@ msgstr "Français"
 msgid "Spanish"
 msgstr "Espagnol"
 
+#~ msgid "View profile"
+#~ msgstr "Voir le profil"

@@ -27,27 +27,41 @@
       </div>
     </div>
   </div>
+  <div class="section grey">
+    <div class="card-panel white">
+      <span class="black-text"> {% trans "Hello." %}</span><br/><br/>
+      <span class="black-text"> {% trans "I'm Arcadius SOGLO." %}</span>
+      <span class="black-text"> {{ personal_info.summary | apply_markup:"markdown" }} </span>
+    </div>
+  </div>
 
-    <div class="section grey">
-      <div class="card-panel white">
-        <span class="black-text"> {{ personal_info.summary | apply_markup:"markdown" }} </span>
+  <div class="section">
+      <div class="center">
+        <a target="_blank" href="{% trans "https://www.dropbox.com/s/4zcmunb2uq8h77e/Resume_Arcadius_SOGLO_english.pdf?dl=0" %}"  class="white black-text waves-effect waves-light btn">{% trans "Download CV" %} </a>
       </div>
-      
+  </div>
+  <div class="section">
+    <div class="center">
+      <a target="_blank" href="https://www.linkedin.com/in/arcadius-soglo-275bb180/" class="white black-text waves-effect waves-light">
+          <i class="left"><img src="{% static 'home/images/linkedin.png' %}" width="32px" heigth="32px" alt="Linkedin"></i>
+      </a>
     </div>
-
-    <div class="section">
-        <div class="chip">
-            <img src="{% static 'home/images/linkedin.svg' %}" alt="Linkedin">
-            <a target="_blank"  href="https://www.linkedin.com/in/arcadius-soglo-275bb180/">{% trans "View profile" %} </a>
-        </div>
-    </div>
+  </div>
 
 </div>
 
+{% comment %} 
+  <div class="section">
+        <div class="chip">
+          <img src="{% static 'home/images/linkedin.svg' %}" alt="Linkedin">
+          <a target="_blank"  href="https://www.linkedin.com/in/arcadius-soglo-275bb180/">{% trans "View profile" %} </a>
+        </div>
+  </div>
+{% endcomment %}
 
 
 {% comment %}
-  
+   
 <div class="container">
     <div class="section">
       <div class="col s12 m12 l12">
@@ -73,7 +87,8 @@
     </div>
 </div>
 
-{% endcomment %}
+{% endcomment %} 
+
 
 
 {% endblock content %}

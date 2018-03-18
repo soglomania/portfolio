@@ -41,7 +41,7 @@ COPY website /home/docker/code/website
 
 #UPDATE DATABASE
 COPY Makefile /home/docker/code
-RUN  cd /home/docker/code && make deploy-app
+RUN  cd /home/docker/code
 
 # add configuration files
 COPY configuration/uwsgi_params /home/docker/code/uwsgi_params
