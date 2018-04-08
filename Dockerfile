@@ -1,28 +1,24 @@
-FROM ubuntu:14.04
+FROM alpine:3.6
 
 LABEL maintainer.fullname="SOGLO Arcadius"
 LABEL maintainer.email="rtsoglo@gmail.com" 
 
 
 # Install required packages and remove the apt packages cache when done.
+# --no-cache avoid the use of apk add --update and rm -rf /var/cache/apk/* at end
 
-RUN apt-get update && \
-    apt-get upgrade -y && \ 	
-    apt-get install -y \
+RUN apk --no-cache add \	
 	git \
-	build-essential \
-	python3.4 \
+	build-base \
+	python3 \
 	python3-dev \
-	python3-setuptools \
-	python3-pip \
+	py-setuptools \
+	py-pip \
 	nginx \
 	supervisor \
-	sqlite3 && \
-	pip3 install -U pip setuptools && \
-   rm -rf /var/lib/apt/lists/*
-
-# install uwsgi now because it takes a little while
-RUN pip3 install uwsgi
+	sqlite \ 
+	uwsgi-python3 && \
+	pip install --upgrade pip
 
 
 # COPY requirements.txt and RUN pip install BEFORE adding the rest of your code, this will cause Docker's caching mechanism
@@ -39,8 +35,7 @@ COPY configuration/supervisor-app.conf /etc/supervisor/conf.d/
 # add (the rest of) our code
 COPY website /home/docker/code/website
 
-#UPDATE DATABASE
-COPY Makefile /home/docker/code
+#Change working directory
 RUN  cd /home/docker/code
 
 # add configuration files
