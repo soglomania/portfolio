@@ -56,4 +56,4 @@ EXPOSE 80
 
 WORKDIR ${CODE_DIR}
 
-CMD ["/usr/bin/supervisord"]
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
