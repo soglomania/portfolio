@@ -20,7 +20,7 @@ Default Credentials : admin/admin
 
 [Kibana Dashboard](http://sogloarcadius.xyz:5601)
 
-# HTTPS
+# HTTPS CONFIGURATION STEPS
 
 ## Copy letsencrypt nginx files 
 
@@ -89,3 +89,18 @@ touch /docker/portfolio/volumes/dh-param/dhparam-2048.pem
 sudo openssl dhparam -out /docker/portfolio/volumes/dh-param/dhparam-2048.pem 2048
 
 ```
+
+## Add crontab to renew certificate
+
+``` 
+sudo crontab -e
+
+0 23 * * * docker run --rm -it --name certbot -v "/docker/portfolio/volumes/etc/letsencrypt:/etc/letsencrypt" -v "/docker/portfolio/volumes/var/lib/letsencrypt:/var/lib/letsencrypt" -v "/docker/portfolio/volumes/letsencrypt-data:/data/letsencrypt" -v "/docker/portfolio/volumes/var/log/letsencrypt:/var/log/letsencrypt" certbot/certbot renew --quiet
+```
+
+
+## Rate https configuration
+
+* [Security Headers](http://securityheaders.io)
+
+* [HTTPS Implementation Qualys. SSL Labs](http://ssllabs.com)
