@@ -5,6 +5,7 @@ EMAIL?=rtsoglo@gmail.com
 PORTFOLIO_DATA_DIR?=~/workspace/notebooks/portfolio
 PATH_TO_MANAGE_PY?=$(PWD)/website
 APP_CLUSTER?=app
+LETSENCRYPT_SERVICE?=letsencrypt
 MONITORING_CLUSTER?=monitoring
 GRAFANA_SERVICE?=grafana
 
@@ -31,6 +32,11 @@ start-monitoring-cluster:
 
 start-grafana:
 	sudo docker-compose up --build -d $(GRAFANA_SERVICE)
+
+start-letsencrypt:
+	mkdir -p /docker/portfolio/volumes/letsencrypt-data/ && \
+	cp $(PWD)/DockerImages/letsencrypt/index.html /docker/portfolio/volumes/letsencrypt-data/ && \
+	sudo docker-compose up --build -d $(LETSENCRYPT_SERVICE)
 
 stop-cluster:
 	sudo docker-compose down --volumes
@@ -77,5 +83,49 @@ insert-rows-db:
 
 
 
+create-certificate-staging: stop-cluster start-letsencrypt
+	sudo docker run -it --rm \
+	-v /docker/portfolio/volumes/etc/letsencrypt:/etc/letsencrypt \
+	-v /docker/portfolio/volumes/var/lib/letsencrypt:/var/lib/letsencrypt \
+	-v /docker/portfolio/volumes/letsencrypt-data:/data/letsencrypt \
+	-v "/docker/portfolio/volumes/var/log/letsencrypt:/var/log/letsencrypt" \
+	certbot/certbot \
+	certonly --webroot \
+	--register-unsafely-without-email --agree-tos \
+	--webroot-path=/data/letsencrypt \
+	--staging \
+	-d sogloarcadius.xyz -d www.sogloarcadius.xyz
 
+show-certificate-staging:
+	sudo docker run --rm -it --name certbot \
+	-v /docker/portfolio/volumes/etc/letsencrypt:/etc/letsencrypt \
+	-v /docker/portfolio/volumes/var/lib/letsencrypt:/var/lib/letsencrypt \
+	-v /docker/portfolio/volumes/letsencrypt-data:/data/letsencrypt \
+	certbot/certbot \
+	--staging \
+	certificates
 
+generate-dh-param-file:
+	mkdir -p /docker/portfolio/volumes/dh-param/ && \
+	touch /docker/portfolio/volumes/dh-param/dhparam-2048.pem && \
+	sudo openssl dhparam -out /docker/portfolio/volumes/dh-param/dhparam-2048.pem 2048
+
+create-certificate-production: generate-dh-param-file stop-cluster start-letsencrypt
+	sudo docker run -it --rm \
+	-v /docker/portfolio/volumes/etc/letsencrypt:/etc/letsencrypt \
+	-v /docker/portfolio/volumes/var/lib/letsencrypt:/var/lib/letsencrypt \
+	-v /docker/portfolio/volumes/letsencrypt-data:/data/letsencrypt \
+	-v "/docker/portfolio/volumes/var/log/letsencrypt:/var/log/letsencrypt" \
+	certbot/certbot \
+	certonly --webroot \
+	--email rtsoglo@gmail.com --agree-tos --no-eff-email \
+	--webroot-path=/data/letsencrypt \
+	-d sogloarcadius.xyz -d www.sogloarcadius.xyz
+
+show-certificate-production:
+	sudo docker run --rm -it --name certbot \
+	-v /docker/portfolio/volumes/etc/letsencrypt:/etc/letsencrypt \
+	-v /docker/portfolio/volumes/var/lib/letsencrypt:/var/lib/letsencrypt \
+	-v /docker/portfolio/volumes/letsencrypt-data:/data/letsencrypt \
+	certbot/certbot \
+	certificates
