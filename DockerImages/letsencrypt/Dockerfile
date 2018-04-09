@@ -2,8 +2,15 @@
 
 FROM nginx:latest
 
-ADD ./DockerImages/letsenscrypt/nginx.conf /etc/nginx/conf.d/default.conf
 
-ADD ./DockerImages/letsenscrypt/index.html /usr/share/nginx/html/index.html
+ENV CODE_DIR /usr/share/nginx/html
+
+#chown -R nginx:nginx ${CODE_DIR} \
+
+RUN mkdir -p ${CODE_DIR} && chmod 777 ${CODE_DIR}/ -R
+
+COPY ./DockerImages/letsencrypt/nginx.conf /etc/nginx/conf.d/
+
+COPY ./DockerImages/letsencrypt/index.html ${CODE_DIR}/
 
 EXPOSE 80

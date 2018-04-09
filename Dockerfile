@@ -52,15 +52,6 @@ COPY configuration/uwsgi.ini ${CODE_DIR}/uwsgi.ini
 # Collect static files and media
 RUN python3 ${CODE_DIR}/website/manage.py collectstatic --no-input
 
-
-# HTTPS
-ENV HTTPS_DIR /home/docker/code/website/static/.well-known/acme-challenge
-RUN mkdir -p ${HTTPS_DIR}}
-
-COPY  configuration/file1 ${HTTPS_DIR}}/file1
-COPY  configuration/file2 ${HTTPS_DIR}}/file2
-
-
 EXPOSE 80
 
 WORKDIR ${CODE_DIR}
