@@ -1,0 +1,6 @@
+
+TODO
+----
+
+* Write unit tests for model 
+* Write UI tests (ex : language selection) => selenium or robotframework
