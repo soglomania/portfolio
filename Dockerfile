@@ -26,6 +26,7 @@ ENV CODE_DIR /home/docker/code
 
 RUN mkdir -p ${CODE_DIR}/ && \
 	chown -R nginx:nginx ${CODE_DIR} \
+	&& chmod 777 ${CODE_DIR}/ \
 	&& chmod 777 /run/ -R \
 	&& chmod 777 /root/ -R
 
