@@ -53,6 +53,9 @@ COPY configuration/uwsgi.ini ${CODE_DIR}/uwsgi.ini
 # Collect static files and media
 RUN python3 ${CODE_DIR}/website/manage.py collectstatic --no-input
 
+# Change owner of ${CODE_DIR}
+RUN chown -R nginx:nginx ${CODE_DIR}/
+
 EXPOSE 80
 
 WORKDIR ${CODE_DIR}
