@@ -25,11 +25,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 SECRET_KEY = 'e@%sr&2vnk)+7urrm-urn@j$v%3kem6*vyjjj+w8sdey95gad$'
 
 
-# CSRF_COOKIE_SECURE = True
-# SESSION_COOKIE_SECURE = True
-# SECURE_BROWSER_XSS_FILTER = True
-# SECURE_CONTENT_TYPE_NOSNIFF = True
-
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_SSL_REDIRECT = True
+SECURE_PROXY_SSL_HEADER = True
 
 ADMINS = [('admin', 'rtsoglo@gmail.com'), ('sogloarcadius', 'sogloarcadius@yahoo.fr')]
 
