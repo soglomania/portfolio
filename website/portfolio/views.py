@@ -14,12 +14,6 @@ from .models import Project
 
 
 
-class ProjectCategoryView(generic.base.TemplateView):
-    template_name = 'portfolio/project_category.html'
-
-
-
-
 class ProjectListView(generic.ListView):
     template_name='portfolio/project_list.html'
     context_object_name = 'all_projects'

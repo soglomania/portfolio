@@ -1,85 +1,98 @@
-{% extends "home/base.html" %}
+{% extends "home/base.html" %} {% load i18n %} {% load markup_tags %} {% block title %} {% trans "Projects" %} {% endblock
+title %} {% block nav_about_class %} # {% endblock nav_about_class %} {% block nav_portfolio_class %} active {% endblock
+nav_portfolio_class %} {% block mobile_nav_about_class %} # {% endblock mobile_nav_about_class %} {% block mobile_nav_portfolio_class
+%} active {% endblock mobile_nav_portfolio_class %} {% block content %}
+<div class="section no-pad-bot center" id="index-banner">
 
-{% load i18n %}
-{% load markup_tags %}
-
-{% block title %} {% trans "Projects" %} {% endblock title %}
-{% block nav_about_class %} #  {% endblock nav_about_class %}
-{% block nav_portfolio_class %}  active  {% endblock nav_portfolio_class %}
-{% block mobile_nav_about_class %}  #  {% endblock mobile_nav_about_class %}
-{% block mobile_nav_portfolio_class %}  active  {% endblock mobile_nav_portfolio_class %}
-
-
-{% block searchbar %}
-    <!--
-    {% csrf_token %}
-    <form class="" id="searchform" action="{% url 'project-list' %}" method="get" accept-charset="utf-8"> 
-        <div class="input-field col s6">
-            <i class="material-icons prefix">search</i>
-            <input class="input-field" id="searchbox" name="q" type="text" value="{% if request.GET.q %} {{ request.GET.q }} {% else %} Search {% endif %} ">
-        </div>
-    </form>
-    -->
-{% endblock searchbar %}
-
-
-{% block content %}
     <div class="section no-pad-bot center" id="index-banner">
-            <div class="chip">
-                    {% if request.GET.q %} {{ request.GET.q }} {% else %}{% endif %}
-                    <a class="" href="{% url 'project-category' %}" title="Go back to project category"><i class="close material-icons">close</i></a>     
-            </div>
-        <!--<p class=" chip center">{% if request.GET.q %} {{ request.GET.q }} {% else %}{% endif %}</p>
-        <p><a class="btn btn-floating center black" href="{% url 'project-category' %}" title="Go back to project category"><i class="material-icons">close</i></a></p>  -->     
-    </div>          
+        <div class="chip ">
+            <i class="material-icons">filter_list</i>
+            {% if request.GET.q %} {{ request.GET.q }} {% else %} all {% endif %}
+        </div>
+    </div>
+    </br>
 
-    <div class="container">
-        <div class="section">
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col l3 m3 s12">
+            <div class="card z-depth-2">
+                <div class="">
+                    <h3 class="card-title grey lighten-2 center">
+                        <i class="material-icons">filter_list</i> {% trans "Filter List" %}
+                    </h3>
+                </div>
+                <div class="card-content">
+                    <div class="">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <p>
+                                    <span>
+                                        <i class="material-icons">filter_list</i>
+                                        <a class="black-text" href="{% url 'project-list'%}">{% trans "All" %}</a>
+                                    </span>
+                                </p>
+                                <p>
+                                    <span>
+                                        <i class="material-icons">filter_list</i>
+                                        <a class="black-text" href="{% url 'project-list'%}?q=software_development">{% trans "Software Development" %}</a>
+                                    </span>
+                                </p>
+                                <p>
+                                    <span>
+                                        <i class="material-icons">filter_list</i>
+                                        <a class="black-text" href="{% url 'project-list'%}?q=data_science">{% trans "Artificial Intelligence" %}</a>
+                                    </span>
+                                </p>
+                                <p>
+                                    <span>
+                                        <i class="material-icons">filter_list</i>
+                                        <a class="black-text" href="{% url 'project-list'%}?q=security">{% trans "Security" %}</a>
+                                    </span>
+                                </p>
+                                <p>
+                                    <span>
+                                        <i class="material-icons">filter_list</i>
+                                        <a class="black-text" href="{% url 'project-list'%}?q=computer_network">{% trans "Computer Network" %}</a>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col l9 m9 s12">
+
             <div class="row">
                 {% for project in all_projects %}
-                <div class="col s12 m6 l3">
-                    <div class="card z-depth-2 custom_card">
+                <div class="col m4 s12">
+
+                    <div class="card z-depth-2 animated rotateIn animation-delay-7 ">
                         <div class="card-image">
                             <img class="activator" src="/media/projects/{{project.icon}}" width="75px" height="75px">
-                            <a class="btn-floating halfway-fab waves-effect waves-light green" href="{% url 'project-detail' project.pk %}"><i class="material-icons">zoom_in</i></a>
+                            <a class="btn-floating halfway-fab waves-effect waves-light green" href="{% url 'project-detail' project.pk %}">
+                                <i class="material-icons">zoom_in</i>
+                            </a>
                         </div>
                         <div class="card-content">
                             <!--<br>-->
                             <span class="card-title activator grey-text text-darken-4">{{project.title}}</span>
                         </div>
                         <div class="card-reveal">
-                            <span class="card-title grey-text text-darken-4">{{project.title}}<i class="material-icons right">close</i></span>
-                            <p>{{ project.summary | apply_markup:"markdown"  }}</p>
+                            <span class="card-title grey-text text-darken-4">{{project.title}}
+                                <i class="material-icons right">close</i>
+                            </span>
+                            <p>{{ project.summary | apply_markup:"markdown" }}</p>
                         </div>
                     </div>
                 </div>
                 {% endfor %}
             </div>
         </div>
-
-        {% if is_paginated %}
-            <ul class="pagination">
-                {% if all_projects.has_previous %}
-                    <li><a href="?page={{ all_projects.previous_page_number }}"><li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li></a></li>
-                {% else %}
-                    <li class="disabled"><span><li class="waves-effect"><a href="#!"><i class="material-icons">chevron_left</i></a></li></span></li>
-                {% endif %}
-                {% for i in paginator.page_range %}
-                    {% if all_projects.number == i %}
-                        <li class="active"><a href="#!">{{ i }}</a></li>
-                    {% else %}
-                        <li class="waves-effect"><a href="?page={{ i }}">{{ i }}</a></li>
-                    {% endif %}
-                {% endfor %}
-                {% if all_projects.has_next %}
-                    <li class="waves-effect"><a href="?page={{ all_projects.next_page_number }}"><li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li></a></li>
-                {% else %}
-                    <li class="disabled"><span><li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li></span></li>
-                {% endif %}
-            </ul>
-        {% endif %}
     </div>
+</div>
 
 {% endblock content %}
-
-
