@@ -1,7 +1,14 @@
-{% extends "home/base.html" %} {% load i18n %} {% load markup_tags %} {% block title %} {% trans "Projects" %} {% endblock
-title %} {% block nav_about_class %} # {% endblock nav_about_class %} {% block nav_portfolio_class %} active {% endblock
-nav_portfolio_class %} {% block mobile_nav_about_class %} # {% endblock mobile_nav_about_class %} {% block mobile_nav_portfolio_class
-%} active {% endblock mobile_nav_portfolio_class %} {% block content %}
+{% extends "home/base.html" %} 
+{% load i18n %} 
+{% load markup_tags %} 
+{% block title %} {% trans "Projects" %} {% endblock title %} 
+
+{% block nav_about_class %} # {% endblock nav_about_class %} 
+{% block nav_portfolio_class %} active {% endblock nav_portfolio_class %} 
+{% block mobile_nav_about_class %} # {% endblock mobile_nav_about_class %} 
+{% block mobile_nav_portfolio_class %} active {% endblock mobile_nav_portfolio_class %} 
+
+{% block content %}
 <div class="section no-pad-bot center" id="index-banner">
 
     <div class="section no-pad-bot center" id="index-banner">
@@ -70,7 +77,7 @@ nav_portfolio_class %} {% block mobile_nav_about_class %} # {% endblock mobile_n
                 {% for project in all_projects %}
                 <div class="col m4 s12">
 
-                    <div class="card z-depth-2 animated rotateIn animation-delay-7 ">
+                    <div class="card z-depth-2 animated tada animation-delay-7 ">
                         <div class="card-image">
                             <img class="activator" src="/media/projects/{{project.icon}}" width="75px" height="75px">
                             <a class="btn-floating halfway-fab waves-effect waves-light green" href="{% url 'project-detail' project.pk %}">
