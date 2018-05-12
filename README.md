@@ -5,8 +5,8 @@ My personal website using Django framework
 
 # Technologies
 
-- Django framework
+- Django
 - Materialize CSS
 - Djangorestframework
-- Selenium
+- animate.css
 

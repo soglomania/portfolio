@@ -18,10 +18,10 @@ class PersonalInfo(models.Model):
     
     surname = models.CharField(max_length=25)
     firstname = models.CharField(max_length=25)
-    date_of_birth = models.DateField()
+    age = models.CharField(max_length=3)
     job_title = models.TextField()
     address = models.TextField()
-    phone_number = models.IntegerField()
+    phone_number = models.CharField(max_length=25)
     email = models.EmailField()
     summary = models.TextField()
     intro_url = models.URLField()

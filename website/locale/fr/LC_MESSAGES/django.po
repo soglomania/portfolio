@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-18 16:28+0100\n"
+"POT-Creation-Date: 2018-05-05 00:53+0200\n"
 "PO-Revision-Date: 2017-07-03 20:19+0009\n"
 "Last-Translator: b'  <admin@admin.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,77 +19,98 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.7.13\n"
 
-#: home/templates/home/base.html:30 home/templates/home/base.html:55
-#: home/templates/home/index.html:8
+#: home/templates/home/base.html:33 home/templates/home/base.html:58
+#: home/templates/home/index.html:8 home/templates/home/index.html:39
 msgid "About"
 msgstr "A propos"
 
-#: home/templates/home/base.html:31 home/templates/home/base.html:56
+#: home/templates/home/base.html:34 home/templates/home/base.html:59
 msgid "Portfolio"
 msgstr "Portfolio"
 
-#: home/templates/home/download.html:8
-msgid "Downloads"
-msgstr "Téléchargements"
+#: home/templates/home/index.html:49
+msgid "Social Networks"
+msgstr "Réseaux Sociaux"
 
-#: home/templates/home/download.html:28 home/templates/home/download.html:38
-msgid "Click to download"
-msgstr "Click pour télécharger"
+#: home/templates/home/index.html:62
+msgid "Top Skills"
+msgstr "Domaines de Compétence"
 
-#: home/templates/home/download.html:30 home/templates/home/download.html:40
+#: home/templates/home/index.html:67
+#: portfolio/templates/portfolio/project_list.html:44
+msgid "Software Development"
+msgstr "Développement Logiciel"
+
+#: home/templates/home/index.html:73
+#: portfolio/templates/portfolio/project_list.html:48
+msgid "Artificial Intelligence"
+msgstr "Intélligence Artificielle"
+
+#: home/templates/home/index.html:79
+#: portfolio/templates/portfolio/project_list.html:55
+msgid "Computer Network"
+msgstr "Réseaux"
+
+#: home/templates/home/index.html:90
+msgid "Contact"
+msgstr "Contact"
+
+#: home/templates/home/index.html:93
+msgid "Fullname"
+msgstr "Nom complet"
+
+#: home/templates/home/index.html:97
+msgid "Age"
+msgstr "Age"
+
+#: home/templates/home/index.html:101
+msgid "Email"
+msgstr "Email"
+
+#: home/templates/home/index.html:105
+msgid "Phone number"
+msgstr "Numéro de téléphone"
+
+#: home/templates/home/index.html:109
 msgid "Resume"
-msgstr "Curriculum Vitae(CV)"
+msgstr "CV"
 
-#: home/templates/home/index.html:32
-msgid "Hello."
-msgstr "Bonjour."
-
-#: home/templates/home/index.html:33
-msgid "I'm Arcadius SOGLO."
-msgstr "Je suis Arcadius SOGLO."
-
-#: home/templates/home/index.html:40
+#: home/templates/home/index.html:111
 msgid ""
 "https://www.dropbox.com/s/4zcmunb2uq8h77e/Resume_Arcadius_SOGLO_english.pdf?"
 "dl=0"
-msgstr "https://www.dropbox.com/s/77ppoj3xld58nmw/Resume_Arcadius_SOGLO_french.pdf?dl=0"
+msgstr ""
+"https://www.dropbox.com/s/77ppoj3xld58nmw/Resume_Arcadius_SOGLO_french.pdf?"
+"dl=0"
 
-#: home/templates/home/index.html:40
+#: home/templates/home/index.html:111
 msgid "Download CV"
-msgstr "Télécharger mon CV"
+msgstr "Télécharger CV"
 
-#: portfolio/templates/portfolio/project_category.html:6
 #: portfolio/templates/portfolio/project_list.html:6
 msgid "Projects"
 msgstr "Projets"
 
-#: portfolio/templates/portfolio/project_category.html:22
-msgid "Software Development"
-msgstr "Développement Logiciel"
+#: portfolio/templates/portfolio/project_list.html:32
+msgid "Filter List"
+msgstr "Filtre"
 
-#: portfolio/templates/portfolio/project_category.html:31
-msgid "Artificial Intelligence"
-msgstr "Intélligence Artificielle"
+#: portfolio/templates/portfolio/project_list.html:40
+msgid "All"
+msgstr "Tous"
 
-#: portfolio/templates/portfolio/project_category.html:41
+#: portfolio/templates/portfolio/project_list.html:52
 msgid "Security"
 msgstr "Sécurité"
 
-#: portfolio/templates/portfolio/project_category.html:51
-msgid "Computer Network"
-msgstr "Réseaux"
-
-#: website/settings/base.py:140
+#: website/settings/base.py:143
 msgid "English"
 msgstr "Anglais"
 
-#: website/settings/base.py:141
+#: website/settings/base.py:144
 msgid "French"
 msgstr "Français"
 
-#: website/settings/base.py:142
+#: website/settings/base.py:145
 msgid "Spanish"
 msgstr "Espagnol"
-
-#~ msgid "View profile"
-#~ msgstr "Voir le profil"

@@ -1,6 +1,16 @@
 version: '3'
 
 services:
+
+    #letsencrypt certificate issuer
+    letsencrypt:
+        build:
+            context: .
+            dockerfile: ./DockerImages/letsencrypt/Dockerfile
+        ports:
+            - "80:80"
+        volumes:
+            - /docker/portfolio/volumes/letsencrypt-data:/usr/share/nginx/html
     #syslog
     log:
         build:
@@ -26,7 +36,7 @@ services:
     grafana:
         image: grafana/grafana
         ports:
-            - "3000:3000"
+            - "2048:3000"
         depends_on:
             - metrics
 
@@ -60,10 +70,15 @@ services:
         build: .
         ports:
             - "80:80"
+            - "443:443"
         depends_on:
             - log
             - metrics
             - os-metrics
+        volumes:
+            - /docker/portfolio/volumes/dh-param/dhparam-2048.pem:/etc/ssl/certs/dhparam-2048.pem
+            - /docker/portfolio/volumes/etc/letsencrypt/live/sogloarcadius.xyz/fullchain.pem:/etc/letsencrypt/live/sogloarcadius.xyz/fullchain.pem
+            - /docker/portfolio/volumes/etc/letsencrypt/live/sogloarcadius.xyz/privkey.pem:/etc/letsencrypt/live/sogloarcadius.xyz/privkey.pem    
     
     monitoring:
         build : .
