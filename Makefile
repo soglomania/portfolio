@@ -1,19 +1,33 @@
 
-USERNAME?=sogloarcadius
-PASSWORD?=!AreYouAHacker!2018
-EMAIL?=rtsoglo@gmail.com
+USERNAME?=$(DJANGO_USERNAME)
+PASSWORD?=$(DJANGO_PASSWORD)
+EMAIL?=$(DJANGO_EMAIL)
+
 PORTFOLIO_DATA_DIR?=~/workspace/notebooks/portfolio
 PATH_TO_MANAGE_PY?=$(PWD)/website
 APP_CLUSTER?=app
-LETSENCRYPT_SERVICE?=letsencrypt
 MONITORING_CLUSTER?=monitoring
+LETSENCRYPT_SERVICE?=letsencrypt
 GRAFANA_SERVICE?=grafana
 
 reset-database:
+	make load-django-credentials
 	make delete-database
 	make makemigrations
 	make create-user
 	make insert-rows-db
+
+encrypt-django-credentials:
+	ansible-vault encrypt secrets.properties
+
+decrypt-django-credentials:
+	ansible-vault decrypt secrets.properties 
+
+load-django-credentials:
+	make decrypt-django-credentials
+	$(source secrets.properties)
+	make encrypt-django-credentials
+
 
 delete-database: 
 	-rm $(PATH_TO_MANAGE_PY)/db.sqlite
