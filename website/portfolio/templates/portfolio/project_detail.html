@@ -1,31 +1,29 @@
-{% extends "home/base.html" %}
 
-{% load i18n %}
-{% load markup_tags %}
+{% extends "portfolio/project_list.html" %}
 
+{% load markup_tags %} 
 
-{% block title %} {{project.title}} {% endblock title %}
-{% block nav_about_class %} #  {% endblock nav_about_class %}
-{% block nav_portfolio_class %}  active  {% endblock nav_portfolio_class %}
-{% block mobile_nav_about_class %}  #  {% endblock mobile_nav_about_class %}
-{% block mobile_nav_portfolio_class %}   active  {% endblock mobile_nav_portfolio_class %}
-
-
-{% block content %}
-
-    <div class="section no-pad-bot" id="index-banner"></div>
-
-    <div class="container">
-        <div class=" section">
-            <div class="row">
-                <div class="col s12 m12 l12 right alegreya">
-                    <p><a class="btn btn-floating right black" href="{% url 'project-list' %}" title="Go back to projects"><i class="material-icons">close</i></a></p>
-                    <h2 class="uppercase">{{ project.title}} </h2>
-                    <div class="center-align card card-content">{{ project.description | apply_markup:"markdown" }}</div>
-                    <br>
-                </div> 
+{% block index-banner %}
+    <div class="section no-pad-bot center" id="index-banner">
+        <div class="section no-pad-bot center" id="index-banner">
+            <div class="chip ">
+                <i class="material-icons">filter_list</i>
+                {{ project.title}}
             </div>
         </div>
     </div>
+{% endblock index-banner %}
 
-{% endblock content %}
+{% block rigth-to-filter %}
+            <div class=" section">
+                <div class="row">
+                    <div class="card col s12 m12 l12 right alegreya animated tada animation-delay-7 ">
+                        <p><a class="btn btn-floating right waves-effect waves-light black" href="{% url 'project-list' %}" title="Go back to projects"><i class="material-icons">close</i></a></p>
+                        <p><img class="left" src="/media/projects/{{project.icon}}" width="75px" height="75px"></p>
+                        <h2 class="center-align">{{project.title}} </h2>
+                        <div class="left-align card-content">{{ project.description | apply_markup:"markdown" }}</div>
+                        <br>
+                    </div> 
+                </div>
+            </div>
+{% endblock rigth-to-filter %}
