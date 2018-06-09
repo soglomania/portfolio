@@ -59,3 +59,69 @@ nav ul li:hover {
     width: 150px;
     height: 150px;
 }
+
+
+.nav-mobile-li
+{
+  background-color: lightgrey;
+  border-left: orange solid;
+  border-width: 3px;
+}
+
+.nav-mobile-pic {
+  height: 60px;
+  padding: 6px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.logo 
+{
+  height: 65px;
+  vertical-align: top;
+}
+
+.nav-language-selection 
+{
+  height: 20px;
+  vertical-align: middle;
+  padding-right: 10px;
+}
+
+.dropdown-content 
+{
+  background-color: lightgrey;
+  border-left: orange solid;
+  border-width: 3px;
+  padding: 0 !important;
+}
+
+.dropdown-content.row 
+{
+  overflow: visible;
+  width : 60%;
+  height: auto;
+}
+
+
+.vertical-tabs 
+{
+  background-color: lightgrey;
+  border-left: orange solid;
+  border-width: 2px;
+  padding: 0 !important;
+}
+.vertical-tabs li a 
+{
+  color: orange !important;
+}
+
+@media (max-width: 720px) 
+{
+  .logo
+  {
+    height: 55px;
+    vertical-align: middle;
+    margin-top: -3px;
+  }
+}

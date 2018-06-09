@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-05 00:46+0200\n"
+"POT-Creation-Date: 2018-06-09 03:15+0200\n"
 "PO-Revision-Date: 2017-07-03 20:19+0009\n"
 "Last-Translator: b'  <admin@admin.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,87 +19,44 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.7.13\n"
 
-#: home/templates/home/base.html:33 home/templates/home/base.html:58
-#: home/templates/home/index.html:8 home/templates/home/index.html:39
+#: home/templates/home/base.html:45 home/templates/home/base.html:88
+#: home/templates/home/index.html:8 home/templates/home/index.html:35
 msgid "About"
 msgstr "Biografia"
 
-#: home/templates/home/base.html:34 home/templates/home/base.html:59
-msgid "Portfolio"
-msgstr "Portfolio"
-
-#: home/templates/home/index.html:49
-msgid "Social Networks"
-msgstr "Redes Sociales"
-
-#: home/templates/home/index.html:62
-msgid "Top Skills"
-msgstr "Competencias"
-
-#: home/templates/home/index.html:67
-#: portfolio/templates/portfolio/project_list.html:44
-msgid "Software Development"
-msgstr "Desarollo de Software"
-
-#: home/templates/home/index.html:73
-#: portfolio/templates/portfolio/project_list.html:48
-msgid "Artificial Intelligence"
-msgstr "Intelligencia Artificial"
-
-#: home/templates/home/index.html:79
-#: portfolio/templates/portfolio/project_list.html:55
-msgid "Computer Network"
-msgstr "Redes de las computadoras"
-
-#: home/templates/home/index.html:90
-msgid "Contact"
-msgstr "Contactarme"
-
-#: home/templates/home/index.html:93
-msgid "Fullname"
-msgstr "Nombre completo"
-
-#: home/templates/home/index.html:97
-msgid "Age"
-msgstr "Edad"
-
-#: home/templates/home/index.html:101
-msgid "Email"
-msgstr "Correo electrónico"
-
-#: home/templates/home/index.html:105
-msgid "Phone number"
-msgstr "Numero de telefono"
-
-#: home/templates/home/index.html:109
-msgid "Resume"
-msgstr "CV"
-
-#: home/templates/home/index.html:111
-msgid ""
-"https://www.dropbox.com/s/4zcmunb2uq8h77e/Resume_Arcadius_SOGLO_english.pdf?"
-"dl=0"
-msgstr ""
-"https://www.dropbox.com/s/4zcmunb2uq8h77e/Resume_Arcadius_SOGLO_english.pdf?"
-"dl=0"
-
-#: home/templates/home/index.html:111
-msgid "Download CV"
-msgstr "Descargar CV"
-
-#: portfolio/templates/portfolio/project_list.html:6
+#: home/templates/home/base.html:46 home/templates/home/base.html:89
+#: portfolio/templates/portfolio/project_list.html:4
 msgid "Projects"
 msgstr "Proyectos"
 
-#: portfolio/templates/portfolio/project_list.html:32
+#: home/templates/home/index.html:54
+msgid "Top Skills"
+msgstr "Competencias"
+
+#: home/templates/home/index.html:60
+#: portfolio/templates/portfolio/project_list.html:56
+msgid "Software Development"
+msgstr "Desarollo de Software"
+
+#: home/templates/home/index.html:67
+#: portfolio/templates/portfolio/project_list.html:62
+msgid "Artificial Intelligence"
+msgstr "Intelligencia Artificial"
+
+#: home/templates/home/index.html:75
+#: portfolio/templates/portfolio/project_list.html:74
+msgid "Computer Network"
+msgstr "Redes de las computadoras"
+
+#: portfolio/templates/portfolio/project_list.html:40
 msgid "Filter List"
 msgstr "Filtrar"
 
-#: portfolio/templates/portfolio/project_list.html:40
+#: portfolio/templates/portfolio/project_list.html:50
 msgid "All"
 msgstr "Todos"
 
-#: portfolio/templates/portfolio/project_list.html:52
+#: portfolio/templates/portfolio/project_list.html:68
 msgid "Security"
 msgstr "Securidad"
 
@@ -115,3 +72,36 @@ msgstr "Francés"
 msgid "Spanish"
 msgstr "Español"
 
+#~ msgid "Portfolio"
+#~ msgstr "Portfolio"
+
+#~ msgid "Social Networks"
+#~ msgstr "Redes Sociales"
+
+#~ msgid "Contact"
+#~ msgstr "Contactarme"
+
+#~ msgid "Fullname"
+#~ msgstr "Nombre completo"
+
+#~ msgid "Age"
+#~ msgstr "Edad"
+
+#~ msgid "Email"
+#~ msgstr "Correo electrónico"
+
+#~ msgid "Phone number"
+#~ msgstr "Numero de telefono"
+
+#~ msgid "Resume"
+#~ msgstr "CV"
+
+#~ msgid ""
+#~ "https://www.dropbox.com/s/4zcmunb2uq8h77e/Resume_Arcadius_SOGLO_english."
+#~ "pdf?dl=0"
+#~ msgstr ""
+#~ "https://www.dropbox.com/s/4zcmunb2uq8h77e/Resume_Arcadius_SOGLO_english."
+#~ "pdf?dl=0"
+
+#~ msgid "Download CV"
+#~ msgstr "Descargar CV"

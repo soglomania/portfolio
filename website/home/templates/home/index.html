@@ -18,8 +18,6 @@
 <div class="left section no-pad-bot" id="index-banner">
 </div>
 
-
-
 <div class="container">
 <div class="section">
 
@@ -28,10 +26,8 @@
     <div class="col l4">
       <div class="row">
         <div class="col l12 m12 s12">
-          <div class="card animated fadeInUp animation-delay-7">
+          <div class="animated fadeInUp animation-delay-7">
             <div class="">
-              </br>
-              </br>
               <p class="activator center">
                 <img src="{% static 'home/images/me.jpg' %}" alt="" class="circle responsive-img">
               </p>
@@ -43,81 +39,47 @@
             </div>
           </div>  
         </div>
-
         <div class="col l12 m12 s12">
-            <div class="card-panel white animated fadeInRight animation-delay-7">
-                <h5 class="card-title">{% trans "Social Networks" %}</h3>
-                </br>
+            <div class="center-align animated fadeInRight animation-delay-7">
                 <a target="_blank" href="https://www.linkedin.com/in/arcadius-soglo-275bb180/" title="Linkedin"><i>  <img src="{% static 'home/images/linkedin.png' %}" width="32px" heigth="32px" alt="Linkedin"></i></a></li>&nbsp;&nbsp;&nbsp; 
                 <a target="_blank" href="https://github.com/soglomania" title="Github"><i><img width="32px" heigth="32px" src="{% static 'home/images/github.svg' %}"></i></a>&nbsp;&nbsp;
                 <a target="_blank" href="https://soglomania.blogspot.ie/" title="Blogger"><i><img width="32px" heigth="32px" src="{% static 'home/images/blogger.png' %}"></i></a>&nbsp;&nbsp;                    
             </div>
-      </div>  
+        </div>  
+      </div>
     </div>
-    </div>
-
     <div class="col l8 m12 s12">
-        <div class="card animated fadeInUp" id="skills">
-            <div class="card-content">
-              <h3 class="center-align">{% trans "Top Skills" %}</h3>
+        <div class="animated fadeInUp" id="skills">
+            <div class="">
+              <h2 class="center-align">{% trans "Top Skills" %}</h2>
               <div class="row">
                 <div class="col l12 m12 s12">
                   <div class="center-align">
-                    <div class="circle"></div>
-                    <h4 class="center-align">{% trans "Software Development" %}</h4>
+                      <div class="circle"><img src="{% static 'home/images/software_dev.png' %}" alt="" class="circle responsive-img">
+                      </div>
+                    <h5 class="center-align">{% trans "Software Development" %}</h5>
                   </div>
-                </div>
+                  <br/>
                 <div class="col l12 m12 s12">
                   <div class="center-align">
-                    <div class="circle"></div>
-                    <h4 class="center-align">{% trans "Artificial Intelligence" %}</h4>
+                    <div class="circle"><img src="{% static 'home/images/ai.png' %}" alt="" class="circle responsive-img">
+                    </div>
+                    <h5 class="center-align">{% trans "Artificial Intelligence" %}</h5>
                   </div>
                 </div>
+                <br/>
                 <div class="col l12 m12 s12">
                   <div class="center-align">
-                    <div class="circle"></div>
-                    <h4 class="center-align">{% trans "Computer Network" %}</h4>
+                    <div class="circle"><img src="{% static 'home/images/computer_network.png' %}" alt="" class="circle responsive-img" width="400px" height="400px">
+                    </div>
+                    <h5 class="center-align">{% trans "Computer Network" %}</h5>
                   </div>
                 </div>
-               
+               </div> 
               </div>
             </div>
         </div>
     </div>
-
-    <div class="col l8 m12 s12">
-        <div class="card-panel white animated fadeInRight animation-delay-7">
-            <h5 class="card-title">{% trans "Contact" %}</h3>
-            <table class="table table-no-border table-striped">
-              <tr>
-                <th><i class=""></i>{% trans "Fullname" %}</th>
-                <td>{{ personal_info.firstname }} {{ personal_info.surname }} </td>
-              </tr>
-              <tr>
-                  <th><i class=""></i>{% trans "Age" %}</th>
-                  <td>{{ personal_info.age }}</td>
-              </tr>
-              <tr>
-                <th><i class=""></i>{% trans "Email" %} </th>
-                <td><a href="mailto:{{personal_info.email}}">{{ personal_info.email }}</a></td>
-              </tr>
-              <tr>
-                  <th><i class=""></i>{% trans "Phone number" %} </th>
-                  <td><a href="#">{{ personal_info.phone_number}}</a></td>
-              </tr>  
-              <tr>
-                  <th><i class=""></i>{% trans "Resume" %} </th>
-                  <td>
-                    <a target="_blank" href="{% trans 'https://www.dropbox.com/s/4zcmunb2uq8h77e/Resume_Arcadius_SOGLO_english.pdf?dl=0' %}" class="white black-text waves-effect waves-light btn"><i class="material-icons">file_download</i> {% trans "Download CV" %} </a>
-                    
-                  </td>
-              </tr>
-            </table>
-        </div>
-    </div>
-
-   
-
     
   </div>
 </div>
