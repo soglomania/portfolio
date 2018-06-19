@@ -33,18 +33,13 @@
             <a id="logo-container" href="#" class="brand-logo center">
               <img alt="SOGLO Arcadius" class="logo" src="{% static 'home/images/favicon.ico' %}">
             </a>
-            <ul class="hide-on-med-and-down right">
+            <ul class="hide-on-med-and-down left">
                 <li>
                   <a href="" class=" dropdown-button" data-activates="services-dropdown" title="change language"><img alt="browser language" src="{% static 'home/images/worlwide.png' %}" class="nav-language-selection">
                   </a>             
                 </li>
             </ul>
             <a href="#" alt="menu" data-activates="slide-out" class="button-collapse"><i class=" black-text material-icons">menu</i></a>
-    
-            <ul class="hide-on-med-and-down left">
-                <li class="{% block nav_about_class %} # {% endblock nav_about_class %}"><a class="center-align black-text" href="{% url 'home-index' %}" >{% trans "About" %}</a></li>
-                <li class="{% block nav_portfolio_class %}  #  {% endblock nav_portfolio_class %}"><a class="center-align black-text" href="{% url 'project-list' %}">{% trans "Projects" %} </a></li>
-            </ul>
           </div>
         </nav>
       </div>
@@ -82,13 +77,6 @@
               </li>
             </ul>
           </li>
-
-          <li class="no-padding nav-mobile-li">
-                    <ul>
-                        <li class="{% block mobile_nav_about_class %}  #  {% endblock mobile_nav_about_class %}"><a class="white left-align black-text"  href="{% url 'home-index' %}">{% trans "About" %}</a></li>
-                        <li class="{% block mobile_nav_portfolio_class %}  #  {% endblock mobile_nav_portfolio_class %}"><a class="white left-align black-text"  href="{% url 'project-list' %}">{% trans "Projects" %}</a></li>
-                    </ul>
-            </li>
       </ul>
   </div> 
   

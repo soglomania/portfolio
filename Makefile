@@ -11,10 +11,10 @@ LETSENCRYPT_SERVICE?=letsencrypt
 GRAFANA_SERVICE?=grafana
 
 reset-database:
-	make load-django-credentials
-	make delete-database
-	make makemigrations
-	make create-user
+	make load-django-credentials && \
+	make delete-database && \
+	make makemigrations && \
+	make create-user && \
 	make insert-rows-db
 
 encrypt-django-credentials:
