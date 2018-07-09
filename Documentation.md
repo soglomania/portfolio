@@ -1,24 +1,24 @@
 # Prometheus
 
-[Django Prometheus Metrics](http://sogloarcadius.xyz/monitoring/metrics)
+[Django Prometheus Metrics](http://sogloarcadius.com/monitoring/metrics)
 
-[Node-Exporter Prometheus Metrics](http://sogloarcadius.xyz:9100/metrics)
+[Node-Exporter Prometheus Metrics](http://sogloarcadius.com:9100/metrics)
 
-[Prometheus Server Metrics](http://sogloarcadius.xyz:9090/metrics)
+[Prometheus Server Metrics](http://sogloarcadius.com:9090/metrics)
 
-[Prometheus UI](http://sogloarcadius.xyz:9090)
+[Prometheus UI](http://sogloarcadius.com:9090)
 
-[Prometheus Web Console](http://sogloarcadius.xyz:9090/consoles/summary.html)
+[Prometheus Web Console](http://sogloarcadius.com:9090/consoles/summary.html)
 
 # Grafana Dashbord
 
-[Grafana Dashboard](http://sogloarcadius.xyz:3000)
+[Grafana Dashboard](http://sogloarcadius.com:3000)
 
 Default Credentials : admin/admin
 
 # ELK
 
-[Kibana Dashboard](http://sogloarcadius.xyz:5601)
+[Kibana Dashboard](http://sogloarcadius.com:5601)
 
 # HTTPS CONFIGURATION STEPS
 
@@ -41,7 +41,7 @@ certonly --webroot \
 --register-unsafely-without-email --agree-tos \
 --webroot-path=/data/letsencrypt \
 --staging \
--d sogloarcadius.xyz -d www.sogloarcadius.xyz
+-d sogloarcadius.com -d www.sogloarcadius.com
 ```
 
 ## Get information about certificate
@@ -76,7 +76,7 @@ certbot/certbot \
 certonly --webroot \
 --email rtsoglo@gmail.com --agree-tos --no-eff-email \
 --webroot-path=/data/letsencrypt \
--d sogloarcadius.xyz -d www.sogloarcadius.xyz
+-d sogloarcadius.com -d www.sogloarcadius.com
 
 ```
 
