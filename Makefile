@@ -49,7 +49,6 @@ start-grafana:
 
 start-letsencrypt:
 	sudo mkdir -p /docker/portfolio/volumes/letsencrypt-data/ && \
-	sudo cp $(PWD)/DockerImages/letsencrypt/index.html /docker/portfolio/volumes/letsencrypt-data/ && \
 	sudo docker-compose up --build -d $(LETSENCRYPT_SERVICE)
 
 stop-cluster:
