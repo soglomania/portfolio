@@ -120,8 +120,8 @@ show-certificate-staging:
 	certificates
 
 generate-dh-param-file:
-	mkdir -p /docker/portfolio/volumes/dh-param/ && \
-	touch /docker/portfolio/volumes/dh-param/dhparam-2048.pem && \
+	sudo mkdir -p /docker/portfolio/volumes/dh-param/ && \
+	sudo touch /docker/portfolio/volumes/dh-param/dhparam-2048.pem && \
 	sudo openssl dhparam -out /docker/portfolio/volumes/dh-param/dhparam-2048.pem 2048
 
 create-certificate-production: generate-dh-param-file stop-cluster start-letsencrypt
