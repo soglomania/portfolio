@@ -2,7 +2,7 @@ FROM alpine:3.6
 
 RUN apk add --update syslog-ng
 
-ADD ./DockerImages/log/syslog-ng.conf /etc/syslog-ng/syslog-ng.conf
+ADD ./docker/log/syslog-ng.conf /etc/syslog-ng/syslog-ng.conf
 
 EXPOSE 514/tcp 514/udp
 

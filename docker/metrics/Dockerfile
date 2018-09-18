@@ -1,11 +1,11 @@
 FROM prom/prometheus:v1.8.0
 
 
-ADD ./DockerImages/metrics/prometheus.yml /etc/prometheus/prometheus.yml
-ADD ./DockerImages/metrics/django.rules /etc/prometheus/django.rules
+ADD ./docker/metrics/prometheus.yml /etc/prometheus/prometheus.yml
+ADD ./docker/metrics/django.rules /etc/prometheus/django.rules
 
 # Consoles can be found in localhost:9090/consoles/summary.html
-ADD ./DockerImages/metrics/consoles/summary.html  /usr/share/prometheus/consoles/
+ADD ./docker/metrics/consoles/summary.html  /usr/share/prometheus/consoles/
 
 ENTRYPOINT []
 

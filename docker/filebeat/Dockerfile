@@ -25,12 +25,12 @@ RUN curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-${
 ### configure Filebeat
 
 # config file
-ADD ./DockerImages/filebeat/filebeat.yml /etc/filebeat/filebeat.yml
+ADD ./docker/filebeat/filebeat.yml /etc/filebeat/filebeat.yml
 RUN chmod 644 /etc/filebeat/filebeat.yml
 
 # CA cert
 RUN mkdir -p /etc/pki/tls/certs
-ADD ./DockerImages/filebeat/logstash-beats.crt /etc/pki/tls/certs/logstash-beats.crt
+ADD ./docker/filebeat/logstash-beats.crt /etc/pki/tls/certs/logstash-beats.crt
 
 
 
@@ -38,6 +38,6 @@ ADD ./DockerImages/filebeat/logstash-beats.crt /etc/pki/tls/certs/logstash-beats
 #                                    START
 ###############################################################################
 
-ADD ./DockerImages/filebeat/start.sh /usr/local/bin/start.sh
+ADD ./docker/filebeat/start.sh /usr/local/bin/start.sh
 RUN chmod +x /usr/local/bin/start.sh
 CMD [ "/usr/local/bin/start.sh" ]

@@ -6,7 +6,7 @@ services:
     letsencrypt:
         build:
             context: .
-            dockerfile: ./DockerImages/letsencrypt/Dockerfile
+            dockerfile: ./docker/letsencrypt/Dockerfile
         ports:
             - "80:80"
         volumes:
@@ -15,7 +15,7 @@ services:
     log:
         build:
             context: .
-            dockerfile: ./DockerImages/log/Dockerfile
+            dockerfile: ./docker/log/Dockerfile
         volumes :
             - /var/log:/var/log/
     
@@ -23,7 +23,7 @@ services:
     metrics:
         build:
           context: .
-          dockerfile: ./DockerImages/metrics/Dockerfile
+          dockerfile: ./docker/metrics/Dockerfile
         ports:
             - "9090:9090"
     
@@ -44,7 +44,7 @@ services:
     elk:
         build:
             context: .
-            dockerfile: ./DockerImages/elk/Dockerfile
+            dockerfile: ./docker/elk/Dockerfile
         ports:
             - "5601:5601"
             - "9200:9200"
@@ -58,7 +58,7 @@ services:
     filebeat:
         build:
           context: .
-          dockerfile: ./DockerImages/filebeat/Dockerfile
+          dockerfile: ./docker/filebeat/Dockerfile
         volumes :
             - /var/log/:/var/log/
         depends_on:
