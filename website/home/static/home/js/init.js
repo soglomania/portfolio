@@ -4,10 +4,9 @@
     $('select').material_select();
     $('.collapsible').collapsible();
     $('.materialboxed').materialbox();
+    $('.sidenav').sidenav();
   }); // end of document ready
 })(jQuery); // end of jQuery name space
-
-
 
 (function($){
   $(function(){
@@ -24,7 +23,8 @@
 }); // end of document ready
 })(jQuery); // end of jQuery name space
 
- $('.button-collapse').sideNav({
+
+$('.button-collapse').sideNav({
       menuWidth: 300, 
       edge: 'right', 
       closeOnClick: true,
@@ -33,3 +33,4 @@
       onClose: function(el) { }
  }
 );
+
