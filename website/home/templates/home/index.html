@@ -11,8 +11,14 @@
    <h5>{{ personal_info.full_name | apply_markup:"markdown" }}</h5>
 {% endblock fullname %}
 
+{% block fullname_mobile %}
+   <h5>{{ personal_info.full_name | apply_markup:"markdown" }}</h5>
+{% endblock fullname_mobile %}
 
 {% block job_title %}
    <span>{{ personal_info.job_title | apply_markup:"markdown" }}</span>
 {% endblock job_title %}
 
+{% block job_title_mobile %}
+   <span>{{ personal_info.job_title | apply_markup:"markdown" }}</span>
+{% endblock job_title_mobile %}
