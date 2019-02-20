@@ -31,13 +31,13 @@ django-prometheus==1.0.9
 django-debug-toolbar==1.8
 
 #Tests
-selenium >= 3.5
-coverage >= 4.4.1
+# selenium >= 3.5
+# coverage >= 4.4.1
 
 #markdown to database scripts dep
-markdown-to-json==1.0.0
+# markdown-to-json==1.0.0
 
 #jupyter 4.4 & 4.3 use tornado 4.5.3 
 # (function asyncio.ensure_future is not available in tornado==5.0
-jupyter
-tornado==4.5.3
+# jupyter
+# tornado==4.5.3
