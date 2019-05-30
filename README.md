@@ -1,7 +1,6 @@
-# Purpose
+# www.sogloarcadius.com
 
 My personal website using Django framework
-
 
 # Technologies
 
