@@ -108,7 +108,7 @@ create-certificate-staging: stop-cluster start-letsencrypt
 	--register-unsafely-without-email --agree-tos \
 	--webroot-path=/data/letsencrypt \
 	--staging \
-	-d sogloarcadius.xyz -d www.sogloarcadius.xyz
+	-d sogloarcadius.com -d www.sogloarcadius.com
 
 show-certificate-staging:
 	sudo docker run --rm -it --name certbot \
@@ -134,7 +134,7 @@ create-certificate-production: generate-dh-param-file stop-cluster start-letsenc
 	certonly --webroot \
 	--email rtsoglo@gmail.com --agree-tos --no-eff-email \
 	--webroot-path=/data/letsencrypt \
-	-d sogloarcadius.xyz -d www.sogloarcadius.xyz
+	-d sogloarcadius.com -d www.sogloarcadius.com
 
 show-certificate-production:
 	sudo docker run --rm -it --name certbot \
