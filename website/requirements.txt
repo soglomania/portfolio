@@ -1,5 +1,5 @@
 # Core
-django==1.11.23
+django==1.11.28
 
 # Model translations
 django-rosetta==0.7.13
