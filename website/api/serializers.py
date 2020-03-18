@@ -3,13 +3,11 @@ from portfolio.models import Project, PersonalInfo, Language, Education, Interes
 
 
 class ProjectSerializer(serializers.ModelSerializer):
-    
     class Meta:
         model = Project
         fields = '__all__'
 
 class PersonalInfoSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = PersonalInfo
         fields = '__all__'

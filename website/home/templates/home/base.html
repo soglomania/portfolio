@@ -4,7 +4,6 @@
 {% load i18n %}
 
 <head>
-
   <meta name="Author" content="SOGLO Arcadius">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
@@ -21,72 +20,113 @@
   <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans" rel="stylesheet"/> 
   <link rel="stylesheet" type="text/css" href="{% static 'home/css/style.css' %}" media="screen,projection"/>
   <link rel="icon" type="image/ico" href="{% static 'home/images/favicon.ico' %}">
-
 </head>
-
 
 <body>
 
-  <nav class="grey lighten-1" role="navigation">
-    <div class="nav-wrapper container">
-      <ul class="left hide-on-med-and-down">
-          <li class="{% block nav_about_class %} # {% endblock nav_about_class %}"><a href="{% url 'home-index' %}" >{% trans "About" %}</a></li>
-          <li class="{% block nav_portfolio_class %}  #  {% endblock nav_portfolio_class %}"><a href="{% url 'project-list' %}">{% trans "Portfolio" %} </a></li>
-      </ul>
-      <ul class='right hide-on-med-and-down'>
-          <!--<li><a href="#!"></a></li>-->
-          <li><a href="{% url 'set_english' %}"><i><img class="responsive-img" src="{% static 'home/images/en.png' %}"></i></a></li>          
-          <li class="divider"></li>
-          <li><a href="{% url 'set_french' %}"><i><img class="responsive-img" src="{% static 'home/images/fr.png' %}"></i></a></li>
-          <li class="divider"></li>          
-          <li><a href="{% url 'set_spanish' %}"><i><img class="responsive-img" src="{% static 'home/images/es.png' %}"></i></a></li>
-          <li class="divider"></li>          
-      </ul>
-      <ul class="right hide-on-med-and-down">
-          {% block searchbar %} {% endblock searchbar %}
-      </ul>
-
-      <ul id="nav-mobile" class="side-nav">
-          <div class="divider"></div>
-          <div class="section">
-            <li><a href="{% url 'set_french' %}" title="fr"><i><img class="responsive-img" src="{% static 'home/images/fr.png' %}"></i></a></li>
-            <li><a href="{% url 'set_english' %}" title="en"><i><img class="responsive-img" src="{% static 'home/images/en.png' %}"></i></a></li>
-            <li><a href="{% url 'set_spanish' %}" title="es"><i><img class="responsive-img" src="{% static 'home/images/es.png' %}"></i></a></li>
+  <ul id="slide-out" class="side-nav fixed">
+        <br/>
+        <li>
+          <div class="center-align">
+            <a href=""><img src="{% static 'home/images/me.jpg' %}" width="128px" heigth="128px" alt="" class="circle responsive-img" ></a>
           </div>
-          <div class="divider"></div>
-          <div class="section">
-            <li class="{% block mobile_nav_about_class %}  #  {% endblock mobile_nav_about_class %}"><a href="{% url 'home-index' %}">{% trans "About" %}</a></li>
-            <li class="{% block mobile_nav_portfolio_class %}  #  {% endblock mobile_nav_portfolio_class %}"><a href="{% url 'project-list' %}">{% trans "Portfolio" %} </a></li>
+        </li>
+        <li>
+          <div class="center-align">
+            <p></p>
           </div>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
-
-  <main class="grey lighten-5">
-    {% block content %}
-    {% endblock content %}
-  </main>
-
-  <footer class="page-footer grey lighten-1">
-    
-    <div class="container">
-      <div class="row">
-        <div class="left col l6 s6">
-            <br>
-            &copy; <span class="black-text text-lighten-3" >sogloarcadius</span>
+        </li>
+        <li><div class="divider"></div></li>
+        <li>
+          <div class="center-align">           
+              {% block fullname %}{% endblock fullname %}
           </div>
-        <div class="col l3">
+        </li>
+        <li>
+          <div class="center-align">
+            {% block job_title %}{% endblock job_title %}
+          </div>
+        </li>
+        <li><div class="divider"></div></li>
+        <li>
+          <div class="center-align">
+            <a href="{% url 'set_english' %}" style="font-weight: bolder" title="en"><img alt='en' src="{% static 'home/images/en.png' %}" class="nav-language-selection"></a>
+            <a href="{% url 'set_french' %}" style="font-weight: bolder" title="fr"><img alt='fr' src="{% static 'home/images/fr.png' %}" class="nav-language-selection"></a>
+            <a href="{% url 'set_spanish' %}" style="font-weight: bolder" title="es"><img alt='es' src="{% static 'home/images/es.png' %}" class="nav-language-selection"></a>
+          </div>
+        </li>     
+        <li><div class="divider"></div></li>
+        <br/>
+        <li>
+          <div class="center-align">
+            <a target="_blank" href="https://www.linkedin.com/in/arcadius-soglo-275bb180/" title="Linkedin">
+              <img src="{% static 'home/images/linkedin.png' %}" width="32px" heigth="32px" alt="Linkedin">
+            </a>
+            <a target="_blank" href="https://github.com/sogloarcadius" title="Github">
+              <img width="32px" heigth="32px" src="{% static 'home/images/github.svg' %}">
+            </a>
+            <a target="_blank" href="https://twitter.com/sogloarcadius" title="Twitter">
+              <img width="32px" heigth="32px" src="{% static 'home/images/twitter.png' %}">
+            </a>
+          </div>
+        </li>
+        
+  </ul>
+
+
+  <!-- Mobile devices -->
+  <ul class="hide-on-large-only">
+      <li>
+          <div class="center-align">
+            <a href="{% url 'set_english' %}" style="font-weight: bolder" title="en"><img alt='en' src="{% static 'home/images/en.png' %}" class="nav-language-selection"></a>
+            <a href="{% url 'set_french' %}" style="font-weight: bolder" title="fr"><img alt='fr' src="{% static 'home/images/fr.png' %}" class="nav-language-selection"></a>
+            <a href="{% url 'set_spanish' %}" style="font-weight: bolder" title="es"><img alt='es' src="{% static 'home/images/es.png' %}" class="nav-language-selection"></a>
+          </div>
+      </li>
+      <br/>
+      <li><div class="divider"></div></li>
+      <li>
+        <div class="nav-mobile-view center-align" style="background-color:white;">
+          <a href="#!about"><img class="circle nav-mobile-pic" src="{% static 'home/images/me.jpg' %}"></a>
         </div>
+      </li>
+      <li><div class="divider"></div></li>
+        <li>
+          <div class="center-align">           
+              {% block fullname_mobile %}{% endblock fullname_mobile %}
+          </div>
+        </li>
+        <li>
+          <div class="center-align">
+            {% block job_title_mobile %}{% endblock job_title_mobile %}
+          </div>
+        </li>
+      <li><div class="divider"></div></li>
+      <br/>
+      <li>
+        <div class="center-align">
+            <a target="_blank" href="https://www.linkedin.com/in/arcadius-soglo-275bb180/" title="Linkedin">
+              <img src="{% static 'home/images/linkedin.png' %}" width="32px" heigth="32px" alt="Linkedin">
+            </a>
+            <a target="_blank" href="https://github.com/sogloarcadius" title="Github">
+              <img width="32px" heigth="32px" src="{% static 'home/images/github.svg' %}">
+            </a>
+            <a target="_blank" href="https://twitter.com/sogloarcadius" title="Twitter">
+              <img width="32px" heigth="32px" src="{% static 'home/images/twitter.png' %}">
+            </a>
+        </div>
+      </li>
+  </ul>
 
-      </div>
-    </div>
-  </footer>
-
+  <!--  body content -->
+  <main class="main center-align">
+    <img src="http://chart.apis.google.com/chart?cht=map:fixed=-70,-180,80,180&chs=450x300&chf=bg,s,336699&chco=d0d0d0,cc0000&chd=s:9999999999999&chld=BJ|NE|MX|CU|US|VA|IT|IE|HU|FR|CZ|BE|AD" width="100%" height="100%" >
+  </main>
+  
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="{% static 'home/js/materialize.js' %}" ></script>
   <script src="{% static 'home/js/init.js' %}"></script>
 
-  </body>
+</body>
 </html>

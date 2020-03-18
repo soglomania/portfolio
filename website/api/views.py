@@ -1,8 +1,5 @@
-from django.shortcuts import get_list_or_404
-from django.http import HttpResponse
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import status
 from rest_framework_swagger.views import get_swagger_view
 
 from portfolio.models import Project, PersonalInfo, Language, Education, Interest, Job, Skill, Membership
@@ -20,8 +17,6 @@ class ProjectApiView(APIView):
         serializer = ProjectSerializer(projects, many=True)
         return Response(serializer.data)
         
-    def post(self):
-        pass
 
 
 class PersonalInfoApiView(APIView):
@@ -31,8 +26,6 @@ class PersonalInfoApiView(APIView):
         serializer = PersonalInfoSerializer(infos, many=True)
         return Response(serializer.data)
         
-    def post(self):
-        pass
 
 
 class LanguageApiView(APIView):
@@ -42,8 +35,6 @@ class LanguageApiView(APIView):
         serializer = LanguageSerializer(languages, many=True)
         return Response(serializer.data)
         
-    def post(self):
-        pass
 
 
 class InterestApiView(APIView):
@@ -53,8 +44,6 @@ class InterestApiView(APIView):
         serializer = InterestSerializer(interests, many=True)
         return Response(serializer.data)
         
-    def post(self):
-        pass
 
 
 class EducationApiView(APIView):
@@ -64,8 +53,6 @@ class EducationApiView(APIView):
         serializer = EducationSerializer(educations, many=True)
         return Response(serializer.data)
         
-    def post(self):
-        pass
 
 
 class JobApiView(APIView):
@@ -75,8 +62,6 @@ class JobApiView(APIView):
         serializer = JobSerializer(jobs, many=True)
         return Response(serializer.data)
         
-    def post(self):
-        pass
 
 class SkillApiView(APIView):
     
@@ -85,8 +70,6 @@ class SkillApiView(APIView):
         serializer = SkillSerializer(skills, many=True)
         return Response(serializer.data)
         
-    def post(self):
-        pass
 
 class MembershipApiView(APIView):
     
@@ -95,5 +78,3 @@ class MembershipApiView(APIView):
         serializer = MembershipSerializer(memberships, many=True)
         return Response(serializer.data)
         
-    def post(self):
-        pass

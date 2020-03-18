@@ -3,7 +3,7 @@ USERNAME?=$(DJANGO_USERNAME)
 PASSWORD?=$(DJANGO_PASSWORD)
 EMAIL?=$(DJANGO_EMAIL)
 
-PORTFOLIO_DATA_DIR?=~/workspace/notebooks/portfolio
+PORTFOLIO_DATA_DIR?=$(PWD)/docs/portfolio
 PATH_TO_MANAGE_PY?=$(PWD)/website
 APP_CLUSTER?=app
 MONITORING_CLUSTER?=monitoring
@@ -11,10 +11,10 @@ LETSENCRYPT_SERVICE?=letsencrypt
 GRAFANA_SERVICE?=grafana
 
 reset-database:
-	make load-django-credentials
-	make delete-database
-	make makemigrations
-	make create-user
+	make load-django-credentials && \
+	make delete-database && \
+	make makemigrations && \
+	make create-user && \
 	make insert-rows-db
 
 encrypt-django-credentials:
@@ -48,8 +48,7 @@ start-grafana:
 	sudo docker-compose up --build -d $(GRAFANA_SERVICE)
 
 start-letsencrypt:
-	mkdir -p /docker/portfolio/volumes/letsencrypt-data/ && \
-	cp $(PWD)/DockerImages/letsencrypt/index.html /docker/portfolio/volumes/letsencrypt-data/ && \
+	sudo mkdir -p /docker/portfolio/volumes/letsencrypt-data/ && \
 	sudo docker-compose up --build -d $(LETSENCRYPT_SERVICE)
 
 stop-cluster:
@@ -120,8 +119,8 @@ show-certificate-staging:
 	certificates
 
 generate-dh-param-file:
-	mkdir -p /docker/portfolio/volumes/dh-param/ && \
-	touch /docker/portfolio/volumes/dh-param/dhparam-2048.pem && \
+	sudo mkdir -p /docker/portfolio/volumes/dh-param/ && \
+	sudo touch /docker/portfolio/volumes/dh-param/dhparam-2048.pem && \
 	sudo openssl dhparam -out /docker/portfolio/volumes/dh-param/dhparam-2048.pem 2048
 
 create-certificate-production: generate-dh-param-file stop-cluster start-letsencrypt

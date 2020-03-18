@@ -17,7 +17,7 @@ urlpatterns = [
 urlpatterns += i18n_patterns(
     url(r'^', include('home.urls')),
     url(r'^admin/', admin.site.urls),
-    url(r'^portfolio/', include('portfolio.urls')),
+    #url(r'^portfolio/', include('portfolio.urls')),
     url(r'^api/', include('api.urls')),
     url(r'^translate/', include('rosetta.urls')),
     url(r'^monitoring/', include('django_prometheus.urls')),
