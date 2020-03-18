@@ -1,14 +1,10 @@
-# www.sogloarcadius.com
+# Portfolio
 
-My personal website using Django framework
+Portfolio to list projects.
 
-# Technologies
+Exposes REST API
 
-- Django
+# Author
 
-- Materialize CSS
-
-- Djangorestframework
-
-- animate.css
+* Arcadius SOGLO
 
