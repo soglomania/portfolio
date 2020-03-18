@@ -1,50 +1,96 @@
-import operator
-from functools import reduce
-
-from django.db.models import Q
-from django.http import HttpResponse
-from django.shortcuts import get_list_or_404, render
+from django.http import Http404, HttpResponse
+from django.shortcuts import render, redirect
 from django.views import generic
-
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from .models import Project
+from .models import (Education, Interest, Job, Language, Membership,
+                     PersonalInfo, Project, Skill)
+from .serializers import (EducationSerializer, InterestSerializer,
+                          JobSerializer, LanguageSerializer,
+                          MembershipSerializer, PersonalInfoSerializer,
+                          ProjectSerializer, SkillSerializer)
 
 
 
-class ProjectListView(generic.ListView):
-    template_name='portfolio/project_list.html'
-    context_object_name = 'all_projects'
-    paginate_by = None
+def api_swagger(request):
+    response =  HttpResponse()
+    try:
+        response["Content-Type"] = "text/plain"
+        response['X-Accel-Redirect'] = '/media/' + "swagger.yaml"
+    except Exception:
+        raise Http404
+    return response
 
 
-    def get_queryset(self):
-        #TODO: sort by most viewed or recently add first
-        result = Project.objects.all() 
-
-        query = self.request.GET.get('q')
+# API Response
+class ProjectApiView(APIView):
+    
+    def get(self, request):
+        projects = Project.objects.all()
+        serializer = ProjectSerializer(projects, many=True)
+        return Response(serializer.data)
         
-        if query and len(query.strip())>0:
-            self.paginate_by = None
-
-            query_list = query.split()
-            result = result.filter(
-                reduce(operator.or_,
-                       (Q(title__icontains=q) for q in query_list)) |
-                reduce(operator.or_,
-                       (Q(summary__icontains=q) for q in query_list)) |
-                reduce(operator.or_,
-                       (Q(description__icontains=q) for q in query_list)) |
-                reduce(operator.or_,
-                       (Q(tag__icontains=q) for q in query_list))       
-            )
-
-        return result  
 
 
-class ProjectDetailView(generic.DetailView):
-    model = Project
-    template_name = 'portfolio/project_detail.html'
+class PersonalInfoApiView(APIView):
+
+    def get(self, request):
+        infos = PersonalInfo.objects.all()
+        serializer = PersonalInfoSerializer(infos, many=True)
+        return Response(serializer.data)
+        
+
+
+class LanguageApiView(APIView):
+    
+    def get(self, request):
+        languages = Language.objects.all()
+        serializer = LanguageSerializer(languages, many=True)
+        return Response(serializer.data)
+        
+
+
+class InterestApiView(APIView):
+    
+    def get(self, request):
+        interests = Interest.objects.all()
+        serializer = InterestSerializer(interests, many=True)
+        return Response(serializer.data)
+        
+
+
+class EducationApiView(APIView):
+    
+    def get(self, request):
+        educations = Education.objects.all()
+        serializer = EducationSerializer(educations, many=True)
+        return Response(serializer.data)
+        
+
+
+class JobApiView(APIView):
+    
+    def get(self, request):
+        jobs = Job.objects.all()
+        serializer = JobSerializer(jobs, many=True)
+        return Response(serializer.data)
+        
+
+class SkillApiView(APIView):
+    
+    def get(self, request):
+        skills = Skill.objects.all()
+        serializer = SkillSerializer(skills, many=True)
+        return Response(serializer.data)
+        
+
+class MembershipApiView(APIView):
+    
+    def get(self, request):
+        memberships = Membership.objects.all()
+        serializer = MembershipSerializer(memberships, many=True)
+        return Response(serializer.data)
+        
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-09 03:15+0200\n"
+"POT-Creation-Date: 2020-03-18 23:37+0100\n"
 "PO-Revision-Date: 2017-07-03 20:19+0009\n"
 "Last-Translator: b'  <admin@admin.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,60 +17,45 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Translated-Using: django-rosetta 0.7.13\n"
 
-#: home/templates/home/base.html:45 home/templates/home/base.html:88
-#: home/templates/home/index.html:8 home/templates/home/index.html:35
-msgid "About"
-msgstr "A propos"
-
-#: home/templates/home/base.html:46 home/templates/home/base.html:89
-#: portfolio/templates/portfolio/project_list.html:4
-msgid "Projects"
-msgstr "Projets"
-
-#: home/templates/home/index.html:54
-msgid "Top Skills"
-msgstr "Compétences"
-
-#: home/templates/home/index.html:60
-#: portfolio/templates/portfolio/project_list.html:56
-msgid "Software Development"
-msgstr "Développement Logiciel"
-
-#: home/templates/home/index.html:67
-#: portfolio/templates/portfolio/project_list.html:62
-msgid "Artificial Intelligence"
-msgstr "Intélligence Artificielle"
-
-#: home/templates/home/index.html:75
-#: portfolio/templates/portfolio/project_list.html:74
-msgid "Computer Network"
-msgstr "Réseaux"
-
-#: portfolio/templates/portfolio/project_list.html:40
-msgid "Filter List"
-msgstr "Filtre"
-
-#: portfolio/templates/portfolio/project_list.html:50
-msgid "All"
-msgstr "Tous"
-
-#: portfolio/templates/portfolio/project_list.html:68
-msgid "Security"
-msgstr "Sécurité"
-
-#: website/settings/base.py:143
+#: website/settings/base.py:139
 msgid "English"
 msgstr "Anglais"
 
-#: website/settings/base.py:144
+#: website/settings/base.py:140
 msgid "French"
 msgstr "Français"
 
-#: website/settings/base.py:145
+#: website/settings/base.py:141
 msgid "Spanish"
 msgstr "Espagnol"
+
+#~ msgid "About"
+#~ msgstr "A propos"
+
+#~ msgid "Projects"
+#~ msgstr "Projets"
+
+#~ msgid "Top Skills"
+#~ msgstr "Compétences"
+
+#~ msgid "Software Development"
+#~ msgstr "Développement Logiciel"
+
+#~ msgid "Artificial Intelligence"
+#~ msgstr "Intélligence Artificielle"
+
+#~ msgid "Computer Network"
+#~ msgstr "Réseaux"
+
+#~ msgid "Filter List"
+#~ msgstr "Filtre"
+
+#~ msgid "All"
+#~ msgstr "Tous"
+
+#~ msgid "Security"
+#~ msgstr "Sécurité"
 
 #~ msgid "Portfolio"
 #~ msgstr "Portfolio"

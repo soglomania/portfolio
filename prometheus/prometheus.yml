@@ -1,0 +1,26 @@
+global:
+  scrape_interval:     2s
+  evaluation_interval: 10s
+
+  external_labels:
+      monitor: django-monitor
+
+rule_files:
+    - '/etc/prometheus/django.rules.yml'
+
+
+scrape_configs:
+  
+  # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
+  - job_name: 'django'
+    metrics_path: "/monitoring/metrics" 
+    static_configs:
+        - targets: ['django:80']
+  - job_name: 'os-metrics'
+    #metrics_path: "/metrics"   # default endpoint
+    static_configs:
+        - targets: ['os-metrics:9100']
+
+    
+
+

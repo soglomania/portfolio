@@ -1,0 +1,42 @@
+---
+swagger: '2.0'
+info:
+  description: |
+    ## Welcome
+    Welcome to my PORTFOLIO API Reference documentation !
+    You can use the API to integrate with 3rd-party systems and custom applications.
+    This document provides an overview of how to use the API.
+    ## A Quick Note
+    This API is intended for software developers, and those are who are comfortable working with RESTful APIs, and writing some code.
+    ## Authentication
+    No Authentication is required to access this API
+
+  version: 1.0.0
+  title: PORTFOLIO REST API
+host: ''
+basePath: "/portfolio/api"
+schemes:
+- http
+- https
+paths:
+  "/me":
+    get:
+      tags:
+      - info
+      summary: Get basic information about me
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: detail about me in json
+  "/project":
+    get:
+      tags:
+      - project
+      summary: Get all my projects
+      description: ''
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: successful operation

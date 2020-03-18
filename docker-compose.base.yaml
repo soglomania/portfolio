@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+
+    log:
+        image: balabit/syslog-ng
+        command: "--no-caps"
+        volumes :
+            - ./confs/syslog-ng.conf:/etc/syslog-ng/syslog-ng.conf
+            - /var/log:/var/log/
+
+    os-metrics:
+        image: "prom/node-exporter"
+
+
+    prometheus:
+        image: prom/prometheus
+        entrypoint:
+            - /bin/prometheus
+            - --config.file=/etc/prometheus/prometheus.yml
+            - --storage.tsdb.path=/prometheus
+            - --storage.tsdb.retention.time=6h
+            - --web.console.libraries=/usr/share/prometheus/console_libraries
+            - --web.console.templates=/usr/share/prometheus/consoles
+        volumes:
+            - ./prometheus/django.rules.yml:/etc/prometheus/django.rules.yml
+            - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+            - ./prometheus/consoles:/usr/share/prometheus/consoles
+        ports:
+            - "9090:9090"
+
+    grafana:
+        image: grafana/grafana
+        volumes:
+            - ./grafana/config.ini:/etc/grafana/grafana.ini
+            - ./grafana/datasource.yaml:/etc/grafana/provisioning/datasources/default.yaml
+            - ./grafana/dashboard.yaml:/etc/grafana/provisioning/dashboards/default.yaml
+            - ./grafana/dashboards:/var/lib/grafana/dashboards
+        ports:
+            - "3000:3000"
+        depends_on:
+            - prometheus
+    

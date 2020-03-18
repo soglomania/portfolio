@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+
+    django:
+        image : sogloarcadius/portfolio
+        env_file: environment.properties
+        build: 
+            context: .
+            dockerfile: ./Dockerfile.httponly
+        ports:
+            - "80:80"
+        depends_on:
+            - log
+            - os-metrics
+            - prometheus
+            - grafana    

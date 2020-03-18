@@ -11,7 +11,6 @@ import os
 import sys
 
 from django.core.wsgi import get_wsgi_application
-#import django.core.handlers.wsgi
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

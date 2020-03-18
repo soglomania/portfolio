@@ -1,8 +1,6 @@
 # Portfolio
 
-Portfolio to list projects.
-
-Exposes REST API
+Django backend which exposes a REST API
 
 # Author
 

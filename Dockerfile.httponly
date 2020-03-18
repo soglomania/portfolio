@@ -38,7 +38,7 @@ RUN pip3 install -r ${CODE_DIR}/app/requirements.txt
 
 # Nginx
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
-COPY confs/nginx-https.conf /etc/nginx/sites-available/default
+COPY confs/nginx-httponly.conf /etc/nginx/sites-available/default
 
 
 # Supervisor
@@ -55,8 +55,6 @@ RUN python3 ${CODE_DIR}/website/manage.py collectstatic --no-input
 
 
 EXPOSE 80
-
-EXPOSE 443
 
 WORKDIR ${CODE_DIR}
 
