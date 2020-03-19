@@ -9,6 +9,16 @@ services:
             - ./confs/syslog-ng.conf:/etc/syslog-ng/syslog-ng.conf
             - /var/log:/var/log/
 
+    letsencrypt:
+        build:
+            context: .
+            dockerfile: ./docker/letsencrypt/Dockerfile
+        ports:
+            - "80:80"
+        volumes:
+            - /docker/portfolio/volumes/letsencrypt-data:/usr/share/nginx/html
+
+
     os-metrics:
         image: "prom/node-exporter"
 
@@ -40,4 +50,6 @@ services:
             - "3000:3000"
         depends_on:
             - prometheus
+
+    
     

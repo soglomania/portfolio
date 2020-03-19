@@ -9,12 +9,12 @@ services:
         ports:
             - "80:80"
             - "443:443"
+        volumes:
+            - /docker/portfolio/volumes/dh-param/dhparam-2048.pem:/etc/ssl/certs/dhparam-2048.pem
+            - /docker/portfolio/volumes/etc/letsencrypt/live/sogloarcadius.com/fullchain.pem:/etc/letsencrypt/live/sogloarcadius.com/fullchain.pem
+            - /docker/portfolio/volumes/etc/letsencrypt/live/sogloarcadius.com/privkey.pem:/etc/letsencrypt/live/sogloarcadius.com/privkey.pem
         depends_on:
             - log
             - os-metrics
             - prometheus
             - grafana
-        volumes:
-            - /docker/portfolio/volumes/dh-param/dhparam-2048.pem:/etc/ssl/certs/dhparam-2048.pem
-            - /docker/portfolio/volumes/etc/letsencrypt/live/sogloarcadius.com/fullchain.pem:/etc/letsencrypt/live/sogloarcadius.com/fullchain.pem
-            - /docker/portfolio/volumes/etc/letsencrypt/live/sogloarcadius.com/privkey.pem:/etc/letsencrypt/live/sogloarcadius.com/privkey.pem

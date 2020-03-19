@@ -20,13 +20,7 @@ services:
     volumes :
       - /var/log/:/var/log/
     depends_on:
+      - log
       - elk
 
-  letsencrypt:
-    build:
-      context: .
-      dockerfile: ./docker/letsencrypt/Dockerfile
-    ports:
-      - "80:80"
-    volumes:
-      - /docker/portfolio/volumes/letsencrypt-data:/usr/share/nginx/html
+  
