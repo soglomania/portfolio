@@ -9,8 +9,9 @@ from .models import (Education, Interest, Job, Language, Membership,
                      PersonalInfo, Project, Skill)
 from .serializers import (EducationSerializer, InterestSerializer,
                           JobSerializer, LanguageSerializer,
-                          MembershipSerializer, PersonalInfoSerializer,
-                          ProjectSerializer, SkillSerializer)
+                          MembershipSerializer, PersonalInfoSerializer, PersonalInfoSerializerEnglish, 
+                          PersonalInfoSerializerFrench, PersonalInfoSerializerSpanish,
+                          ProjectSerializer, ProjectSerializer, SkillSerializer)
 
 
 
@@ -24,7 +25,27 @@ def api_swagger(request):
     return response
 
 
-# API Response
+
+class PersonalInfoApiView(APIView):
+    
+    def get(self, request):
+
+        infos = PersonalInfo.objects.all()
+        
+        serializer = PersonalInfoSerializerEnglish(infos, many=True)
+
+        locales = self.request.META.get("HTTP_ACCEPT_LANGUAGE")
+        if locales:
+            if "es" in locales:
+                serializer = PersonalInfoSerializerSpanish(infos, many=True)
+            if "fr" in locales:
+                serializer = PersonalInfoSerializerFrench(infos, many=True)
+            if "*" in locales:
+                serializer = PersonalInfoSerializer(infos, many=True)
+
+        return Response(serializer.data)
+
+
 class ProjectApiView(APIView):
     
     def get(self, request):
@@ -34,12 +55,7 @@ class ProjectApiView(APIView):
         
 
 
-class PersonalInfoApiView(APIView):
 
-    def get(self, request):
-        infos = PersonalInfo.objects.all()
-        serializer = PersonalInfoSerializer(infos, many=True)
-        return Response(serializer.data)
         
 
 

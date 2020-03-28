@@ -7,11 +7,44 @@ class ProjectSerializer(serializers.ModelSerializer):
         model = Project
         fields = '__all__'
 
+
+
 class PersonalInfoSerializer(serializers.ModelSerializer):
     class Meta:
         model = PersonalInfo
         fields = '__all__'
 
+
+class PersonalInfoSerializerEnglish(serializers.ModelSerializer):
+    job_title = serializers.CharField(source="job_title_en")
+    summary = serializers.CharField(source="summary_en")
+    intro_url = serializers.CharField(source="intro_url_en")
+
+    class Meta:
+        model = PersonalInfo
+        fields = ["surname", "firstname", "age", "address", "phone_number", "email", "job_title", "summary", "intro_url"]
+        
+
+class PersonalInfoSerializerFrench(serializers.ModelSerializer):
+    job_title = serializers.CharField(source="job_title_fr")
+    summary = serializers.CharField(source="summary_fr")
+    intro_url = serializers.CharField(source="intro_url_fr")
+
+    class Meta:
+        model = PersonalInfo
+        fields = ["surname", "firstname", "age", "address", "phone_number", "email", "job_title", "summary", "intro_url"]
+        
+
+
+class PersonalInfoSerializerSpanish(serializers.ModelSerializer):
+    job_title = serializers.CharField(source="job_title_es")
+    summary = serializers.CharField(source="summary_es")
+    intro_url = serializers.CharField(source="intro_url_es")
+
+    class Meta:
+        model = PersonalInfo
+        fields = ["surname", "firstname", "age", "address", "phone_number", "email", "job_title", "summary", "intro_url"]
+        
 
 
 class LanguageSerializer(serializers.ModelSerializer):
