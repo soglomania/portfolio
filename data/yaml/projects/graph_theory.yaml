@@ -1,0 +1,51 @@
+---
+
+title: Graph Theory
+
+logo: python.svg
+
+category_en: programming
+category_fr: programmation
+category_es: programmacion
+
+summary_en: >
+   In the computer science courses, I implemented the basic functionalities of oriented and non-oriented graph of N vertexes. 
+   I also implemented some algorithms of routing to find the shortest path for example Dijkstra and Bellman.
+summary_fr: >
+  Dans le cadre de ma formation d'ingénieur j'ai mis en oeuvre des fonctionnalités de base d'un graphe orienté valué à N sommets, 
+  les algorithmes de recherche de plus courts chemins avec routage de Dijkstra et Bellman.
+summary_es: >
+  El objetivo del proyecto es de programar las funcionalidades de un grafo orientado y no-orientado de N vertices. 
+  Tambien he programado los clasicos algoritmos de graphos por ejemplo la busceda del mas corto camino de Djikstra y Bellman.
+  
+description_en: |    
+    In the computer science courses, I implemented the basic functionalities of oriented and non-oriented graph of N vertexes.
+
+    I also implemented some algorithms of routing to find the shortest path for example Dijkstra and Bellman.
+    
+    The goal is to implement the algorithms we study in class using my favorite programming language. 
+    
+    I used python to implement the different algorithms.
+    
+
+description_fr: |
+    Dans le cadre de ma formation d'ingénieur j'ai mis en oeuvre des fonctionnalités de base d'un graphe orienté valué à N sommets, les algorithmes de recherche de plus courts chemins avec routage de Dijkstra et Bellman.
+    
+    L'objectif est d'implémenter les algorithmes étudiés en cours dans le langage de programmation de notre choix. 
+    
+    J'ai utilisé le langage python pour implémenter les différents algorithmes. 
+    
+    
+description_es: |
+    El objetivo del proyecto es de programar las funcionalidades de un grafo orientado y no-orientado de N vertices.
+
+    Tambien he programado los clasicos algoritmos de graphos por ejemplo la busceda del mas corto camino de Djikstra y Bellman.
+    
+    La idea es de programar los algoritmos que estudiamos en clase usando mi favorito lenguaje de programacion.
+    
+    Con python he programado los diferentes algoritmos.
+
+    
+link: https://www.dropbox.com/s/5akn37hlfz7gjne/Rapportdeprojet_SOGLO_Arcadius.pdf?dl=0
+
+github: https://github.com/soglomania/graph

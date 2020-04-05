@@ -3,8 +3,9 @@ DJANGO_USERNAME?=admin
 DJANGO_PASSWORD?=admin
 DJANGO_EMAIL?=admin@admin.com
 
-DATA_DIR?=$(PWD)/data
-DJANGO_APP_DIR?=$(PWD)/website
+JUPYTER_DIR?=$(PWD)/data/jupyter
+YAML_DIR?=$(PWD)/data/yaml
+DJANGO_APP_DIR?=$(PWD)/app
 
 SERVICE_APP?=django
 SERVICE_LETSENCRYPT?=letsencrypt
@@ -15,7 +16,7 @@ reset-database:
 	make delete-database && \
 	make makemigrations && \
 	make create-user && \
-	make insert-rows-db
+	make insert-yaml-dir
 
 delete-database: 
 	-rm $(DJANGO_APP_DIR)/db.sqlite
@@ -56,23 +57,36 @@ create-user:
 	echo "import os; from django.contrib.auth.models import User; print(User.objects.all())" | python3 manage.py shell && \
 	cd ../ && pwd
 
-insert-rows-db:
+insert-jupyter-dir:
 	cd $(DJANGO_APP_DIR) && python3 --version && jupyter --version && \
 	echo "import tornado; print(tornado.version)" | python3 && \
-	python3 manage.py project --sql printall && \
-	python3 manage.py project --sql flush && \
-	python3 manage.py project --sql printall && \
-	python3 manage.py project --addproject $(DATA_DIR)/projects/software_development &&\
-	python3 manage.py project --addproject $(DATA_DIR)/projects/data_science && \
-	python3 manage.py project --addproject $(DATA_DIR)/projects/computer_network && \
-	python3 manage.py project --addproject $(DATA_DIR)/projects/security && \
-	python3 manage.py project --sql printall && \
-	python3 manage.py resume --model PersonalInfo --sql printall && \
-	python3 manage.py resume --model PersonalInfo --sql flush && \
-	python3 manage.py resume --model PersonalInfo --sql printall && \
-	python3 manage.py resume --model PersonalInfo --addresume $(DATA_DIR)/about.me/ && \
-	python3 manage.py resume --model PersonalInfo --sql printall
+	python3 manage.py project --db select && \
+	python3 manage.py project --db flush && \
+	python3 manage.py project --db select && \
+	python3 manage.py project --addjupyter $(JUPYTER_DIR)/projects/software_development &&\
+	python3 manage.py project --addjupyter $(JUPYTER_DIR)/projects/data_science && \
+	python3 manage.py project --addjupyter $(JUPYTER_DIR)/projects/computer_network && \
+	python3 manage.py project --addjupyter $(JUPYTER_DIR)/projects/security && \
+	python3 manage.py project --db select && \
+	python3 manage.py resume --model Biography --db select && \
+	python3 manage.py resume --model Biography --db flush && \
+	python3 manage.py resume --model Biography --db select && \
+	python3 manage.py resume --model Biography --addjupyter $(JUPYTER_DIR)/biography/ && \
+	python3 manage.py resume --model Biography --db select
 
+insert-yaml-dir:
+	cd $(DJANGO_APP_DIR) && python3 --version && \
+	python3 manage.py project --db select && \
+	python3 manage.py project --db flush && \
+	python3 manage.py project --db select && \
+	python3 manage.py project --addyaml $(YAML_DIR)/projects/dit.pentest.yaml &&\
+	python3 manage.py project --addyaml $(YAML_DIR)/projects/graph_theory.yaml &&\
+	python3 manage.py project --db select && \
+	python3 manage.py resume --model Biography --db select && \
+	python3 manage.py resume --model Biography --db flush && \
+	python3 manage.py resume --model Biography --db select && \
+	python3 manage.py resume --model Biography --addyaml $(YAML_DIR)/resume/biography.yaml && \
+	python3 manage.py resume --model Biography --db select
 
 
 certificate-create-staging: stop-cluster start-letsencrypt

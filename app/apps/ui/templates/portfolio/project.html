@@ -1,0 +1,43 @@
+
+{% extends "portfolio/projects.html" %}
+
+{% load i18n %}
+{% load static %}
+{% load markup_tags %}
+
+{% block index-banner %}
+    <div class="section no-pad-bot center" id="index-banner">
+        <div class="section no-pad-bot center" id="index-banner">
+            <div class="chip ">
+                <i class="material-icons">filter_list</i>
+                {{ project.title}}
+            </div>
+        </div>
+    </div>
+{% endblock index-banner %}
+
+{% block rigth-to-filter %}
+            <div class="section">
+                <div class="row">
+                    <div class="card col s12 m12 l12 right alegreya animated tada animation-delay-7 ">
+                        <p><a class="btn btn-floating right waves-effect waves-light black" href="{% url 'ui:projects' %}" title="Go back to projects"><i class="material-icons">close</i></a></p>
+                        <p><img class="left" src="{% static 'ui/images/'|add:project.category|add:'.svg' %}" width="75px" height="75px"></p>
+                        <h2 class="center-align">{{project.title}} </h2>
+                        <div class="left-align card-content">{{ project.description | apply_markup:"markdown" }}</div>
+                        <div class="card-action">
+                            {% if project.github %}
+                            <a target="_blank" class="btn-floating left halfway-fab waves-effect waves-light grey" href="{{project.github}}">
+                                <i class="material-icons">code</i>
+                            </a>
+                            {% endif %}
+                            {% if project.link %}
+                            <a target="_blank" class="btn-floating right halfway-fab waves-effect waves-light grey" href="{{project.link}}">
+                                <i class="material-icons">insert_link</i>
+                            </a>
+                            {% endif %}
+                        </div>
+                        <br>
+                    </div> 
+                </div>
+            </div>
+{% endblock rigth-to-filter %}

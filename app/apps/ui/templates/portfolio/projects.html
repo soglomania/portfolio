@@ -1,0 +1,114 @@
+{% extends "home/base.html" %}
+
+{% load i18n %}
+{% load static %}
+{% load markup_tags %} 
+
+{% block title %} {% trans "Projects" %} {% endblock title %} 
+
+{% block nav_about_class %} # {% endblock nav_about_class %} 
+{% block nav_portfolio_class %} active {% endblock nav_portfolio_class %} 
+{% block mobile_nav_about_class %} # {% endblock mobile_nav_about_class %} 
+{% block mobile_nav_portfolio_class %} active {% endblock mobile_nav_portfolio_class %} 
+
+{% block content %}
+
+    {% block index-banner %}
+
+        <div class="section no-pad-bot center" id="index-banner">
+
+            <div class="section no-pad-bot center" id="index-banner">
+                <div class="chip ">
+                    <i class="material-icons">filter_list</i>
+                    {% if request.GET.q %} {{ request.GET.q }} {% else %} all {% endif %}
+                </div>
+            </div>
+            </br>
+        
+        </div>
+        
+    {% endblock index-banner %}
+
+    {% block container %}
+      
+        <div class="container">
+            <div class="row">
+
+                    {% block filter %}
+
+                        <div class="col l4 m4 s12">
+                            <div class="card z-depth-2">
+                                <div class="">
+                                    <h3 class="card-title grey lighten-2 center">
+                                        <i class="material-icons">filter_list</i> {% trans "Filter" %}
+                                    </h3>
+                                </div>
+                                <div class="card-content">
+                                    <div class="">
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <p>
+                                                    <span>
+                                                        <i class="material-icons">filter_list</i>
+                                                        <a class="black-text" href="{% url 'ui:projects' %}"> <i class="material-icons">select_all</i></a>
+                                                    </span>
+                                                </p>
+                                                {% for category in categories %}
+                                                <p>
+                                                    <span>
+                                                        <i class="material-icons">filter_list</i>
+                                                        <a class="black-text" href="{% url 'ui:projects' %}?q={{category}}">{{category}}</a>
+                                                    </span>
+                                                </p>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                  
+                    {% endblock filter %}
+
+                        <div class="col l8 m8 s12">
+
+                    {% block rigth-to-filter %}
+
+                                <div class="section">
+                                    <div class="row">
+                                        {% for project in projects %}
+                                        <div class="col l4 m4 s12">
+                                            <div class="card small right z-depth-2 animated tada animation-delay-7">
+                                                <div class="card-image">
+                                                    <img class="activator" src="{% static 'ui/images/'|add:project.category|add:'.svg' %}">
+                                                </div>
+                                                <div class="card-content">
+                                                    <!--<br>-->
+                                                    <span class="card-title activator grey-text text-darken-4">{{project.title}}</span>
+                                                </div>
+                                                <div class="card-reveal">
+                                                    <span class="card-title grey-text text-darken-4">{{project.title}}
+                                                        <i class="material-icons right">close</i>
+                                                    </span>
+                                                    <p>{{ project.summary | apply_markup:"markdown" }}</p>
+                                                </div>
+                                                <div class="card-action">
+                                                    <a class="btn-floating halfway-fab waves-effect waves-light grey" href="{% url 'ui:project' project.pk %}">
+                                                        <i class="material-icons">zoom_in</i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+
+                    {% endblock rigth-to-filter %}
+
+                        </div>
+            </div>
+        </div>
+
+    {% endblock container %}
+
+{% endblock content %}

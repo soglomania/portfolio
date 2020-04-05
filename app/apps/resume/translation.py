@@ -1,0 +1,42 @@
+
+from modeltranslation.translator import translator, TranslationOptions
+from .models import Biography, Language, Interest, Membership, Education, Job, Skill
+
+
+class BiographyTranslationOptions(TranslationOptions):
+    fields = ('job_title', 'summary',)
+
+
+class LanguageTranslationOptions(TranslationOptions):
+    fields = ('description',)
+
+class InterestTranslationOptions(TranslationOptions):
+    fields = ('name','level','description',)
+
+
+class InterestTranslationOptions(TranslationOptions):
+    fields = ('name','description',)
+
+class MembershipTranslationOptions(TranslationOptions):
+    fields = ('name','description',)
+
+
+class EducationTranslationOptions(TranslationOptions):
+    fields = ('name','summary','description',)
+
+
+class JobTranslationOptions(TranslationOptions):
+    fields = ('title','summary','description',)
+
+
+class SkillTranslationOptions(TranslationOptions):
+    fields = ('name','description',)
+
+
+translator.register(Biography, BiographyTranslationOptions)
+translator.register(Language, LanguageTranslationOptions)
+translator.register(Interest, InterestTranslationOptions)
+translator.register(Membership, MembershipTranslationOptions)
+translator.register(Education, EducationTranslationOptions)
+translator.register(Job, JobTranslationOptions)
+translator.register(Skill, SkillTranslationOptions)

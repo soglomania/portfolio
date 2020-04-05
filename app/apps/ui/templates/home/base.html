@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+{% load static %}
+{% load i18n %}
+
+{% load markup_tags %}
+
+<head>
+  <meta name="Author" content="SOGLO Arcadius">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>{% block title %} {% endblock title %}</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'/>
+  <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet"/>
+
+  <!-- Animate -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">   
+  <link href="{% static 'ui/css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans" rel="stylesheet"/> 
+  <link rel="stylesheet" type="text/css" href="{% static 'ui/css/style.css' %}" media="screen,projection"/>
+  <link rel="icon" type="image/ico" href="{% static 'ui/images/favicon.ico' %}">
+</head>
+
+<body>
+
+  <ul id="slide-out" class="side-nav fixed">
+        <li>
+          <div class="center-align">
+            <a href="{% url 'ui:set-english' %}?next={{ request.path }}" style="font-weight: bolder" title="en"><img alt='en' src="{% static 'ui/images/en.png' %}" class="nav-language-selection"></a>
+            <a href="{% url 'ui:set-french' %}?next={{ request.path }}" style="font-weight: bolder" title="fr"><img alt='fr' src="{% static 'ui/images/fr.png' %}" class="nav-language-selection"></a>
+            <a href="{% url 'ui:set-spanish' %}?next={{ request.path }}" style="font-weight: bolder" title="es"><img alt='es' src="{% static 'ui/images/es.png' %}" class="nav-language-selection"></a>
+          </div>
+        </li>
+        <li><div class="divider"></div></li>
+        <br/>
+        <li>
+          <div class="center-align">
+            <a href="{% url 'ui:index' %}"><img src="{% static 'ui/images/profile.jpeg' %}" width="128px" heigth="128px" alt="" class="circle responsive-img" ></a>
+          </div>
+        </li>
+        <li>
+          <div class="center-align">
+            <p></p>
+          </div>
+        </li>
+        <li><div class="divider"></div></li>
+        <li>
+          <div class="center-align">           
+              {% block fullname %}
+                  <h5>{{ biography.full_name | apply_markup:"markdown" }}</h5>
+              {% endblock fullname %}
+          </div>
+        </li>
+        <li>
+          <div class="center-align">
+            {% block job_title %}
+                <span>
+                  {{ biography.job_title }} <br/> {{ biography.address }}
+                </span>
+            {% endblock job_title %}
+          </div>
+        </li>
+        <li><div class="divider"></div></li>
+        <br/>
+        <li>
+          <div class="center-align">
+            <a href="{% url 'ui:index' %}" style="font-weight: bolder" title=""><img alt='' src="{% static 'ui/images/home.svg' %}" class="nav-language-selection"></a>
+            <a href="{% url 'ui:projects' %}" style="font-weight: bolder" title=""><img alt='' src="{% static 'ui/images/grid.svg' %}" class="nav-language-selection"></a>
+          </div>
+        </li>
+        <li><div class="divider"></div></li>
+        <br/>
+        <li>
+          <div class="center-align">
+            <a target="_blank" href="https://www.linkedin.com/in/arcadius-soglo-275bb180/" title="Linkedin">
+              <img src="{% static 'ui/images/linkedin.png' %}" width="32px" heigth="32px" alt="Linkedin">
+            </a>
+            <a target="_blank" href="https://github.com/sogloarcadius" title="Github">
+              <img width="32px" heigth="32px" src="{% static 'ui/images/github.svg' %}">
+            </a>
+            <a target="_blank" href="https://twitter.com/sogloarcadius" title="Twitter">
+              <img width="32px" heigth="32px" src="{% static 'ui/images/twitter.png' %}">
+            </a>
+          </div>
+        </li>
+        
+  </ul>
+
+
+  <!-- Mobile devices -->
+  <ul class="hide-on-large-only">
+      <li>
+          <div class="center-align">
+            <a href="{% url 'ui:set-english' %}" style="font-weight: bolder" title="en"><img alt='en' src="{% static 'ui/images/en.png' %}" class="nav-language-selection"></a>
+            <a href="{% url 'ui:set-french' %}" style="font-weight: bolder" title="fr"><img alt='fr' src="{% static 'ui/images/fr.png' %}" class="nav-language-selection"></a>
+            <a href="{% url 'ui:set-spanish' %}" style="font-weight: bolder" title="es"><img alt='es' src="{% static 'ui/images/es.png' %}" class="nav-language-selection"></a>
+          </div>
+      </li>
+      <br/>
+      <li><div class="divider"></div></li>
+      <li>
+        <div class="nav-mobile-view center-align" style="background-color:white;">
+          <a href="#!about"><img class="circle nav-mobile-pic" src="{% static 'ui/images/profile.jpeg' %}"></a>
+        </div>
+      </li>
+      <li><div class="divider"></div></li>
+        <li>
+          <div class="center-align">           
+              {% block fullname_mobile %}
+                  <h5>{{ biography.full_name | apply_markup:"markdown" }}</h5>
+              {% endblock fullname_mobile %}
+          </div>
+        </li>
+        <li>
+          <div class="center-align">
+            {% block job_title_mobile %}
+              <span>{{ biography.job_title | apply_markup:"markdown" }}</span>
+            {% endblock job_title_mobile %}
+          </div>
+        </li>
+      <li><div class="divider"></div></li>
+      <br/>
+      <li>
+          <div class="center-align">
+            <a href="{% url 'ui:index' %}" style="font-weight: bolder" title=""><img alt='' src="{% static 'ui/images/home.svg' %}" class="nav-language-selection"></a>
+            <a href="{% url 'ui:projects' %}" style="font-weight: bolder" title=""><img alt='' src="{% static 'ui/images/grid.svg' %}" class="nav-language-selection"></a>
+          </div>
+      </li>
+      <br/>
+      <li><div class="divider"></div></li>
+      <br/>
+      <li>
+        <div class="center-align">
+            <a target="_blank" href="https://www.linkedin.com/in/arcadius-soglo-275bb180/" title="Linkedin">
+              <img src="{% static 'ui/images/linkedin.png' %}" width="32px" heigth="32px" alt="Linkedin">
+            </a>
+            <a target="_blank" href="https://github.com/sogloarcadius" title="Github">
+              <img width="32px" heigth="32px" src="{% static 'ui/images/github.svg' %}">
+            </a>
+            <a target="_blank" href="https://twitter.com/sogloarcadius" title="Twitter">
+              <img width="32px" heigth="32px" src="{% static 'ui/images/twitter.png' %}">
+            </a>
+        </div>
+      </li>
+  </ul>
+
+  <!--  body content -->
+  {% block content %} {% endblock content %}
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{% static 'ui/js/materialize.js' %}" ></script>
+  <script src="{% static 'ui/js/init.js' %}"></script>
+
+</body>
+</html>

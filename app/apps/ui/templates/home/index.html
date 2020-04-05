@@ -1,0 +1,16 @@
+{% extends "home/base.html" %}
+
+{% load static %}
+{% load i18n %}
+
+{% load markup_tags %}
+
+{% block title %} {% trans "home" %} {% endblock title %}
+
+
+{% block content %}
+   <main class="main center-align">
+      <img src="http://chart.apis.google.com/chart?cht=map:fixed=-70,-180,80,180&chs=450x300&chf=bg,s,336699&chco=d0d0d0,cc0000&chd=s:9999999999999&chld=BJ|NE|MX|CU|US|VA|IT|IE|HU|FR|CZ|BE|AD" width="100%" height="100%" >
+   </main>
+
+{% endblock content %}
