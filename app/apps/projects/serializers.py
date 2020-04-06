@@ -16,7 +16,7 @@ class ProjectSerializerEnglish(serializers.ModelSerializer):
 
     class Meta:
         model = Project
-        fields = ["title", "logo", "category", "summary", "description", "link", "github"]
+        fields = ["title", "category", "summary", "description", "link", "github"]
     
 
 
@@ -27,7 +27,7 @@ class ProjectSerializerFrench(serializers.ModelSerializer):
 
     class Meta:
         model = Project
-        fields = ["title", "logo", "category", "summary", "description", "link", "github"]
+        fields = ["title", "category", "summary", "description", "link", "github"]
 
 
 class ProjectSerializerSpanish(serializers.ModelSerializer):
@@ -37,4 +37,4 @@ class ProjectSerializerSpanish(serializers.ModelSerializer):
 
     class Meta:
         model = Project
-        fields = ["title", "logo", "category", "summary", "description", "link", "github"]
+        fields = ["title", "category", "summary", "description", "link", "github"]

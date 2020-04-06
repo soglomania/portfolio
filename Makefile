@@ -46,15 +46,15 @@ stop-cluster:
 
 create-user:
 	cd $(DJANGO_APP_DIR) &&	python3 --version && pwd && echo "print all users" && \
-	echo "import os; from django.contrib.auth.models import User; print(User.objects.all())" | python3 manage.py shell && \
+	echo "import os; from apps.users.models import User; print(User.objects.all())" | python3 manage.py shell && \
 	echo "Delete all users" && \
-	echo "import os; from django.contrib.auth.models import User; User.objects.all().delete()" | python3 manage.py shell && \
+	echo "import os; from apps.users.models import User; User.objects.all().delete()" | python3 manage.py shell && \
 	echo "print all users" && \
-	echo "import os; from django.contrib.auth.models import User; print(User.objects.all())" | python3 manage.py shell && \
+	echo "import os; from apps.users.models import User; print(User.objects.all())" | python3 manage.py shell && \
 	echo "Create new super user" && \
-	echo "import os; from django.contrib.auth.models import User; User.objects.create_superuser('$(DJANGO_USERNAME)','$(DJANGO_EMAIL)','$(DJANGO_PASSWORD)')" | python3 manage.py shell && \
+	echo "import os; from apps.users.models import User; User.objects.create_superuser('$(DJANGO_USERNAME)','$(DJANGO_EMAIL)','$(DJANGO_PASSWORD)')" | python3 manage.py shell && \
 	echo "print all users" && \
-	echo "import os; from django.contrib.auth.models import User; print(User.objects.all())" | python3 manage.py shell && \
+	echo "import os; from apps.users.models import User; print(User.objects.all())" | python3 manage.py shell && \
 	cd ../ && pwd
 
 insert-jupyter-dir:

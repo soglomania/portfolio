@@ -5,7 +5,7 @@ from . import views
 app_name = "projects"
 
 urlpatterns = [
-    url(r'^projects/$', views.ProjectApiView.as_view(), name='api-projects'),
+    url(r'^projects/?$', views.ProjectApiView.as_view(), name='api-projects'),
 ]
 
 

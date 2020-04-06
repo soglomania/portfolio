@@ -1,9 +1,10 @@
 import operator
 from functools import reduce
-
+from django.http import HttpResponseRedirect
 from django.conf import settings
 from django.db.models import Q
 from django.shortcuts import redirect, render
+from django.urls import reverse
 from django.utils import translation
 from django.views import generic
 
@@ -12,12 +13,12 @@ from apps.resume.models import Biography as BiographyModel
 
 from . import utils
 
+
 def set_french(request):
     redirect_url = utils.parse_url(request.GET.get('next', '/'))
-    
     user_language = 'fr'
     translation.activate(user_language)
-    response = redirect(redirect_url)
+    response = HttpResponseRedirect(redirect_url)
     response.set_cookie(settings.LANGUAGE_COOKIE_NAME, user_language)
 
     return response
@@ -26,17 +27,20 @@ def set_english(request):
     redirect_url = utils.parse_url(request.GET.get('next', '/'))
     user_language = 'en'
     translation.activate(user_language)
-    response = redirect(redirect_url)
+    response = HttpResponseRedirect(redirect_url)
     response.set_cookie(settings.LANGUAGE_COOKIE_NAME, user_language)
+
     return response
+
 
 
 def set_spanish(request):
     redirect_url = utils.parse_url(request.GET.get('next', '/'))
     user_language = 'es'
     translation.activate(user_language)
-    response = redirect(redirect_url)
+    response = HttpResponseRedirect(redirect_url)
     response.set_cookie(settings.LANGUAGE_COOKIE_NAME, user_language)
+    
     return response
 
 
@@ -113,6 +117,4 @@ class Project(generic.DetailView):
         context["categories"] = categories
 
         return context
-
-
 

@@ -9,6 +9,8 @@ https://docs.djangoproject.com/en/1.11/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
+
+
 import os
 import logging
 from logging.handlers import SysLogHandler
@@ -40,6 +42,7 @@ ADMINS = [('admin', 'rtsoglo@gmail.com'), ('sogloarcadius', 'sogloarcadius@yahoo
 # Application definition
 
 INSTALLED_APPS = [
+    
     'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -51,9 +54,9 @@ INSTALLED_APPS = [
     'corsheaders',
     'django_prometheus',
     'rest_framework',
-    'rest_framework_swagger',
     'django_markup',
 
+    'apps.users',
     'apps.core',
     'apps.projects',
     'apps.resume',
@@ -65,10 +68,10 @@ MIDDLEWARE = [
     'django_prometheus.middleware.PrometheusBeforeMiddleware',
     'log_request_id.middleware.RequestIDMiddleware',
     'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.security.SecurityMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -242,7 +245,26 @@ GENERATE_REQUEST_ID_IF_NOT_IN_HEADER = True
 REQUEST_ID_RESPONSE_HEADER = "X-REQUEST-ID"
 
 
-# REST Framework
+# DJANGO REST FRAMEWORK
 REST_FRAMEWORK = {
-    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
+    'EXCEPTION_HANDLER': 'apps.core.exceptions.core_exception_handler',
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
+    'DEFAULT_RENDERER_CLASSES': ['rest_framework.renderers.JSONRenderer'],
+    'DEFAULT_AUTHENTICATION_CLASSES': ['apps.users.backends.JWTAuthentication'],
 }
+
+
+## Set to false to fix 
+# issue creating migrations 
+PROMETHEUS_EXPORT_MIGRATIONS = False
+
+
+# Register default user model
+AUTH_USER_MODEL = "users.User"
+
+
+# JWT
+JWT_EXPIRATION_DELAY = os.environ.get("JWT_EXPIRATION_DELAY")
+JWT_PUBLIC_KEY = os.environ.get("JWT_PUBLIC_KEY")
+JWT_PRIVATE_KEY = os.environ.get("JWT_PRIVATE_KEY")
+JWT_ISSUER = os.environ.get("JWT_ISSUER")

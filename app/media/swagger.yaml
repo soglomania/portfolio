@@ -14,22 +14,22 @@ info:
   version: 1.0.0
   title: PORTFOLIO REST API
 host: ''
-basePath: "/portfolio/api"
+basePath: "/api/"
 schemes:
 - http
 - https
 paths:
-  "/me":
+  "/resume":
     get:
       tags:
-      - info
-      summary: Get basic information about me
+      - resume
+      summary: get resume
       produces:
       - application/json
       responses:
         '200':
-          description: detail about me in json
-  "/project":
+          description: my resume in json
+  "/projects":
     get:
       tags:
       - project
@@ -39,4 +39,4 @@ paths:
       - application/json
       responses:
         '200':
-          description: successful operation
+          description: projects in json

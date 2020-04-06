@@ -8,7 +8,6 @@ class Project(models.Model):
     description = models.TextField()
     category = models.TextField()
 
-    logo = models.TextField()
     github = models.URLField()
     link = models.URLField()
 

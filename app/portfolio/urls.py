@@ -6,23 +6,24 @@ from django.conf.urls.i18n import i18n_patterns
 from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns
 
 
+
 urlpatterns = [
     url(r'^i18n/', include('django.conf.urls.i18n')),
 ]
 
 urlpatterns += i18n_patterns(
-
     url(r'^', include('apps.ui.urls', namespace="ui")),
-
     url(r'^admin/', admin.site.urls),
+    prefix_default_language=True
+)
 
-    url(r'^health/', include('django_prometheus.urls')),
-
-    url(r'^api/', include('apps.core.urls')),
+urlpatterns += [
+    url(r'^api/', include('apps.core.urls', namespace="core")),
+    url(r'^api/', include('apps.users.urls', namespace="users")),
     url(r'^api/', include('apps.projects.urls', namespace="projects")),
     url(r'^api/', include('apps.resume.urls', namespace="resume")),
-
-)
+    url(r'^api/', include('django_prometheus.urls')),
+]
 
 
 urlpatterns += staticfiles_urlpatterns()
