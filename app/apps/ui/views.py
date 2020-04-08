@@ -23,6 +23,7 @@ def set_french(request):
 
     return response
 
+
 def set_english(request):
     redirect_url = utils.parse_url(request.GET.get('next', '/'))
     user_language = 'en'

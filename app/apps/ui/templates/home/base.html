@@ -50,7 +50,7 @@
         <li>
           <div class="center-align">           
               {% block fullname %}
-                  <h5>{{ biography.full_name | apply_markup:"markdown" }}</h5>
+                  <h5>{{ biography.name | apply_markup:"markdown" }}</h5>
               {% endblock fullname %}
           </div>
         </li>
@@ -110,7 +110,7 @@
         <li>
           <div class="center-align">           
               {% block fullname_mobile %}
-                  <h5>{{ biography.full_name | apply_markup:"markdown" }}</h5>
+                  <h5>{{ biography.name | apply_markup:"markdown" }}</h5>
               {% endblock fullname_mobile %}
           </div>
         </li>

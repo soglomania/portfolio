@@ -1,41 +1,31 @@
 from django.contrib import admin
 
-from .models import Biography, Language, Interest, Membership, Education, Job, Skill
+from . import models
 from modeltranslation.admin import TranslationAdmin
-
-
 
 
 class BiographyAdmin(TranslationAdmin):
     pass
 
-
 class LanguageAdmin(TranslationAdmin):
     pass
-
-
-class InterestAdmin(TranslationAdmin):
-    pass
-
-class MembershipAdmin(TranslationAdmin):
-    pass
-
 
 class EducationAdmin(TranslationAdmin):
     pass
 
-class JobAdmin(TranslationAdmin):
+class ExperienceAdmin(TranslationAdmin):
     pass
-
 
 class SkillAdmin(TranslationAdmin):
     pass
 
+class InterestAdmin(TranslationAdmin):
+    pass
 
-admin.site.register(Biography, BiographyAdmin)
-admin.site.register(Language, LanguageAdmin)
-admin.site.register(Interest, InterestAdmin)
-admin.site.register(Membership, MembershipAdmin)
-admin.site.register(Education, EducationAdmin)
-admin.site.register(Job, JobAdmin)
-admin.site.register(Skill, SkillAdmin)
+
+admin.site.register(models.Biography, BiographyAdmin)
+admin.site.register(models.Language, LanguageAdmin)
+admin.site.register(models.Education, EducationAdmin)
+admin.site.register(models.Experience, ExperienceAdmin)
+admin.site.register(models.Skill, SkillAdmin)
+admin.site.register(models.Interest, InterestAdmin)
