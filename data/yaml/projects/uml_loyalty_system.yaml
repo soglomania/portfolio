@@ -1,0 +1,68 @@
+---
+title: Loyalty Program
+category: programming
+
+summary_en: >
+  This project was done as part of the software design module during my Erasmus Exchange at DIT.
+
+  The idea is to imagine a real world problem and provide a software design using UML and RSA IDE(IBM).
+
+summary_fr: >
+  Ce projet à été réalisé dans le cadre de mon séjour Erasmus à DIT.
+  Le projet de mon module Architecture logiciel consiste à imaginer un système et mettre en place son architecture logiciel.
+
+summary_es: >
+  Este proyecto fue realizado durante mi intercambio Erasmus en Dublin Institute of Technology (DIT).
+
+  El proyecto consiste en imaginar un sistema y proponer su diseno usando UML.
+
+description_en: |
+  This project was done as part of the software design module during my Erasmus Exchange at DIT. 
+  
+  The idea is to imagine a real world problem and provide a software design using UML and RSA IDE(IBM). 
+  
+  I create a design of a sofware to manage the loyalty system of businesses.
+  
+  The main goal of this system is to replace the printed loyalty cards.
+  
+  Now the customers create their digital loyalty card and use the same digital loyalty card in all the businesses that use the Smart Points system.
+  
+  The customers will now get points from businesses on the same digital loyalty card.
+  
+  The application will allow businesses to easily give points to their customers and customers points are grouped by business.
+  
+  The customer can use the same application for all the businesses that use the same system.
+  
+  Each business needs to define the rewards and the points corresponding to the rewards.
+
+  This can be described in the application and also displayed in the restaurants.
+  
+description_fr: |
+  Le projet a été réalisé dans le cadre de mon séjour Erasmus à DIT. 
+  
+  Le projet de mon module Architecture logiciel consiste à imaginer un système et mettre en place son architecture logiciel. 
+  
+  Le systeme permet de mettre en place un programme de fidélité mobile pour les petites et moyennes entreprises.
+  
+  L'objectif est de permettre aux entreprises de remplacer les cartes de fidélité papier par un systeme digital.
+  
+  Les clients peuvent créer un compte sur le systeme et utiliser la meme carte digital chez tous les commercants qui utilise le systeme Smart Points.
+
+  Les entreprises doivent définir l'association entre les points et les bonus associés.
+
+description_es: |
+  El proyecto fue realizado durante mi intercambio Erasmus en Dublin Institute of Technology (DIT).
+
+  Este proyecto consiste en imaginar un sistema y proponer su diseno usando UML. 
+  
+  El sistema permite a las empressas con pocos recursos de crear un programma de fidelidad mobil.
+  
+  El objetivo es de permitir a las empresas que recompensaban a los clientes usando un sistema de fidelidad en papel de usar un sistema digital.
+  
+  Los clientes pueden utilizar la misma carta digital en todos los comercios que utilizan el sistema Smart Points. 
+  
+  Las empresas deben definir las recompensas en la aplicacion y los puntos necesitados para obtener cada recompensa. 
+  
+link: https://www.dropbox.com/s/f51lvx0v5y1xcie/Deliverable3_D17123407_SOGLO_Arcadius.pdf?dl=0
+
+github: https://github.com/sogloarcadius

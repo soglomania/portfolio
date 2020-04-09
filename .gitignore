@@ -26,7 +26,7 @@ coverage.xml
 # Django stuff:
 *.log
 local_settings.py
-website/static
+app/static
 
 # pyenv
 .python-version

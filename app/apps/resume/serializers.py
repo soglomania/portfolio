@@ -15,7 +15,7 @@ class BiographySerializerEnglish(serializers.ModelSerializer):
 
     class Meta:
         model = models.Biography
-        fields = ["surname", "lastname", "firstname", "name", "date_of_birth", "age", "address", "phone_number", "email", "job_title", "summary", "description", "youtube", "facebook", "github", "linkedin", "viadeo", "twitter"]
+        fields = ["surname", "lastname", "firstname", "fullname", "date_of_birth", "age", "address", "phone_number", "email", "job_title", "summary", "description", "youtube", "facebook", "github", "linkedin", "viadeo", "twitter"]
         
 
 class BiographySerializerFrench(serializers.ModelSerializer):
@@ -25,7 +25,7 @@ class BiographySerializerFrench(serializers.ModelSerializer):
 
     class Meta:
         model = models.Biography
-        fields = ["surname", "lastname", "firstname", "name", "date_of_birth", "age", "address", "phone_number", "email", "job_title", "summary", "description", "youtube", "facebook", "github", "linkedin", "viadeo", "twitter"]
+        fields = ["surname", "lastname", "firstname", "fullname", "date_of_birth", "age", "address", "phone_number", "email", "job_title", "summary", "description", "youtube", "facebook", "github", "linkedin", "viadeo", "twitter"]
         
 
 
@@ -36,7 +36,7 @@ class BiographySerializerSpanish(serializers.ModelSerializer):
 
     class Meta:
         model = models.Biography
-        fields = ["surname", "lastname", "firstname", "name", "date_of_birth", "age", "address", "phone_number", "email", "job_title", "summary", "description", "youtube", "facebook", "github", "linkedin", "viadeo", "twitter"]
+        fields = ["surname", "lastname", "firstname", "fullname", "date_of_birth", "age", "address", "phone_number", "email", "job_title", "summary", "description", "youtube", "facebook", "github", "linkedin", "viadeo", "twitter"]
         
 
 

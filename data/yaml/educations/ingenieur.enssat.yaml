@@ -1,0 +1,56 @@
+name_en: >
+  Master II Degree in Computer Science (Engineer), co-op program( Apprenticeship)
+name_fr: >
+  Diplôme d’ingénieur Informatique, Multimédia et Réseaux par Alternance
+name_es: > 
+  Master II Degree in Computer Science (Engineer), co-op program( Apprenticeship)
+start_date: 2015-09-14
+end_date: 2018-09-14
+is_current: false
+
+school_en: National School of Applied Science and Technology (University of Rennes 1, France)
+school_fr: ENSSAT Lannion (Université Rennes 1, France)
+school_es: ENSSAT Lannion (Universidad de Rennes 1, Francia)
+
+summary_en: >
+  Engineer degree in computer science
+summary_fr: >
+  Titre d'ingénieur en informatique
+summary_es:
+  Ingeneria informatica
+
+description_en: |
+  Software development (JAVA, C/C++, Python, UML-RUP)
+
+  Web development technologies (HTML, CSS, PHP, NODEJS, etc...)
+
+  Network administration & Sysadmin.
+
+  Introduction to Machine Learning at DIT Kevin Street, Dublin, Ireland
+
+  Project Management and Communication Skills
+
+description_fr: |
+  Développement logiciel.
+  
+  Administration système et réseau.
+  
+  Traitement et manipulation d'images et de données multimédia
+
+  Introduction à l'intelligence artificielle à Dublin, Ireland (Echange académique)
+
+  Compétences de l'ingénieur : gestion de projet, communication
+
+
+description_es:
+  Software development (JAVA, C/C++, Python, UML-RUP)
+
+  Web development technologies (HTML, CSS, PHP, NODEJS, etc...)
+
+  Network administration & Sysadmin.
+
+  Introduction to Machine Learning at DIT Kevin Street, Dublin, Ireland
+
+  Project Management and Communication Skills
+
+link: https://www.linkedin.com/school/enssat/

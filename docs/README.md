@@ -20,14 +20,28 @@ Default Credentials : admin/admin
 
 [Kibana Dashboard](http://sogloarcadius.com:5601)
 
+
+
 # HTTPS CONFIGURATION STEPS
 
-## Copy letsencrypt nginx files 
+
+## Start letsencrypt nginx 
 
 ```
+mkdir -p /docker/portfolio/volumes/letsencrypt-data/
 cp ./docker/letsencrypt/index.html /docker/portfolio/volumes/letsencrypt-data/
+sudo docker-compose -f docker-compose.base.yaml up --build -d letsencrypt
+```
+
+
+## Generate a 2048 bit DH Param file
 
 ```
+mkdir -p /docker/portfolio/volumes/dh-param/
+touch /docker/portfolio/volumes/dh-param/dhparam-2048.pem
+sudo openssl dhparam -out /docker/portfolio/volumes/dh-param/dhparam-2048.pem 2048
+```
+
 ## Issue a staging certificate
 
 ```
@@ -58,7 +72,6 @@ certificates
 
 ## Clean up Certificates
 
-
 ```
 sudo rm -rf /docker/portfolio/volumes/
 
@@ -80,15 +93,6 @@ certonly --webroot \
 
 ```
 
-
-## Generate a 2048 bit DH Param file
-
-```
-mkdir -p /docker/portfolio/volumes/dh-param/
-touch /docker/portfolio/volumes/dh-param/dhparam-2048.pem
-sudo openssl dhparam -out /docker/portfolio/volumes/dh-param/dhparam-2048.pem 2048
-
-```
 
 ## Add crontab to renew certificate
 
@@ -123,5 +127,50 @@ run on the server hosting docker machines to increase mem
 
 ``` 
 $ sudo sysctl -w vm.max_map_count=262144
+
+```
+
+
+# Start app http
+
+```sh
+
+source production.properties
+
+docker-compose -f docker-compose.base.yaml -f docker-compose.httponly.yaml build --build-arg JWT_PUBLIC_KEY --build-arg JWT_PRIVATE_KEY django
+
+docker-compose -f docker-compose.base.yaml -f docker-compose.httponly.yaml up -d django
+
+```
+
+
+# Start app https
+
+```sh
+
+source production.properties
+
+docker-compose -f docker-compose.base.yaml -f docker-compose.yaml build --build-arg JWT_PUBLIC_KEY --build-arg JWT_PRIVATE_KEY django
+
+docker-compose -f docker-compose.base.yaml -f docker-compose.yaml up -d django
+
+```
+
+
+# Start elk
+
+```sh
+
+sysctl -w vm.max_map_count=262144
+
+docker-compose -f docker-compose.base.yaml -f docker-compose.elk.yaml up --build -d filebeat
+
+```
+
+# Stop all containers
+
+```sh
+
+docker-compose -f docker-compose.base.yaml -f docker-compose.yaml -f docker-compose.httponly.yaml down --volumes
 
 ```

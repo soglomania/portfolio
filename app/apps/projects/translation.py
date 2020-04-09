@@ -4,7 +4,7 @@ from .models import Project
 
 
 class ProjectTranslationOptions(TranslationOptions):
-    fields = ('summary', 'description', 'category',)
+    fields = ('summary', 'description',)
 
 
 

@@ -1,8 +1,7 @@
 FROM ubuntu:18.04
 
 LABEL maintainer.fullname="SOGLO Arcadius"
-LABEL maintainer.email="rtsoglo@gmail.com" 
-
+LABEL maintainer.email="rtsoglo@gmail.com"
 
 ## Default ubuntu docker image doesn't have en-US.UTF-8
 RUN apt update --fix-missing && apt install locales
@@ -33,7 +32,7 @@ RUN apt-get update && \
 ENV CODE_DIR /home/docker/code
 
 
-COPY website/requirements.txt ${CODE_DIR}/app/
+COPY app/requirements.txt ${CODE_DIR}/app/
 RUN pip3 install -r ${CODE_DIR}/app/requirements.txt
 
 # Nginx
@@ -50,12 +49,19 @@ COPY confs/uwsgi.ini ${CODE_DIR}/uwsgi.ini
 
 
 # App
-COPY website ${CODE_DIR}/website
-RUN python3 ${CODE_DIR}/website/manage.py collectstatic --no-input
+COPY app ${CODE_DIR}/app
+RUN python3 ${CODE_DIR}/app/manage.py collectstatic --no-input
+
+
+# JWT
+ARG JWT_PUBLIC_KEY
+ARG JWT_PRIVATE_KEY
+
+ENV JWT_PUBLIC_KEY $JWT_PUBLIC_KEY
+ENV JWT_PRIVATE_KEY $JWT_PRIVATE_KEY
 
 
 EXPOSE 80
-
 EXPOSE 443
 
 WORKDIR ${CODE_DIR}

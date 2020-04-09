@@ -32,6 +32,7 @@
     {% block container %}
       
         <div class="container">
+        
             <div class="row">
 
                     {% block filter %}
@@ -74,34 +75,32 @@
 
                     {% block rigth-to-filter %}
 
-                                <div class="section">
-                                    <div class="row">
-                                        {% for project in projects %}
-                                        <div class="col l4 m4 s12">
-                                            <div class="card small right z-depth-2 animated tada animation-delay-7">
-                                                <div class="card-image">
-                                                    <img class="activator" src="{% static 'ui/images/'|add:project.category|add:'.svg' %}">
-                                                </div>
-                                                <div class="card-content">
-                                                    <!--<br>-->
-                                                    <span class="card-title activator grey-text text-darken-4">{{project.title}}</span>
-                                                </div>
-                                                <div class="card-reveal">
-                                                    <span class="card-title grey-text text-darken-4">{{project.title}}
-                                                        <i class="material-icons right">close</i>
-                                                    </span>
-                                                    <p>{{ project.summary | apply_markup:"markdown" }}</p>
-                                                </div>
-                                                <div class="card-action">
-                                                    <a class="btn-floating halfway-fab waves-effect waves-light grey" href="{% url 'ui:project' project.pk %}">
-                                                        <i class="material-icons">zoom_in</i>
-                                                    </a>
-                                                </div>
-                                            </div>
+                            <div class="row">
+                                {% for project in projects %}
+                                <div class="col l3 m3 s12">
+                                    <div class="card small right z-depth-2 animated tada animation-delay-7">
+                                        <div class="card-image">
+                                            <img class="activator" src="{% static 'ui/images/'|add:project.category|add:'.svg' %}">
                                         </div>
-                                        {% endfor %}
+                                        <div class="card-content">
+                                            <!--<br>-->
+                                            <span class="card-title activator grey-text text-darken-4">{{project.title}}</span>
+                                        </div>
+                                        <div class="card-reveal">
+                                            <span class="card-title grey-text text-darken-4">{{project.title}}
+                                                <i class="material-icons right">close</i>
+                                            </span>
+                                            <p>{{ project.summary | apply_markup:"markdown" }}</p>
+                                        </div>
+                                        <div class="card-action">
+                                            <a class="btn halfway-fab waves-effect waves-light grey" href="{% url 'ui:project' project.pk %}">
+                                                <i class="material-icons">zoom_in</i>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
+                                {% endfor %}
+                            </div>
 
                     {% endblock rigth-to-filter %}
 

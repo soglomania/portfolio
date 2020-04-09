@@ -1,0 +1,52 @@
+---
+title: Machine Learning using SQL
+category: datascience
+
+summary_en: >
+  This project was done as part of the data analytics module during my Erasmus Exhange at DIT. 
+  In this project I put in practice some techniques when using relational databases for data analysis and machine learning.
+
+
+summary_fr: >
+  Le projet a été réalisé dans le cadre de mon échange Erasmus à DIT (Dublin Institute of Technology), Ireland. 
+  
+  Ce projet consiste à utiliser le langage SQL pour faire une analyse de donnée et du machine learning.
+
+summary_es: >
+  Este proyecto consiste en analizar una base de datos usando SQL. 
+  
+  El proyecto fue realizado durante mi intercambio Erasmus en DIT, Ireland. 
+  
+  El objetivo es de utilizar SQL para analizar la base de datos y crear modelos de inteligencia artificial.
+
+description_en: |
+  
+  This project was done as part of the data analytics module during my Erasmus Exhange at DIT. 
+  
+  In this project we put in practice some techniques when using relational databases for data analysis and machine learning. 
+  
+  The objective of this project is to use SQL to do some analysis on a data stored in relational databases and the built in machine learning algorithms.
+
+  For this project, I use the following tools and technologies : Oracle Database Server 12c R2, Oracle SQL developer, SQL language, Built in Data Mining/ML algorithms in Oracle Database Server
+
+  
+description_fr: |
+  Le projet à été réalisé dans le cadre de mon échange Erasmus à DIT (Dublin Institute of Technology), Ireland. 
+  
+  Il consiste à utiliser le langage SQL pour faire une analyse de donnée et du machine learning.
+  
+  Pour réaliser le projet, j'ai utilisé les outils et technologies suivantes : Oracle Database Server 12c R2, Oracle SQL developer, le langage SQL, les algorithmes de Data Mining/ML dans Oracle Database Server.
+  
+  
+description_es: |
+  Este proyecto consiste en analizar una base de datos usando SQL. 
+  
+  Este proyecto fue realizado durante mi intercambio Erasmus en DIT, Ireland.
+  
+  El objetivo es de utilizar SQL para analizar la base de datos y crear modelos de inteligencia artificial.
+  
+  Las herramientas y tecnologias utilizadas son : Oracle Database Server 12c R2, Oracle SQL developer, SQL, los algorithmos de Data Mining/ML en Oracle Database Server.
+
+link: https://www.dropbox.com/s/cmiud5we5dj5tjd/Report_Database_D17123407_Arcadius_SOGLO.pdf?dl=0
+
+github: https://github.com/sogloarcadius

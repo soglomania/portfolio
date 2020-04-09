@@ -1,0 +1,63 @@
+---
+title: Ski Booking
+category: programming
+
+summary_en: >
+  This project was done as part of the database module of my master. 
+  It was a group project and I did the project with another classmate.
+  The goal is to setup a database for the ski reservation system.
+
+summary_fr: >
+  Dans le cadre du module de base de données, j'ai été amené à réaliser un projet en binôme.
+  
+  L’objectif est de réaliser une base de données pour la gestion de location des appartements d’une station de sports d’hiver.
+
+summary_es: >
+  Este proyecto fue en grupo de dos durante mis clases de base de datos del master.
+  
+  El objetivo es de crear una base de datos para la reservacion de apartamentos en una estacion de ski.
+
+description_en: |
+  This project was done as part of the database module of my master.
+
+  It was a group project and I did the project with another classmate.
+
+  The goal is to setup a database for the ski reservation system.
+  
+  The database have to allow the reservation of at least fourty appartments of differents type in three different places. 
+  
+  We are expected to setup the following use cases : registration or login of the customer, booking of an appartment, confirmation of booking with the payement of the deposit, automated deletion of booking not confirmed within 15 days.
+  
+  During the project we follow the classic workflow of database creation : Conceptual and logical modeling, physical modeling, Data Definition Language (SQL code, indexes, triggers, procedures, functions), Testing with data.
+  
+  The tools used are : MySQL Server and MySQL client Workbench.
+
+description_fr: |
+  Dans le cadre du module de base de données, j'ai été amené à réaliser un projet en binôme. 
+
+  L’objectif est de réaliser une base de données pour la gestion de location des appartements d’une station de sports d’hiver.
+  
+  La base de données à créer doit permettre de gérer un système de location d'une quarantaine d'appartements de catégories différentes et reparties dans trois sites.
+  
+  Nous devrons mettre en place des mécanismes pour permettre l'inscription ou la connexion d'un client, la demande de réservation d'un appartement, la validation de la réservation avec le paiement des arrhes, la suppression automatique des réservations de plus de 15 jours.
+  
+  Nous avons réaliser toutes les phases du cycle de création d'une base de données : Model logique, odel physique, Ecriture du code SQL (indexes, triggers, fonctions, procédures), tests des contraintes avec des jeux de données.
+  
+  Les outils utilisés sont : MySQL Server et MySQL Client Workbench
+  
+description_es: |
+  Este proyecto fue en grupo de dos durante mis clases de base de datos del master. 
+  
+  El objetivo es de crear una base de datos para la reservacion de apartamentos en una estacion de ski.
+  
+  La base de datos debe permitir la reservacion de quarenta apartamentos en tres diferentes sitios.
+  
+  El systema debe manejar la inscripcion o connexion de los clientes, la reservacion de un apartamento, la confirmacion de una reservacion cuando el cliente paga el deposito, la suprecion automatica de las revervaciones no confirmada en 15 dias.
+  
+  Las etapas siguentes fueron respectadas para crear la base de datos : Modelo logico, Modelo fisico, Codigo SQL (indexes, triggers, proceduras, funciones), Test del sistema.
+  Las herramientas utilizadas son MySQL server y el Cliente MySQL WorkBench
+
+
+link: https://www.dropbox.com/s/nen74gqrtc0v1yu/Rapport_Arcadius_Saliou.docx?dl=0
+
+github: https://github.com/sogloarcadius

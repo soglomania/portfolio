@@ -10,7 +10,6 @@ class ProjectSerializer(serializers.ModelSerializer):
 
 
 class ProjectSerializerEnglish(serializers.ModelSerializer):
-    category = serializers.CharField(source="category_en")
     summary = serializers.CharField(source="summary_en")
     description = serializers.CharField(source="description_en")
 
@@ -21,7 +20,6 @@ class ProjectSerializerEnglish(serializers.ModelSerializer):
 
 
 class ProjectSerializerFrench(serializers.ModelSerializer):
-    category = serializers.CharField(source="category_fr")
     summary = serializers.CharField(source="summary_fr")
     description = serializers.CharField(source="description_fr")
 
@@ -31,7 +29,6 @@ class ProjectSerializerFrench(serializers.ModelSerializer):
 
 
 class ProjectSerializerSpanish(serializers.ModelSerializer):
-    category = serializers.CharField(source="category_es")
     summary = serializers.CharField(source="summary_es")
     description = serializers.CharField(source="description_es")
 

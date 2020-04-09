@@ -1,19 +1,20 @@
 ---
 title: Graph Theory
-category_en: programming
-category_fr: programmation
-category_es: programmacion
+category: programming
 
 summary_en: >
    In the computer science courses, I implemented the basic functionalities of oriented and non-oriented graph of N vertexes. 
    I also implemented some algorithms of routing to find the shortest path for example Dijkstra and Bellman.
+
 summary_fr: >
   Dans le cadre de ma formation d'ingénieur j'ai mis en oeuvre des fonctionnalités de base d'un graphe orienté valué à N sommets, 
   les algorithmes de recherche de plus courts chemins avec routage de Dijkstra et Bellman.
+  
 summary_es: >
   El objetivo del proyecto es de programar las funcionalidades de un grafo orientado y no-orientado de N vertices. 
   Tambien he programado los clasicos algoritmos de graphos por ejemplo la busceda del mas corto camino de Djikstra y Bellman.
-  
+
+
 description_en: |    
     In the computer science courses, I implemented the basic functionalities of oriented and non-oriented graph of N vertexes.
 

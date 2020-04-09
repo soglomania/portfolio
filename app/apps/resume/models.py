@@ -21,7 +21,7 @@ class Biography(models.Model):
     viadeo = models.URLField()
     twitter = models.URLField()
 
-    def name(self):
+    def fullname(self):
         return "%(firstname)s %(surname)s" %({'firstname' : self.firstname, 'surname' : self.surname })
 
     def lastname(self):
@@ -31,7 +31,7 @@ class Biography(models.Model):
         return (datetime.date.today() - self.date_of_birth).days // 365
 
     def __str__(self):
-        return self.name()
+        return self.fullname()
 
 
 class Language(models.Model):

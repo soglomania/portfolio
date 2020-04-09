@@ -1,0 +1,58 @@
+---
+title: NITFLEX & ANI
+category: programming
+
+summary_en: >
+  During my master degree courses at ENSSAT, I setup a computer network with another classmates. 
+  The goal of the project is to reuse our skills in computer network on a real use case.
+
+summary_fr: >
+  Dans le cadre de ma formation d'ingénieur à l'ENSSAT, j'ai été amené à réaliser un projet de réseaux en équipe.
+  L'objectif du projet est de réutiliser les connaissances acquises en réseaux sur un cas d'usage entreprise.
+
+summary_es: >
+  Durante mis clases de master, hicimos un proyecto de redes de las computadoras en grupo.
+
+  El objetivo era de reutilizar nuestros conocimientos de redes de las computadoras para disenar la arquitectura de la red de una empresa y hacer una simulacion de la red en el laboratorio.
+
+
+description_en: |
+  During my master degree courses at ENSSAT, I setup a computer network with another classmates. 
+  
+  The goal of the project is to reuse our skills in computer network on a real use case. 
+  
+  We are suppose to redesign a company network.
+  
+  The project consist of practising some skills of a network engineer by analysing a real use case requirements and set up a solution to satisfy the requirements(Computer network architecture).
+  
+  The following fonctionalities and services have been implemented in the final architecture :  Vlans, VOIP, DNS, DHCP, SFTP, SSH, Firewall, Mail server, QoS
+  
+  The following equipments have been used : cisco router 2811, Cisco switch  2960, IP Phone Alcatel
+
+description_fr: |
+  Dans le cadre de ma formation d'ingénieur à l'ENSSAT, j'ai été amené à réaliser un projet de réseaux en équipe.
+  
+  L'objectif du projet est de réutiliser les connaissances acquises en réseaux sur un cas d'usage entreprise.
+  
+  Il s'agit de la modification de la haute disponibilité du réseau d'entreprise suite à la fusion de deux sociétés( NITFLEX & ANI).
+  
+  Le projet à permis de mettre en oeuvre les compétences d'un ingénieur réseau qui consiste à analyser un cahier des charges puis proposer une solution pour répondre aux attentes (conception de l'architecture réseau).
+  
+  Les fonctionnalités et services suivants sont à présent disponible dans la nouvelle configuration du réseau : Vlans, VOIP, DNS, DHCP, SFTP, SSH, Pare-feu - filtrage, Serveur mail, QoS.
+  
+  Les équipements suivants ont été utilisés : routeur cisco 2811, commutateur Cisco 2960, Téléphone IP Alcatel
+
+description_es: |
+  Durante mis clases de master, hicimos un proyecto de redes de las compputadoras en grupo. 
+  
+  El objetivo era de reutilizar nuestros conocimientos de redes de las computadoras para disenar la arquitectura de la red de una empresa y hacer una simulacion de la red.
+  
+  El proyecto consiste en practicar algunas habilidades del ingeniero de red.
+
+  Primero analizamos los requisitos de un caso de uso real y establecemos una solución para satisfacer los requisitos (arquitectura de la red).
+  
+  Las funcionalidades siguente fueron implementadas en la nueva arquitectura : Vlans, VOIP, DNS, DHCP, SFTP, SSH, Firewall, Servidor de coreo electronico, QoS.
+
+link: https://www.dropbox.com/s/op2k8pqem4qf4wv/RapportFinal.pdf?dl=0
+
+github: https://github.com/sogloarcadius

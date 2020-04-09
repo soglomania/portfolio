@@ -1,0 +1,59 @@
+---
+title: Judo Tournament Management
+category: programming
+
+summary_en: >
+  This project was done as part of the web application development module of my master courses. 
+  The idea is to create a web application to manage a Judo Tournament using the PHP framework CodeIgniter and the MVC design pattern.
+
+summary_fr: >
+  Dans le cadre de ma formation d"ingénieur, j'ai été amené à réaliser une application Web en équipe pour la gestion des tournois de judo. 
+  Les contraintes majeures pour ce projet sont l’utilisation du Framework CodeIgniter et le respect du modèle Modèle Vue Controller.
+
+summary_es: >
+  Este proyecto consiste en crear una aplicacion web para manejar una competicion de judo. 
+  La aplicacion fue creada usando el framework PHP CodeIgniter y el patron de diseno MVC.
+
+description_en: |
+  
+  This project was done as part of the web application development module of my master courses.
+  
+  The idea is to create a web application to manage a Judo Tournament using the PHP framework CodeIgniter and the MVC design pattern.
+  
+  It was a group project and we develop the following use cases : users management, competition management, fights management.
+  
+  We use the PHP framework CodeIgniter and the relational database management system PostgreSQL to store the data. 
+  
+  A focus on the project management and team management was required and evaluated during this project. 
+  Another constraints was the time management.
+
+
+description_fr: |
+  
+  Dans le cadre de ma formation d'ingénieur, j'ai été amené à réaliser une application Web en équipe pour la gestion des tournois de judo.
+  
+  Les contraintes majeures pour ce projet sont l’utilisation du Framework CodeIgniter et le respect du modèle Modèle Vue Controller. 
+  
+  Nous avons développés les fonctionnalités suivantes : gestion des utilisateurs, gestion du tournoi, gestion des combats.
+  
+  Nous avons utilisé le framework CodeIgniter et le système de gestion de base de données PostgreSQL pour le stockage des données. 
+  
+  Un point également important dans ce projet est l’organisation de l'équipe pour réaliser le travail demandé dans les délais imposés.
+  
+
+description_es: |
+  
+  Este proyecto consiste en crear una aplicacion web en equipo de cinco personas para manejar una competicion de judo. 
+  
+  La aplicacion fue creada usando el framework PHP CodeIgniter y el patron de diseno MVC.
+  
+  Las funcionalidades siguentes fueron implementadas : gestiòn de los usarios, gestiòn de la competicion, gestiòn de los combates.
+  
+  Ademas del framework PHP CodeIgniter, la aplicacion fue creada usando el sistema de gestion de base de datos PostgreSQL.
+  
+  Este proyecto necesitò una organizacion del equipo de trabajo para crear todas la funcionalidades en tiempo.
+
+
+link: https://github.com/sogloarcadius
+
+github: https://github.com/sogloarcadius

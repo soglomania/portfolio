@@ -1,0 +1,63 @@
+---
+title: Employee Management
+category: programming
+
+summary_en: >
+  This project was done as part of the JAVA module of my master. 
+  The goal is to create a UML diagram and the java code based on the requirements.
+
+summary_fr: >
+  Pour mettre en pratique mes connaissances en JAVA, j'ai été amené à réaliser un projet en monôme. 
+  L’objectif est de mettre en œuvre un modèle UML pour répondre à un cahier des charges et ensuite coder celui-ci dans le langage JAVA.
+
+summary_es: >
+  Este proyecto fue parte de la clase de programacion de  mi master.
+
+  El objetivo es de crear el modelo de un sistema usando UML y programar la aplicacion en JAVA.
+
+description_en: |
+  
+  This project was done as part of the JAVA module of my master. 
+  
+  The goal is to create a UML diagram and the java code based on the requirements.
+
+  In my case the requirement is to setup a java application to manage the employees, the projects and the tasks.
+  
+  The java application should allow users to add, view and delete new employees, customers, projects and tasks.
+  
+  The application should allow the tracking of the employees tasks.
+  
+  The tools needed to develop the application are : JDK 1.8.0, Eclipse IDE
+  
+
+description_fr: |
+  
+  Pour mettre en pratique mes connaissances en JAVA, j'ai été amené à réaliser un projet en monôme.
+  
+  L’objectif est de mettre en œuvre un modèle UML pour répondre à un cahier des charges et ensuite coder celui-ci dans
+  le langage JAVA.
+  
+  Le cahier des charges est de réaliser une application pour la gestion des taches des employées pour suivre les projets d’une entreprise. 
+  
+  Cette application offre un nombre de fonctionnalités de base à savoir la consultation, l’ajout, la modification et la suppression d’un projet, d’un client, d’un employé ou d’une tache.
+  
+  Les outils utilisés pour mettre en œuvre le système de gestion de taches sont : JDK 1.8.0, IDE Eclipse
+
+
+description_es: |
+  
+  Este proyecto fue parte de la clase de programacion de mi master.
+  
+  El objetivo es de crear el modelo de un sistema usando UML y programar la aplicacion en JAVA.
+  
+  La aplicacion consiste en un sistema para manejar los empleados y los los proyectos de los empleados.
+  
+  La idea es que la aplicacion permite a la empresa manejar los proyectos y progresos de los empleados.
+  
+  La applicacion debe permitir anadir, ver y suprimir nuevos empleados, proyectos o clientes.
+  
+  Las herramientas utilizadas son : JDK 1.8.0, IDE Eclipse
+
+link: https://www.dropbox.com/s/l0zm5j7l2rqvkyx/Rapport_projet_Arcadius_SOGLO.docx?dl=0
+
+github: https://github.com/sogloarcadius

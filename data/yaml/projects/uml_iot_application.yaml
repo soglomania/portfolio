@@ -1,0 +1,49 @@
+---
+title: Control my Home
+category: programming
+
+summary_en: >
+  This project was done as part of my software design module. 
+  The goal is to design a software application using the RUP methodology and UML.
+
+summary_fr: >
+  Pour mettre en pratique mes connaissances sur le langage de modélisation UML(Unified Modeling Language), j'ai été amené à réaliser un projet en monôme. 
+  L’idée est de répondre à un client en utilisant la méthodologie « Récursive UP » et en s’appuyant sur UML.
+
+summary_es: >
+  Este proyecto consiste en crear el modelo de un sistema usando UML y la metodologia RUP.
+
+description_en: |
+  This project was done as part of my software design module. 
+  
+  The goal is to design a software application using the RUP methodology and UML.
+
+  The application is a software to manage the connected home devices. 
+  
+  The design should be created using the Recursive-UP methodology which allow the software architect to model the system based on the use cases using a recursive approach.
+
+description_fr: |
+  Pour mettre en pratique mes connaissances sur le langage de modélisation UML(Unified Modeling Language), j'ai été amené à réaliser un projet en monôme. 
+  
+  L’idée est de répondre à un client en utilisant la méthodologie « Récursive UP » et en s’appuyant sur UML.
+  
+  L'objectif est de répondre à un cahier des charges en utilisant UML et la méthodologie RUP. 
+  
+  Dans mon cas il s'agit de faire la conception d’une application qui permet de gérer l'ensemble des systemes domotiques d'une maison.
+
+  La conception demande une méthodologie pour guider le concepteur dans sa démarche.
+  
+  RUP permet une approche itérative guidée par des cas fonctionnels. 
+  
+description_es: |
+  Este proyecto consiste en crear el modelo de un sistema usando UML y la metodologia RUP.
+  
+  La idea es de proponer una solucion a una oferta de un cliente usando la metodologia Recursive-UP y el lenguage de diseno UML. 
+  
+  La aplicacion disenada permite manejar los objetos connectados de una casa.
+  
+  RUP permite disenar la aplicacion desde un punto de vista general y los casos funcionales de manera recursiva.
+
+link: https://www.dropbox.com/s/wo6q451q38x89ob/Rapport%20ProjetUML.pdf?dl=0
+
+github: https://github.com/sogloarcadius

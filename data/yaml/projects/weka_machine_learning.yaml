@@ -1,0 +1,46 @@
+---
+title: Machine Learning with WEKA
+category: datascience
+
+summary_en: >
+  In the machine learning module during my Erasmus exchange at DIT we put in practice machine learning algorithms using WEKA.
+
+summary_fr: >
+  Dans le cadre du module Machine Learning à l'Institut technologique de Dublin (DIT), Ireland, j'ai mis en oeuvre mes connaissances sur les différents algorithmes étudiés en utilisant WEKA.
+
+summary_es: >
+  Durante mi intercambio Erasmus en DIT, Ireland, Los proyectos de Inteligencia Artificial fueron con WEKA.
+
+description_en: |
+  In the machine learning module during my Erasmus exchange at DIT we put in practice machine learning algorithms using WEKA. 
+  
+  WEKA is a Machine learning/data mining software written in Java (distributed under the GNU PublicLicense). 
+  
+  It is used for research, education, and applications.
+  
+  The different projects consist of using WEKA for preprocessing, modeling and evaluation.
+  
+description_fr: |
+
+  Dans le cadre du module Machine Learning à l'Institut technologique de Dublin (DIT), Ireland, j'ai mis en oeuvre mes connaissances sur les différents algorithmes étudiés en utilisant WEKA. 
+  
+  WEKA est un logiciel d'apprentissage machine / data mining écrit en Java (distribué sous licence publique GNU). 
+  
+  Il est utilisé pour la recherche, l'éducation et les applications.
+
+  Les différents projets du module consiste à utilisé WEKA pour la préparation des données, la modélisation et l'évaluation.
+
+
+description_es: |
+
+  Durante mi intercambio Erasmus en DIT los proyectos de la asignatura Inteligencia Artificial fueron con WEKA. 
+  
+  WEKA es un software de data mining/IA escrito en Java (distribuido bajo la Licencia Pública GNU). 
+  
+  Se usa para la investigación, educación y las aplicaciones.
+
+  Los diferentes proyectos consistieron en usar WEKA para practicar las diferentes tecnicas de inteligencia artificial (Preparacion de los datos, Evaluacion)
+
+link: https://www.dropbox.com/s/ccl3bw6ewhxh8tb/ML_Assignment_1_D17123407_Arcadius_SOGLO.docx?dl=0
+
+github: https://github.com/sogloarcadius

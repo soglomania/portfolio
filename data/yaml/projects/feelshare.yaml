@@ -1,0 +1,61 @@
+---
+title: FEELSHARE Android 
+category: programming
+
+summary_en: >
+  Android Application to see the world feelings and yours.
+  Feelshare is developed to help people to save daily their moods and visualize it.
+  The main goal is to give user's an overview of the world feelings. 
+
+summary_fr: >
+  Application android pour partager ses émotions.
+  L'objectif est de permettre au monde entier de visualiser en tant réél la météo des sentiments.
+
+summary_es: >
+  Applicacion android para compartir sus emociones.
+  Feelshare fue creado para permitir a la gente compartir sus sentimientos con el mundo.
+  Les permite tambien saber como usted suele sentirse.
+
+description_en: |
+  
+  One day, I was discussing with my friend and he presents me his idea of android application to see the world feelings in real time. 
+  
+  Vladimir is an artist (arts, music, photographer) and have no programming experience.
+
+  He was very insterested in an application, that helps people to record their feelings and share them.
+  
+  The main goal of this app, is to quickly have an overview of the world feelings.
+  
+  The features expected are : the user can log his feelings, view charts of user feeling, map of the world with the world feelings, stats about the world feelings (Ex : how many people are sad or happy today ?, ...).
+  
+  First release of this app is a prototype of the idea and is not production ready. It helps me present the idea to other people and get their feedback about the project.
+  
+
+description_fr: |
+  Lors d'un échange avec un ami sur la situation actuelle du monde, celui ci m'a présenté son idée d'application pour connaitre en temps réel le sentiment du monde. 
+  
+  Vladimir est un artiste ( beaux-arts, musique, photographie) et par conséquent il n'a pas d'expérience en programmation. 
+  
+  Ayant trouvé l'idée interresante, je me suis lancé dans le dévelopement de l'application android.
+
+  Les fonctionalités attendues sont : pouvoir ajouter ses émotions, avoir des graphiques de ses sentiments, la carte du monde avec la répartition des sentiments, statistique sur les sentiments ( Ex : Combien de personne sont content aujourd'hui ?, ...).
+
+  La première version est un prototype pour démontrer la faisabilité du projet.
+  Cette version me permet de présenter l'idéé à mon entourage et de receuillir les avis des gens.
+  
+  
+description_es: |
+  
+  Un día, estaba discutiendo con mi amigo vladimir y me presentò su idea de aplicación Android para ver los sentimientos del mundo en tiempo real. 
+  
+  Vladimir es un artista (bellas artes, música, fotógrafo) y no tiene experiencia en programación.
+  
+  Muy encatado por la idea, me lanze en el desarollo de la aplicaciòn android.
+  
+  Las funcionalidades requeridas son : el usuario puede registrar sus sentimientos, gráficos de sentimientos, mapa del mundo con los sentimientos, estadísticas sobre los sentimientos del mundo (Ejemplo .: cuántas personas están tristes o felices hoy ?, ...).
+  
+  La primera version de la aplicación es un prototipo rápido de la idea que me permite mostrar a la gente. 
+  
+link: https://play.google.com/store/apps/details?id=io.soglomania.appfeelshare
+
+github: https://github.com/sogloarcadius/feelshare

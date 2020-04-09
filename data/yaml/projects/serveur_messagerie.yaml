@@ -1,0 +1,56 @@
+---
+title: MAIL SERVER GNU/LINUX
+category: programming
+
+summary_en: >
+  During my training leading to the computer networks and telecommunications administrator, the students of the second year have to do a tutored project proposed by the teachers of the IUT (Technology Institute). 
+  I have worked in group with another student on the implementation of a mail server on Linux.
+
+summary_fr: >
+  Dans le cadre de ma formation menant au DUT Réseaux et Télécoms, les étudiants de deuxième année sont amenés à réaliser un projet tuteuré proposé par les enseignants de l'IUT (Institut Universitaire de Technologie).
+  J'ai éffectué un projet en binôme sur la mise en place d'un serveur de messagerie linux.
+
+summary_es: >
+  Para obtener mi diploma de redes de las computadoras y telecomunicaciones, tenia que hacer un proyecto supervisado por los profesores del instituto universitario de technologia (IUT).
+  En mi caso, trabaje en conjunto con otro alumno sobre la implementacion de un servidor de coreo electronico con el sistema operativo Linux.
+
+description_en: |
+  During my training leading to the computer networks and telecommunications administrator, the students of the second year have to do a tutored project proposed by the teachers of the IUT (Technology Institute). 
+  
+  I have worked in group with another student on the implementation of a mail server on Linux.
+  
+  The features installed and configured are : Installation and configuration of a virtual environment running Linux : Ubuntu (14.04 LTS), Installation and configuration of a SMTP server (Postfix),
+  Installation and configuration of an anti-spam (Spamassasin) and antivirus (Clam AV), Installation and configuration of a POP3 / IMAP4 server (Dovecot), Installation and configuration of a Webmail (Roundcube),
+  Installation and configureation of a mail client (Thunderbird), Implementation of a secure e-mail exchange mechanism.
+  
+  After the mail server setup, mail traffic analysis was done with Wireshark to check that the services are performing as expected.
+  
+  We also create an installation guide for each service.
+  
+description_fr: |
+  Dans le cadre de ma formation menant au DUT réseaux et télécoms, les étudiants de deuxième année sont amenés à réaliser un projet tuteuré proposé par les enseignants de l'IUT (Institut Universitaire de Technologie).
+  
+  J'ai éffectué un projet en binôme sur la mise en place d'un serveur de messagerie linux.
+
+  Les fonctionnalités installés et configurés sont : environnement virtualisé GNU/Linux (Ubuntu Version LTS 14.04), serveur SMTP(Postfix), anti-spam (Spamassasin) et anti-virus (Clam AV)\, serveur POP3/IMAP4(Dovecot), serveur Webmail(Roundcube), client de messagerie(Thunderbird).
+  
+  Aprés installation, nous avons étudier la sécurisation des échanges de mail et valider le bon fonctionnement avec des tests Wireshark).
+  
+  De meme, nous avons rédiger des fiches de synthèses (Installation, Configuration, Utilisation, Mise à jour,... pour chacun des services).
+  
+description_es: |
+  Para obtener mi diploma de redes de las computadoras y telecomunicaciones, tenia que hacer un proyecto supervisado por los profesores del instituto universitario de technologia (IUT). 
+  
+  En mi caso, trabaje en conjunto con otro alumno sobre la implementacion de un servidor de coreo electronico con el sistema operativo Linux.
+  
+  Los siguientes servicions fueron implementados : servidor virtual con Linux (Ubuntu 14.04 LTS), servidor SMTP (Postfix), anti-spam (Spamassasin) y antivirus (Clam AV), servidor POP3 / IMAP4 (Dovecot), Webmail (Roundcube), cliente de correo (Thunderbird).
+  
+  Tambien, analizamos el mecanismo de securidad de intercambio de correo electrónico.
+
+  Wireshark nos ayudo para comprobar que los servicios están funcionando.
+  
+  Al final del proyecto, todo fue documentado y una guía de instalación para cada servicio esta disponible.
+
+link: https://drive.google.com/file/d/0B3QdIomi2EtuNTBfVzhwbkJ4ZDg/view?usp=sharing
+
+github: https://github.com/sogloarcadius

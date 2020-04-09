@@ -1,0 +1,47 @@
+---
+title: Bike Sharing
+category: datascience 
+
+summary_en: >
+  This machine learning project was done as part of an academic exchange at Dublin Institute of Technology (DIT).
+
+  For this project we have a dataset about the bike sharing system which provide us some data representing the count of bike rents hourly and daily.
+
+summary_fr: >
+  Le projet a été réalisé dans le cadre d'un échange académique à DIT (Dublin Institute of Technology).
+  
+  L'objectif du projet est de mettre en oeuvre nos connaissances en intelligence artifielle sur un jeu de données qui donne des informations sur la location de vélo.
+
+summary_es: >
+  Durante un intercambio universitario en Dublin Institute of Technology, hicimos un proyecto de inteligencia artificial utilizando los datos sobre la locacion de bicicleta.
+
+description_en: |
+
+  This machine learning project was done as part of an academic exchange at Dublin Institute of Technology (DIT).
+
+  For this project we have a dataset about the bike sharing systems which provide us some data representing the count of bike rents hourly and daily.
+  
+  The goal is to use machine learning to create a model that predict bike rental hourly or daily based on the environmental and seasonal settings.
+  
+  During this project, the CRISP-DM steps have been followed (Data understanding, Data preparation, Modeling and Evaluation).
+
+
+description_fr: |
+  Le projet à été réalisé dans le cadre d'un échange académique à DIT (Dublin Institute of Technology).
+  
+  L'objectif du projet est de mettre en oeuvre nos connaissances en intélligence artifielle sur un jeu de données qui donne des informations sur la location de vélo. 
+  
+  Le model à créer doit permettre de prédire le nombre de location de vélo par heure et par jour en fonction du temps et des informations météorologiques.
+
+
+description_es: |
+
+  Durante un intercambio universitario en Dublin Institute of Technology, hicimos un proyecto de inteligencia artificial utilizando los datos sobre la locacion de bicicleta. 
+  
+  Los datos contienen cuantas personas han alquilado las bicicletas cada hora y cada dia durante un periodo de tiempo.
+  
+  El objetivo es de escribir un programa que permite predecir cuantas bicicletas van a ser alquilados dando informaciones sobre el tiempo y el clima.
+
+link: https://github.com/soglomania/introduction_machine_learning/blob/master/docs/Report.pdf
+
+github: https://github.com/sogloarcadius
