@@ -36,7 +36,7 @@ ENV CODE_DIR /home/docker/code
 COPY app/requirements.txt ${CODE_DIR}/app/
 RUN pip3 install -r ${CODE_DIR}/app/requirements.txt
 
-# Nginx
+# Nginx http
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 COPY confs/nginx-httponly.conf /etc/nginx/sites-available/default
 
@@ -53,12 +53,6 @@ COPY confs/uwsgi.ini ${CODE_DIR}/uwsgi.ini
 COPY app ${CODE_DIR}/app
 RUN python3 ${CODE_DIR}/app/manage.py collectstatic --no-input
 
-# JWT
-ARG JWT_PUBLIC_KEY
-ARG JWT_PRIVATE_KEY
-
-ENV JWT_PUBLIC_KEY $JWT_PUBLIC_KEY
-ENV JWT_PRIVATE_KEY $JWT_PRIVATE_KEY
 
 EXPOSE 80
 

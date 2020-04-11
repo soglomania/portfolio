@@ -137,7 +137,7 @@ $ sudo sysctl -w vm.max_map_count=262144
 
 source production.properties
 
-docker-compose -f docker-compose.base.yaml -f docker-compose.httponly.yaml build --build-arg JWT_PUBLIC_KEY --build-arg JWT_PRIVATE_KEY django
+docker-compose -f docker-compose.base.yaml -f docker-compose.httponly.yaml build django
 
 docker-compose -f docker-compose.base.yaml -f docker-compose.httponly.yaml up -d django
 
@@ -150,9 +150,9 @@ docker-compose -f docker-compose.base.yaml -f docker-compose.httponly.yaml up -d
 
 source production.properties
 
-docker-compose -f docker-compose.base.yaml -f docker-compose.yaml build --build-arg JWT_PUBLIC_KEY --build-arg JWT_PRIVATE_KEY django
+docker-compose -f docker-compose.base.yaml -f docker-compose.https.yaml build django
 
-docker-compose -f docker-compose.base.yaml -f docker-compose.yaml up -d django
+docker-compose -f docker-compose.base.yaml -f docker-compose.https.yaml up -d django
 
 ```
 

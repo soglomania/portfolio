@@ -3,9 +3,17 @@ version: '3'
 services:
     
     django:
-        image : sogloarcadius/portfolio
-        env_file: environment.properties
-        build: .
+        image : sogloarcadius/portfolio_backend:https
+        environment:
+            - SYSLOG_HOST
+            - SYSLOG_PORT
+            - JWT_EXPIRATION_DELAY
+            - JWT_ISSUER
+            - JWT_PUBLIC_KEY
+            - JWT_PRIVATE_KEY
+        build: 
+            context: .
+            dockerfile: ./Dockerfile.https
         ports:
             - "80:80"
             - "443:443"

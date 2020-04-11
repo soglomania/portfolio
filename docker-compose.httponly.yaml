@@ -3,8 +3,14 @@ version: '3'
 services:
 
     django:
-        image : sogloarcadius/portfolio
-        env_file: environment.properties
+        image : sogloarcadius/portfolio_backend:httponly
+        environment:
+            - SYSLOG_HOST
+            - SYSLOG_PORT
+            - JWT_EXPIRATION_DELAY
+            - JWT_ISSUER
+            - JWT_PUBLIC_KEY
+            - JWT_PRIVATE_KEY
         build: 
             context: .
             dockerfile: ./Dockerfile.httponly
