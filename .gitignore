@@ -47,5 +47,5 @@ app/static
 !.elasticbeanstalk/*.global.yml
 .ebextensions
 
-# Credentials
-secrets.properties
+# env
+env.properties
