@@ -20,7 +20,7 @@ services:
     volumes :
       - /var/log/:/var/log/
     depends_on:
-      - log
+      - syslog-ng
       - elk
 
   

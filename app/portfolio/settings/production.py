@@ -5,8 +5,9 @@ DEBUG = False
 CORS_ORIGIN_ALLOW_ALL = False
 
 CORS_ORIGIN_WHITELIST = (
-    'sogloarcadius.com',
+    "sogloarcadius.com"
+
 )
 
-ALLOWED_HOSTS = ['.sogloarcadius.com', 'django', 'localhost']
+ALLOWED_HOSTS = [".sogloarcadius.com", "portfolio-backend", "portfolio", "backend", "django", "localhost"]
 

@@ -4,10 +4,10 @@ DEBUG = True
 
 CORS_ORIGIN_ALLOW_ALL = True
 
-
 ALLOWED_HOSTS = ['*']
 
 CONSOLE_LOGS = True
+
 
 if CONSOLE_LOGS:
     # Log all to the console as well. This is used while running unit tests

@@ -59,9 +59,7 @@ INSTALLED_APPS = [
     'apps.users',
     'apps.core',
     'apps.projects',
-    'apps.resume',
-    'apps.ui',
-    
+    'apps.resume',    
 ]
 
 MIDDLEWARE = [

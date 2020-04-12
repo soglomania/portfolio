@@ -3,7 +3,7 @@ version: '3'
 services:
     
     django:
-        image : sogloarcadius/portfolio_backend:https
+        image : sogloarcadius/portfolio-backend:https
         environment:
             - SYSLOG_HOST
             - SYSLOG_PORT
@@ -14,6 +14,9 @@ services:
         build: 
             context: .
             dockerfile: ./Dockerfile.https
+            args:
+                - SYSLOG_HOST
+                - SYSLOG_PORT
         ports:
             - "80:80"
             - "443:443"
@@ -22,7 +25,7 @@ services:
             - /docker/portfolio/volumes/etc/letsencrypt/live/sogloarcadius.com/fullchain.pem:/etc/letsencrypt/live/sogloarcadius.com/fullchain.pem
             - /docker/portfolio/volumes/etc/letsencrypt/live/sogloarcadius.com/privkey.pem:/etc/letsencrypt/live/sogloarcadius.com/privkey.pem
         depends_on:
-            - log
+            - syslog-ng
             - os-metrics
             - prometheus
             - grafana

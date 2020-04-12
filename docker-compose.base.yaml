@@ -2,7 +2,7 @@ version: '3'
 
 services:
 
-    log:
+    syslog-ng:
         image: balabit/syslog-ng
         command: "--no-caps"
         volumes :

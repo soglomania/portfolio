@@ -12,7 +12,7 @@ urlpatterns = [
 ]
 
 urlpatterns += i18n_patterns(
-    url(r'^', include('apps.ui.urls', namespace="ui")),
+    url(r'^', include('apps.core.urls', namespace="core")),
     url(r'^admin/', admin.site.urls),
     prefix_default_language=True
 )

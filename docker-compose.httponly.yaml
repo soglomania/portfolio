@@ -3,7 +3,7 @@ version: '3'
 services:
 
     django:
-        image : sogloarcadius/portfolio_backend:httponly
+        image: sogloarcadius/portfolio-backend:httponly
         environment:
             - SYSLOG_HOST
             - SYSLOG_PORT
@@ -14,10 +14,13 @@ services:
         build: 
             context: .
             dockerfile: ./Dockerfile.httponly
+            args:
+                - SYSLOG_HOST
+                - SYSLOG_PORT
         ports:
             - "80:80"
         depends_on:
-            - log
+            - syslog-ng
             - os-metrics
             - prometheus
             - grafana    
