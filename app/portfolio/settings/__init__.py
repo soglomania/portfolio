@@ -1,2 +1,2 @@
 
-from .production import *
+from .kubernetes import *
