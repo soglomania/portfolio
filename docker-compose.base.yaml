@@ -18,7 +18,6 @@ services:
         volumes:
             - /docker/portfolio/volumes/letsencrypt-data:/usr/share/nginx/html
 
-
     os-metrics:
         image: "prom/node-exporter"
 
