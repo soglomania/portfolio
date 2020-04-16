@@ -6,8 +6,11 @@ JUPYTER_DIR?=$(PWD)/data/jupyter
 YAML_DIR?=$(PWD)/data/yaml
 DJANGO_APP_DIR?=$(PWD)/app
 
+
+
+
 setup:
-	-rm $(DJANGO_APP_DIR)/db.sqlite && \
+	rm $(DJANGO_APP_DIR)/db.sqlite | true  && \
 	make makemigrations && \
 	make create-superuser && \
 	make insert-biography && \
@@ -58,8 +61,13 @@ insert-educations:
 	python3 manage.py portfolio --model education --db select && \
 	python3 manage.py portfolio --model education --db flush && \
 	python3 manage.py portfolio --model education --db select && \
-	python3 manage.py portfolio --model education --addyaml $(YAML_DIR)/educations/ingenieur.enssat.yaml &&\
+	python3 manage.py portfolio --model education --addyaml $(YAML_DIR)/educations/dit.erasmus.yaml &&\
+	python3 manage.py portfolio --model education --addyaml $(YAML_DIR)/educations/engineer.enssat.yaml &&\
+	python3 manage.py portfolio --model education --addyaml $(YAML_DIR)/educations/high.school.diploma.yaml &&\
+	python3 manage.py portfolio --model education --addyaml $(YAML_DIR)/educations/iut.blagnac.yaml &&\
 	python3 manage.py portfolio --model education --db select
+
+
 
 
 insert-experiences:
@@ -67,7 +75,10 @@ insert-experiences:
 	python3 manage.py portfolio --model experience --db select && \
 	python3 manage.py portfolio --model experience --db flush && \
 	python3 manage.py portfolio --model experience --db select && \
-	python3 manage.py portfolio --model experience --addyaml $(YAML_DIR)/experiences/apprenti.ingénieur.yaml &&\
+	python3 manage.py portfolio --model experience --addyaml $(YAML_DIR)/experiences/apprentice.engineer.yaml &&\
+	python3 manage.py portfolio --model experience --addyaml $(YAML_DIR)/experiences/homework.facilitator.yaml &&\
+	python3 manage.py portfolio --model experience --addyaml $(YAML_DIR)/experiences/internship.iut.yaml &&\
+	python3 manage.py portfolio --model experience --addyaml $(YAML_DIR)/experiences/technical.solutions.engineer.yaml &&\
 	python3 manage.py portfolio --model experience --db select
 
 
@@ -77,7 +88,10 @@ insert-skills:
 	python3 manage.py portfolio --model skill --db select && \
 	python3 manage.py portfolio --model skill --db flush && \
 	python3 manage.py portfolio --model skill --db select && \
+	python3 manage.py portfolio --model skill --addyaml $(YAML_DIR)/skills/artificial.intelligence.yaml &&\
+	python3 manage.py portfolio --model skill --addyaml $(YAML_DIR)/skills/networking.yaml &&\
 	python3 manage.py portfolio --model skill --addyaml $(YAML_DIR)/skills/programming.yaml &&\
+	python3 manage.py portfolio --model skill --addyaml $(YAML_DIR)/skills/security.yaml &&\
 	python3 manage.py portfolio --model skill --db select
 
 
@@ -86,6 +100,7 @@ insert-interests:
 	python3 manage.py portfolio --model interest --db select && \
 	python3 manage.py portfolio --model interest --db flush && \
 	python3 manage.py portfolio --model interest --db select && \
+	python3 manage.py portfolio --model interest --addyaml $(YAML_DIR)/interests/sports.yaml &&\
 	python3 manage.py portfolio --model interest --addyaml $(YAML_DIR)/interests/traveling.yaml &&\
 	python3 manage.py portfolio --model interest --db select
 

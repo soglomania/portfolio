@@ -1,0 +1,18 @@
+name_en: Computer Network Skills
+name_fr: Réseaux
+name_es: Redes y telecomunicaciones
+
+summary_en: Computer Network Skills
+summary_fr: Réseaux et télécommunications
+summary_es: Redes y telecomunicaciones
+
+description_en: |
+  Solid knowledge of TCP/IP and OSI Protocols (CCNA 1 & 2).
+  Configuration of network devices (Switch & router
+  Cisco) and network services (DHCP, DNS, AD, ...)
+description_fr: |
+  Bonne maitrise des protocoles réseaux (CCNA 1 & 2).
+  Configuration des équipements réseaux (Switch et Routeur Cisco) et services réseaux (DHCP, DNS, AD, ...)
+description_es: |
+  TCP/IP, OSI, CCNA 1 & 2
+  Configuracion Cisco (Router, Switch)

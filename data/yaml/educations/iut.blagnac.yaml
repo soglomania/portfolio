@@ -1,0 +1,47 @@
+name_en: >
+  2 years Degree in Computer Systems Networking and Telecommunication
+
+name_fr: >
+  Diplôme Universitaire de Technologie, Spécialité Réseaux informatiques et Télécommunications
+
+name_es: >
+  Diploma de redes y telecomunicaciones
+
+start_date: 2013-09-14
+end_date: 2015-06-30
+
+is_current: false
+
+school_en: IUT de Blagnac, University of Toulouse II Le Mirail, Toulouse, France
+school_fr: IUT de Blagnac, University of Toulouse II, Le Mirail, Toulouse, France
+school_es: IUT de Blagnac, Universidad de Tolosa II, Le Mirail, Tolosa, Francia
+
+summary_en: >
+  2 years Degree (DUT) in Computer Systems Networking and Telecommunication 
+  
+summary_fr: >
+  Diplôme Universitaire de Technologie (DUT), Spécialité Réseaux informatiques et Télécommunications 
+
+summary_es: >
+  Diploma (DUT) de redes y telecomunicaciones 
+
+description_en: |
+  Networking : Switching and Routing (TCP/IP, OSI,.. ), network design, cisco devices, ...
+  Basic Programming Skills : OOP(JAVA), Data Structure (C), ...
+  OS : Linux/Windows & Scripting : CShell, PowerShell,
+  Telecom & Telephony : Toip : Asterisk configuration, Wifi, Bluetooth, Zigbee, telecom basics concepts,
+
+description_fr: |
+  Bonne maitrise des protocoles réseaux (CCNA 1 & 2).
+  Configuration des équipements réseaux (Switch et Routeur Cisco)
+  Configuration des services réseaux (DHCP, DNS, AD, …)
+  Télécom et Téléphonie : VoIP, ToIP (Asterisk), concept des télécoms (3G, 4G,..)
+
+description_es: |
+  Networking : Switching and Routing (TCP/IP, OSI,.. ), network design, cisco devices, ...
+  Basic Programming Skills : OOP(JAVA), Data Structure (C), ...
+  OS : Linux/Windows & Scripting : CShell, PowerShell,
+  Telecom & Telephony : Toip : Asterisk configuration, Wifi, Bluetooth, Zigbee, telecom basics concepts,
+
+
+link: https://www.linkedin.com/school/universit%C3%A9-toulouse---jean-jaur%C3%A8s/

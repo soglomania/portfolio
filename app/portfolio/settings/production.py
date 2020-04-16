@@ -9,5 +9,5 @@ CORS_ORIGIN_WHITELIST = (
 
 )
 
-ALLOWED_HOSTS = [".sogloarcadius.com", "portfolio-backend", "portfolio", "backend", "django", "localhost"]
+ALLOWED_HOSTS = [".sogloarcadius.com", "localhost"]
 

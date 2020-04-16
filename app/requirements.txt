@@ -1,12 +1,5 @@
-
-jupyter
-markdown
-markdown-to-json
-pyyaml
 cryptography
 pyjwt
-
-
 django
 django-modeltranslation
 djangorestframework
@@ -14,10 +7,7 @@ django-cors-middleware
 django-log-request-id
 django-markup[all_filter_dependencies]
 django-prometheus
-django-debug-toolbar
 
-selenium
-coverage
 
 
 

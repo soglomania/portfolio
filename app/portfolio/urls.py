@@ -12,13 +12,12 @@ urlpatterns = [
 ]
 
 urlpatterns += i18n_patterns(
-    url(r'^', include('apps.core.urls', namespace="core")),
+    url(r'^', include('apps.core.urls')),
     url(r'^admin/', admin.site.urls),
     prefix_default_language=True
 )
 
 urlpatterns += [
-    url(r'^api/', include('apps.core.urls', namespace="core")),
     url(r'^api/', include('apps.users.urls', namespace="users")),
     url(r'^api/', include('apps.projects.urls', namespace="projects")),
     url(r'^api/', include('apps.resume.urls', namespace="resume")),

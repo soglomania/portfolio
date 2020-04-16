@@ -1,0 +1,10 @@
+
+jupyter
+markdown
+markdown-to-json
+pyyaml
+
+django-debug-toolbar
+
+selenium
+coverage

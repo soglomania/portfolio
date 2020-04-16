@@ -4,19 +4,21 @@ name_fr: >
   Diplôme d’ingénieur Informatique, Multimédia et Réseaux par Alternance
 name_es: > 
   Master II Degree in Computer Science (Engineer), co-op program( Apprenticeship)
+
 start_date: 2015-09-14
 end_date: 2018-09-14
+
 is_current: false
 
-school_en: National School of Applied Science and Technology (University of Rennes 1, France)
-school_fr: ENSSAT Lannion (Université Rennes 1, France)
-school_es: ENSSAT Lannion (Universidad de Rennes 1, Francia)
+school_en: National School of Applied Science and Technology, University of Rennes 1, France
+school_fr: ENSSAT Lannion, Université Rennes 1, France
+school_es: ENSSAT Lannion, Universidad de Rennes 1, Francia
 
 summary_en: >
   Engineer degree in computer science
 summary_fr: >
   Titre d'ingénieur en informatique
-summary_es:
+summary_es: >
   Ingeneria informatica
 
 description_en: |
@@ -42,7 +44,7 @@ description_fr: |
   Compétences de l'ingénieur : gestion de projet, communication
 
 
-description_es:
+description_es: |
   Software development (JAVA, C/C++, Python, UML-RUP)
 
   Web development technologies (HTML, CSS, PHP, NODEJS, etc...)
