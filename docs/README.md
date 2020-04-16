@@ -1,29 +1,8 @@
 # Prometheus
 
-[Django Prometheus Metrics](http://sogloarcadius.com/monitoring/metrics)
-
-[Node-Exporter Prometheus Metrics](http://sogloarcadius.com:9100/metrics)
-
-[Prometheus Server Metrics](http://sogloarcadius.com:9090/metrics)
-
-[Prometheus UI](http://sogloarcadius.com:9090)
-
-[Prometheus Web Console](http://sogloarcadius.com:9090/consoles/summary.html)
-
-# Grafana Dashbord
-
-[Grafana Dashboard](http://sogloarcadius.com:3000)
-
-Default Credentials : admin/admin
-
-# ELK
-
-[Kibana Dashboard](http://sogloarcadius.com:5601)
-
-
+[Prometheus Metrics](http://sogloarcadius.com/api/metrics)
 
 # HTTPS CONFIGURATION STEPS
-
 
 ## Start letsencrypt nginx 
 
@@ -68,13 +47,6 @@ sudo docker run --rm -it --name certbot \
 certbot/certbot \
 --staging \
 certificates
-```
-
-## Clean up Certificates
-
-```
-sudo rm -rf /docker/portfolio/volumes/
-
 ```
 
 ## Issue a production certificate
@@ -133,9 +105,9 @@ $ sudo sysctl -w vm.max_map_count=262144
 
 # Start app http
 
-```sh
+```s
 
-source production.properties
+source env.properties
 
 docker-compose -f docker-compose.base.yaml -f docker-compose.httponly.yaml build django
 
@@ -146,9 +118,9 @@ docker-compose -f docker-compose.base.yaml -f docker-compose.httponly.yaml up -d
 
 # Start app https
 
-```sh
+```s
 
-source production.properties
+source env.properties
 
 docker-compose -f docker-compose.base.yaml -f docker-compose.https.yaml build django
 
@@ -159,7 +131,7 @@ docker-compose -f docker-compose.base.yaml -f docker-compose.https.yaml up -d dj
 
 # Start elk
 
-```sh
+```s
 
 sysctl -w vm.max_map_count=262144
 
@@ -169,8 +141,8 @@ docker-compose -f docker-compose.base.yaml -f docker-compose.elk.yaml up --build
 
 # Stop all containers
 
-```sh
+```s
 
-docker-compose -f docker-compose.base.yaml -f docker-compose.yaml -f docker-compose.httponly.yaml down --volumes
+docker-compose -f docker-compose.base.yaml -f docker-compose.yaml -f docker-compose.httponly.yaml -f docker-compose.https.yaml down --volumes
 
 ```
