@@ -18,10 +18,10 @@ urlpatterns += i18n_patterns(
 )
 
 urlpatterns += [
-    url(r'^api/', include('apps.users.urls', namespace="users")),
-    url(r'^api/', include('apps.projects.urls', namespace="projects")),
-    url(r'^api/', include('apps.resume.urls', namespace="resume")),
-    url(r'^api/', include('django_prometheus.urls')),
+    url(r'^', include('apps.users.urls', namespace="users")),
+    url(r'^', include('apps.projects.urls', namespace="projects")),
+    url(r'^', include('apps.resume.urls', namespace="resume")),
+    url(r'^', include('django_prometheus.urls')),
 ]
 
 
