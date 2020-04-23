@@ -16,7 +16,6 @@ CORS_ORIGIN_WHITELIST = (
     "https://sogloarcadius.com",
     "http://api.sogloarcadius.com",
     "https://api.sogloarcadius.com"
-
 )
 
 CSRF_TRUSTED_ORIGINS = (
