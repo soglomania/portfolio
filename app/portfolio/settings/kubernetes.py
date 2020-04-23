@@ -23,4 +23,6 @@ CSRF_TRUSTED_ORIGINS = (
     "api.sogloarcadius.com",
 )
 
+CORS_ALLOW_CREDENTIALS = True
+
 ALLOWED_HOSTS = ['*']
