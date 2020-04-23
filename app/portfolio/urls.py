@@ -12,7 +12,6 @@ urlpatterns = [
 ]
 
 urlpatterns += [
-    url(r'^portfolio/api/admin/', admin.site.urls),
     url(r'^portfolio/api/', include('apps.core.urls', namespace="core")),
     url(r'^portfolio/api/', include('apps.users.urls', namespace="users")),
     url(r'^portfolio/api/', include('apps.projects.urls', namespace="projects")),
@@ -29,5 +28,6 @@ if settings.DEBUG:
     import debug_toolbar
     urlpatterns = [
         url(r'^__debug__/', include(debug_toolbar.urls)),
+        url(r'^admin/', include(admin.site.urls)),
     ] + urlpatterns
 
