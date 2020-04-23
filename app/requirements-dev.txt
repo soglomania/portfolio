@@ -4,6 +4,8 @@ markdown
 markdown-to-json
 pyyaml
 
+coreapi
+
 django-debug-toolbar
 
 selenium

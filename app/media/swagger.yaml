@@ -3,7 +3,7 @@ swagger: '2.0'
 info:
   description: |
     ## Welcome
-    Welcome to my PORTFOLIO API Reference documentation !
+    Welcome to PORTFOLIO API Reference documentation !
     You can use the API to integrate with 3rd-party systems and custom applications.
     This document provides an overview of how to use the API.
     ## A Quick Note
@@ -28,7 +28,7 @@ paths:
       - application/json
       responses:
         '200':
-          description: my resume in json
+          description: resume in json format
   "/projects":
     get:
       tags:
@@ -39,4 +39,4 @@ paths:
       - application/json
       responses:
         '200':
-          description: projects in json
+          description: projects in json format

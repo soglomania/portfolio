@@ -3,7 +3,7 @@ pyjwt
 django
 django-modeltranslation
 djangorestframework
-django-cors-middleware
+django-cors-headers
 django-log-request-id
 django-markup[all_filter_dependencies]
 django-prometheus
