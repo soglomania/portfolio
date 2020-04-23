@@ -12,13 +12,18 @@ CORS_ALLOW_HEADERS = default_headers + (
 CORS_ORIGIN_ALLOW_ALL = False
 
 CORS_ORIGIN_WHITELIST = (
-    "sogloarcadius.com",
-    "api.sogloarcadius.com"
+    "http://sogloarcadius.com",
+    "https://sogloarcadius.com",
+    "http://api.sogloarcadius.com",
+    "https://api.sogloarcadius.com"
+
 )
 
 CSRF_TRUSTED_ORIGINS = (
-    "sogloarcadius.com",
-    "api.sogloarcadius.com",
+    "http://sogloarcadius.com",
+    "https://sogloarcadius.com",
+    "http://api.sogloarcadius.com",
+    "https://api.sogloarcadius.com"
 )
 
 ALLOWED_HOSTS = ['*']
