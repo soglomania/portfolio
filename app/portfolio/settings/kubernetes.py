@@ -19,10 +19,8 @@ CORS_ORIGIN_WHITELIST = (
 )
 
 CSRF_TRUSTED_ORIGINS = (
-    "http://sogloarcadius.com",
-    "https://sogloarcadius.com",
-    "http://api.sogloarcadius.com",
-    "https://api.sogloarcadius.com"
+    "sogloarcadius.com",
+    "api.sogloarcadius.com",
 )
 
 ALLOWED_HOSTS = ['*']
