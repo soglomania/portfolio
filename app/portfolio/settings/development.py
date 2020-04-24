@@ -1,19 +1,32 @@
 from .base import *
 
-DEBUG = True
+ALLOWED_HOSTS = ['*']
 
 CORS_ORIGIN_ALLOW_ALL = True
 
-ALLOWED_HOSTS = ['*']
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+    'cache-control',
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    '.sogloarcadius.com',
+]
 
 CONSOLE_LOGS = True
-
 if CONSOLE_LOGS:
-    # Log all to the console as well. This is used while running unit tests
     LOGGING['loggers']['']['handlers'] += ['console']
 
 
-# DEBUG MODE
+DEBUG = True
 if DEBUG:  
     INTERNAL_IPS = ['127.0.0.1',]
     MIDDLEWARE+=['debug_toolbar.middleware.DebugToolbarMiddleware',]

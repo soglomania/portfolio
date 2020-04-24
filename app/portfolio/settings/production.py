@@ -4,9 +4,29 @@ DEBUG = False
 
 CORS_ORIGIN_ALLOW_ALL = False
 
-CORS_ORIGIN_WHITELIST = (
-    "sogloarcadius.com"
-)
+CORS_ORIGIN_WHITELIST = [
+    "http://sogloarcadius.com",
+    "https://sogloarcadius.com",
+    "https://api.sogloarcadius.com",
+    "http://api.sogloarcadius.com",
+]
 
-ALLOWED_HOSTS = [".sogloarcadius.com", "localhost"]
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+    'cache-control',
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    '.sogloarcadius.com',
+]
+
+ALLOWED_HOSTS = [".sogloarcadius.com"]
 

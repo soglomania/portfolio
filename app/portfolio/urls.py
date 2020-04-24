@@ -6,13 +6,11 @@ from django.conf.urls.i18n import i18n_patterns
 from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns
 
 
-
 urlpatterns = [
     url(r'^i18n/', include('django.conf.urls.i18n')),
 ]
 
 urlpatterns += [
-    url(r'^portfolio/api/', include('apps.core.urls', namespace="core")),
     url(r'^portfolio/api/', include('apps.users.urls', namespace="users")),
     url(r'^portfolio/api/', include('apps.projects.urls', namespace="projects")),
     url(r'^portfolio/api/', include('apps.resume.urls', namespace="resume")),

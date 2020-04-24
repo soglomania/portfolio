@@ -1,14 +1,12 @@
 cryptography
 pyjwt
 django
+django-cors-headers
 django-modeltranslation
 djangorestframework
-django-cors-headers
 django-log-request-id
 django-markup[all_filter_dependencies]
 django-prometheus
-
-
 
 
 

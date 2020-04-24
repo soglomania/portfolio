@@ -3,7 +3,7 @@ swagger: '2.0'
 info:
   description: |
     ## Welcome
-    Welcome to PORTFOLIO API Reference documentation !
+    Welcome to my Curriculum Vitae API Reference documentation !
     You can use the API to integrate with 3rd-party systems and custom applications.
     This document provides an overview of how to use the API.
     ## A Quick Note
@@ -12,9 +12,9 @@ info:
     No Authentication is required to access this API
 
   version: 1.0.0
-  title: PORTFOLIO REST API
+  title: Curriculum Vitae REST API
 host: ''
-basePath: "/api/"
+basePath: "sogloarcadius.com/portfolio/api"
 schemes:
 - http
 - https
@@ -23,17 +23,78 @@ paths:
     get:
       tags:
       - resume
-      summary: get resume
+      summary: Download my resume in JSON Format
       produces:
       - application/json
       responses:
         '200':
           description: resume in json format
+
+  "/resume/biography":
+    get:
+      tags:
+      - resume
+      summary: Download resume biography in JSON Format
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: resume biography in json format
+  "/resume/languages":
+    get:
+      tags:
+      - resume
+      summary: Download resume languages in JSON Format
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: resume languages in json format
+  "/resume/educations":
+    get:
+      tags:
+      - resume
+      summary: Download resume educations in JSON Format
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: resume educations in json format          
+  "/resume/experiences":
+    get:
+      tags:
+      - resume
+      summary: Download resume experiences in JSON Format
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: resume experiences in json format 
+  "/resume/skills":
+    get:
+      tags:
+      - resume
+      summary: Download resume skills in JSON Format
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: resume skills in json format   
+  "/resume/interests":
+    get:
+      tags:
+      - resume
+      summary: Download resume interests in JSON Format
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: resume interests in json format      
   "/projects":
     get:
       tags:
       - project
-      summary: Get all my projects
+      summary: Get all my projects information in JSON Format
       description: ''
       produces:
       - application/json
