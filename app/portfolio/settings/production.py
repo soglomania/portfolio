@@ -7,12 +7,13 @@ CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = [
     "http://sogloarcadius.com",
     "https://sogloarcadius.com",
-    "https://api.sogloarcadius.com",
     "http://api.sogloarcadius.com",
+    "https://api.sogloarcadius.com",
+    
     "http://sogloarcadius.fr",
     "https://sogloarcadius.fr",
-    "https://api.sogloarcadius.fr",
     "http://api.sogloarcadius.fr",
+    "https://api.sogloarcadius.fr",
 ]
 
 CORS_ALLOW_HEADERS = [

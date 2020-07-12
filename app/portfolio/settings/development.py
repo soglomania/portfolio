@@ -21,9 +21,8 @@ CORS_ALLOW_HEADERS = [
 CSRF_TRUSTED_ORIGINS = [
     '.sogloarcadius.com',
     '.sogloarcadius.fr',
-    'localhost.com',
-    'localhost.fr',
-    'localhost',
+    '.localhost.com',
+    '.localhost.fr',
 ]
 
 CONSOLE_LOGS = True
@@ -36,5 +35,3 @@ if DEBUG:
     INTERNAL_IPS = ['127.0.0.1',]
     MIDDLEWARE+=['debug_toolbar.middleware.DebugToolbarMiddleware',]
     INSTALLED_APPS+=['debug_toolbar',]
-    #settings_logger.critical('starting server in debug mode')
-    #settings_logger.info('allowed_hosts: {}'.format(str(ALLOWED_HOSTS)))
