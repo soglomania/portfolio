@@ -20,6 +20,10 @@ CORS_ALLOW_HEADERS = [
 
 CSRF_TRUSTED_ORIGINS = [
     '.sogloarcadius.com',
+    '.sogloarcadius.fr',
+    'localhost.com',
+    'localhost.fr',
+    'localhost',
 ]
 
 CONSOLE_LOGS = True

@@ -9,6 +9,10 @@ CORS_ORIGIN_WHITELIST = [
     "https://sogloarcadius.com",
     "https://api.sogloarcadius.com",
     "http://api.sogloarcadius.com",
+    "http://sogloarcadius.fr",
+    "https://sogloarcadius.fr",
+    "https://api.sogloarcadius.fr",
+    "http://api.sogloarcadius.fr",
 ]
 
 CORS_ALLOW_HEADERS = [
@@ -27,6 +31,7 @@ CORS_ALLOW_HEADERS = [
 
 CSRF_TRUSTED_ORIGINS = [
     '.sogloarcadius.com',
+    '.sogloarcadius.fr',
 ]
 
 ALLOWED_HOSTS = ['*']
