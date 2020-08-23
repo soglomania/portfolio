@@ -22,8 +22,8 @@ services:
             - "443:443"
         volumes:
             - /docker/portfolio/volumes/dh-param/dhparam-2048.pem:/etc/ssl/certs/dhparam-2048.pem
-            - /docker/portfolio/volumes/etc/letsencrypt/live/sogloarcadius.com/fullchain.pem:/etc/letsencrypt/live/sogloarcadius.com/fullchain.pem
-            - /docker/portfolio/volumes/etc/letsencrypt/live/sogloarcadius.com/privkey.pem:/etc/letsencrypt/live/sogloarcadius.com/privkey.pem
+            - /docker/portfolio/volumes/etc/letsencrypt/live/sogloarcadius.fr/fullchain.pem:/etc/letsencrypt/live/sogloarcadius.fr/fullchain.pem
+            - /docker/portfolio/volumes/etc/letsencrypt/live/sogloarcadius.fr/privkey.pem:/etc/letsencrypt/live/sogloarcadius.fr/privkey.pem
         depends_on:
             - syslog-ng
             - os-metrics

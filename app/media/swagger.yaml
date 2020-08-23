@@ -14,7 +14,7 @@ info:
   version: 1.0.0
   title: Curriculum Vitae REST API
 host: ''
-basePath: "sogloarcadius.com/portfolio/api"
+basePath: "sogloarcadius.fr/portfolio/api"
 schemes:
 - http
 - https
